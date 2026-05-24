@@ -45,9 +45,8 @@ const SERVICES: Record<
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
     image: partCnc,
     alt: "Bead-blasted aluminum CNC machined heat sink component",
-    detailHeading: "Express yourself.",
-    detailBody:
-      "Our 5-axis cells handle complex geometries in a single setup — from one-off prototypes to short-run production. Surface finishes inspected against the master file before they leave the shop.",
+    detailHeading: "Kreativt samarbete.",
+    detailBody: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
     bullets: [
       { label: "Material", value: "Jasmonite" },
       { label: "Tolerans", value: "±0.1 mm" },
@@ -100,7 +99,7 @@ function Index() {
           <div className="size-6 bg-foreground flex items-center justify-center">
             <div className="size-2 bg-primary" />
           </div>
-          <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
+          <span className="font-display text-lg tracking-tighter uppercase font-extrabold">Vorm-Fabric</span>
         </div>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
           <a href="#services" className="hover:text-primary transition-colors">
@@ -132,7 +131,7 @@ function Index() {
             </h1>
             <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
               <p className="text-lg text-pretty max-w-[45ch]">
-                DG Development is a specialized development shop bridging the gap between digital design and physical
+                Vorm-Fabric is a specialized development shop bridging the gap between digital design and physical
                 reality. We engineer parts that feel as good as they perform.
               </p>
               <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter">
@@ -277,10 +276,10 @@ function Index() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">Start a project</p>
             <a
-              href="mailto:hello@dgdevelopment.se"
+              href="mailto:hello@vormfabric.studio"
               className="font-display font-extrabold text-4xl md:text-7xl tracking-tighter hover:text-primary transition-colors underline decoration-border decoration-1 underline-offset-8 break-all"
             >
-              hello@dgdevelopment.se
+              hello@vormfabric.studio
             </a>
             <div className="grid md:grid-cols-3 gap-12 mt-24 text-[10px] font-mono uppercase tracking-tighter text-muted-foreground text-left">
               <div>
@@ -294,9 +293,9 @@ function Index() {
               <div>
                 <p className="text-foreground mb-2">Digital</p>
                 <p>
-                  Instagram: @dg_development
+                  Instagram: @vorm_fab
                   <br />
-                  LinkedIn: /dg-development
+                  LinkedIn: /vorm-fabric
                 </p>
               </div>
               <div>
@@ -309,7 +308,7 @@ function Index() {
               </div>
             </div>
             <div className="mt-16 pt-8 border-t border-border text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-              © 2026 DG Development. All tolerances reserved.
+              © 2026 Vorm-Fabric Studio. All tolerances reserved.
             </div>
           </div>
         </footer>
