@@ -100,7 +100,7 @@ function Index() {
           <div className="size-6 bg-foreground flex items-center justify-center">
             <div className="size-2 bg-primary" />
           </div>
-          <span className="font-display text-lg tracking-tighter uppercase font-extrabold">Vorm-Fabric</span>
+          <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
         </div>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
           <a href="#services" className="hover:text-primary transition-colors">
