@@ -164,10 +164,9 @@ function Index() {
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
-          <section id="work" className="p-6 md:p-12 scroll-mt-20 border-b border-border">
+          <section id="work" className="p-6 md:p-12 scroll-mt-20 bg-foreground text-background">
             <div className="flex justify-between items-end mb-12">
-              <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">{activeService.title}</h2>
-              <span className="font-mono text-[10px] text-muted-foreground hidden md:block">[ {activeService.tag} ]</span>
+              <span className="font-mono text-[10px] text-background/70 hidden md:block">[ {activeService.tag} ]</span>
             </div>
 
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
