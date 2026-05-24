@@ -164,14 +164,13 @@ function Index() {
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
-          <section id="work" className="p-6 md:p-12 scroll-mt-20 border-b border-border">
+          <section id="work" className="p-6 md:p-12 scroll-mt-20 bg-foreground text-background">
             <div className="flex justify-between items-end mb-12">
-              <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">{activeService.title}</h2>
-              <span className="font-mono text-[10px] text-muted-foreground hidden md:block">[ {activeService.tag} ]</span>
+              <span className="font-mono text-[10px] text-background/70 hidden md:block">[ {activeService.tag} ]</span>
             </div>
 
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-              <div className="w-full aspect-square bg-card border border-border overflow-hidden">
+              <div className="w-full aspect-square bg-white/5 border border-white/10 overflow-hidden">
                 <img
                   src={activeService.image}
                   alt={activeService.alt}
@@ -186,15 +185,15 @@ function Index() {
                   <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
                     {activeService.detailHeading}
                   </h3>
-                  <p className="text-base text-muted-foreground text-pretty max-w-[50ch]">{activeService.detailBody}</p>
+                  <p className="text-base text-background/70 text-pretty max-w-[50ch]">{activeService.detailBody}</p>
                 </div>
-                <dl className="border-t border-border divide-y divide-border">
+                <dl className="border-t border-white/10 divide-y divide-white/10">
                   {activeService.bullets.map((b) => (
                     <div
                       key={b.label}
                       className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
                     >
-                      <dt className="text-muted-foreground">{b.label}</dt>
+                      <dt className="text-background/70">{b.label}</dt>
                       <dd>{b.value}</dd>
                     </div>
                   ))}
