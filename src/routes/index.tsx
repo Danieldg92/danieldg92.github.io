@@ -55,13 +55,12 @@ const SERVICES: Record<
   },
   mould: {
     tag: "03/FORM",
-    title: "Moulding & Tooling",
+    title: "Företagsevent",
     body: "Custom silicone moulding and low-volume polyurethane casting.",
     image: partMould,
     alt: "Clear polyurethane cast enclosure for optic module",
     detailHeading: "Bridge tooling, production feel.",
-    detailBody:
-      "Silicone tools and vacuum-cast polyurethane parts deliver injection-grade aesthetics in days, not months. Perfect for validation runs, investor samples, and pilot batches before committing to steel.",
+    detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events. ",
     bullets: [
       { label: "Process", value: "Silicone · PU casting" },
       { label: "Finish", value: "Optical clear · Soft-touch" },
