@@ -41,17 +41,17 @@ const SERVICES: Record<
   },
   cnc: {
     tag: "02/MANUFACTURE",
-    title: "5-Axis CNC Machining",
-    body: "High-precision milling in aluminum, titanium, and engineering plastics.",
+    title: "Design och formgivning",
+    body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
     image: partCnc,
     alt: "Bead-blasted aluminum CNC machined heat sink component",
-    detailHeading: "Cut once. Cut right.",
+    detailHeading: "Express yourself.",
     detailBody:
       "Our 5-axis cells handle complex geometries in a single setup — from one-off prototypes to short-run production. Surface finishes inspected against the master file before they leave the shop.",
     bullets: [
-      { label: "Materials", value: "Al · Ti · Steel · POM · PEEK" },
-      { label: "Tolerance", value: "±0.01 mm" },
-      { label: "Volume", value: "1 — 5,000 units" },
+      { label: "Material", value: "Jasmonite" },
+      { label: "Tolerans", value: "±0.1 mm" },
+      { label: "Metod", value: "Gjutning" },
     ],
   },
   mould: {
