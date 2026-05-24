@@ -32,8 +32,8 @@ const SERVICES: Record<
     tag: "01/DESIGN",
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
-    image: serviceDesign,
-    alt: "Parametric CAD model with dimensional tolerances on a workstation",
+    image: vaakumlyft,
+    alt: "Vakuumlyftsystem i industriell miljö",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
       "Vi förvandlar idéer till produktions-redo CAD. Varje del är designad parametriskt, och dokumenterade med toleranser för direkt produktion.",
