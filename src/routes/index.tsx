@@ -5,6 +5,9 @@ import partMould from "@/assets/part-mould.jpg";
 import workshop from "@/assets/workshop.jpg";
 import serviceDesign from "@/assets/service-design.jpg";
 import serviceLaser from "@/assets/service-laser.jpg";
+import vaakumlyft from "@/assets/vaakumlyft-2.png";
+import boursinEvent from "@/assets/boursin-event.jpg";
+import manasi from "@/assets/manasi-2.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
