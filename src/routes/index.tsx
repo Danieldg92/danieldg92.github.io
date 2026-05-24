@@ -24,7 +24,7 @@ const SERVICES: Record<ServiceKey, {
 }> = {
   design: {
     tag: "01/DESIGN",
-    title: "Technical Design",
+    title: "Technical solutions",
     body: "Parametric CAD modeling and FEA stress testing for complex assemblies.",
     image: serviceDesign,
     alt: "Parametric CAD model with dimensional tolerances on a workstation",
@@ -39,7 +39,7 @@ const SERVICES: Record<ServiceKey, {
   },
   cnc: {
     tag: "02/MANUFACTURE",
-    title: "5-Axis CNC Machining",
+    title: "Design och formgivning",
     body: "High-precision milling in aluminum, titanium, and engineering plastics.",
     image: partCnc,
     alt: "Bead-blasted aluminum CNC machined heat sink component",
