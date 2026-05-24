@@ -46,8 +46,8 @@ const SERVICES: Record<
     tag: "02/MANUFACTURE",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    image: partCnc,
-    alt: "Bead-blasted aluminum CNC machined heat sink component",
+    image: manasi,
+    alt: "Design och formgivningsprojekt",
     detailHeading: "Med kreativt samarbete.",
     detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
     bullets: [
