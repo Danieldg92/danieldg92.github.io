@@ -1,26 +1,198 @@
 import { createFileRoute } from "@tanstack/react-router";
+import partCnc from "@/assets/part-cnc.jpg";
+import partMould from "@/assets/part-mould.jpg";
+import workshop from "@/assets/workshop.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <div className="size-6 bg-foreground flex items-center justify-center">
+            <div className="size-2 bg-primary" />
+          </div>
+          <span className="font-display text-lg tracking-tighter uppercase font-extrabold">
+            Vorm-Fabric
+          </span>
+        </div>
+        <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
+          <a href="#services" className="hover:text-primary transition-colors">01. Services</a>
+          <a href="#work" className="hover:text-primary transition-colors">02. Output</a>
+          <a href="#contact" className="hover:text-primary transition-colors">03. Inquiry</a>
+        </div>
+        <div className="text-[10px] font-mono text-primary">[ STATUS: ACTIVE ]</div>
+      </nav>
+
+      <main>
+        {/* Hero */}
+        <header className="px-6 pt-24 pb-12 border-b border-border">
+          <div className="max-w-6xl">
+            <div className="inline-block px-2 py-1 bg-foreground text-background font-mono text-[10px] mb-8 animate-reveal">
+              PROTOTYPE TO PRODUCTION STUDIO
+            </div>
+            <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance mb-12 animate-reveal [animation-delay:100ms]">
+              TOLERANCE <br />
+              <span className="text-muted-foreground">IS NOT</span> <br />
+              NEGOTIABLE.
+            </h1>
+            <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
+              <p className="text-lg text-pretty max-w-[45ch]">
+                Vorm-Fabric is a specialized development shop bridging the gap between digital design
+                and physical reality. We engineer parts that feel as good as they perform.
+              </p>
+              <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter">
+                <span>Available for Q4 2026 Commissioning</span>
+                <span>ISO 9001:2015 Standards Observed</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Services */}
+        <section id="services" className="grid md:grid-cols-4 border-b border-border">
+          {[
+            { tag: "01/DESIGN", title: "Technical Design", body: "Parametric CAD modeling and FEA stress testing for complex assemblies." },
+            { tag: "02/MANUFACTURE", title: "5-Axis CNC Machining", body: "High-precision milling in aluminum, titanium, and engineering plastics." },
+            { tag: "03/FORM", title: "Moulding & Tooling", body: "Custom silicone moulding and low-volume polyurethane casting." },
+            { tag: "04/DETAIL", title: "Laser Engraving", body: "Fiber laser marking for permanent serialization and cosmetic branding." },
+          ].map((s, i) => (
+            <div
+              key={s.tag}
+              className={`p-6 border-b md:border-b-0 border-border hover:bg-card transition-colors ${
+                i < 3 ? "md:border-r" : ""
+              }`}
+            >
+              <span className="block font-mono text-[10px] mb-12 text-muted-foreground">{s.tag}</span>
+              <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">{s.title}</h3>
+              <p className="text-sm text-muted-foreground">{s.body}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Selected Output */}
+        <section id="work" className="p-6">
+          <div className="flex justify-between items-end mb-12">
+            <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">
+              Selected Output
+            </h2>
+            <span className="font-mono text-[10px] text-muted-foreground hidden md:block">
+              [ ARCHIVE_INDEX: 02 PIECES ]
+            </span>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-1">
+            <article>
+              <div className="w-full aspect-square bg-card border border-border overflow-hidden">
+                <img
+                  src={partCnc}
+                  alt="Bead-blasted aluminum CNC machined heat sink component"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4 flex justify-between font-mono text-[10px] uppercase tracking-tighter">
+                <span>Component 082: Heat Sink</span>
+                <span className="text-muted-foreground">Tolerance: ±0.01mm</span>
+              </div>
+            </article>
+            <article>
+              <div className="w-full aspect-square bg-card border border-border overflow-hidden">
+                <img
+                  src={partMould}
+                  alt="Clear polyurethane cast enclosure for optic module"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4 flex justify-between font-mono text-[10px] uppercase tracking-tighter">
+                <span>Enclosure: Optic Module</span>
+                <span className="text-muted-foreground">Finish: Optical Clear</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="px-6 py-24 bg-foreground text-background">
+          <div className="grid md:grid-cols-2 gap-24 max-w-7xl mx-auto">
+            <div>
+              <h2 className="font-display font-extrabold text-5xl tracking-tighter leading-none mb-8 italic">
+                "The difference is felt in the radius."
+              </h2>
+              <p className="text-muted-foreground max-w-sm mb-12">
+                Our workshop operates at the intersection of traditional machining and algorithmic
+                design. We don't just manufacture; we refine.
+              </p>
+              <div className="space-y-6">
+                {[
+                  { n: "01", title: "Material Integrity", body: "Certified aerospace-grade alloys and chemical-resistant polymers." },
+                  { n: "02", title: "Rapid Tooling", body: "Bridge production for testing before full-scale manufacturing." },
+                  { n: "03", title: "Quality Verification", body: "Micrometer-level inspection against the master CAD file." },
+                ].map((s) => (
+                  <div key={s.n} className="flex gap-4 border-t border-white/10 pt-4">
+                    <span className="text-primary font-mono text-xs">{s.n}</span>
+                    <div>
+                      <h4 className="font-display font-extrabold text-lg uppercase">{s.title}</h4>
+                      <p className="text-sm text-muted-foreground mt-1">{s.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="w-full aspect-[3/4] bg-white/5 border border-white/10 overflow-hidden">
+              <img
+                src={workshop}
+                alt="CNC machine spindle and tool changer in the workshop"
+                width={1024}
+                height={1408}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <footer id="contact" className="px-6 py-24 border-t border-border">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">
+              Start a project
+            </p>
+            <a
+              href="mailto:hello@vormfabric.studio"
+              className="font-display font-extrabold text-4xl md:text-7xl tracking-tighter hover:text-primary transition-colors underline decoration-border decoration-1 underline-offset-8 break-all"
+            >
+              hello@vormfabric.studio
+            </a>
+            <div className="grid md:grid-cols-3 gap-12 mt-24 text-[10px] font-mono uppercase tracking-tighter text-muted-foreground text-left">
+              <div>
+                <p className="text-foreground mb-2">Studio</p>
+                <p>42 Industrial Way<br />Ste 200, Brooklyn, NY</p>
+              </div>
+              <div>
+                <p className="text-foreground mb-2">Digital</p>
+                <p>Instagram: @vorm_fab<br />LinkedIn: /vorm-fabric</p>
+              </div>
+              <div>
+                <p className="text-foreground mb-2">Capacity</p>
+                <p>Current: 85% Load<br />Next Open: Dec 2026</p>
+              </div>
+            </div>
+            <div className="mt-16 pt-8 border-t border-border text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+              © 2026 Vorm-Fabric Studio. All tolerances reserved.
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
