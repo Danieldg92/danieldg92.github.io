@@ -60,8 +60,8 @@ const SERVICES: Record<
     tag: "03/FORM",
     title: "Företagsevent",
     body: "Custom silicone moulding and low-volume polyurethane casting.",
-    image: partMould,
-    alt: "Clear polyurethane cast enclosure for optic module",
+    image: boursinEvent,
+    alt: "Företagsevent med varumärkesframhävning",
     detailHeading: "Bridge tooling, production feel.",
     detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events. ",
     bullets: [
