@@ -102,13 +102,13 @@ function Index() {
         </div>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
           <a href="#services" className="hover:text-primary transition-colors">
-            01. Services
+            01. Tjänster
           </a>
           <a href="#work" className="hover:text-primary transition-colors">
             02. Capabilities
           </a>
           <a href="#contact" className="hover:text-primary transition-colors">
-            03. Inquiry
+            03. Kontakt
           </a>
         </div>
         <div className="text-[10px] font-mono text-primary">[ STATUS: ACTIVE ]</div>
@@ -127,13 +127,10 @@ function Index() {
             </h1>
             <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
               <p className="text-lg text-pretty max-w-[45ch]">
-                Vorm-Fabric is a specialized development shop bridging the gap between digital design and physical
-                reality. We engineer parts that feel as good as they perform.
+                DG development är ett specialiserat design och tillverknings företag som minskar klyftan mellan digital
+                design och verkliga produkter, med mål att nå just era specifika visioner.
               </p>
-              <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter">
-                <span>Available for Q4 2026 Commissioning</span>
-                <span>ISO 9001:2015 Standards Observed</span>
-              </div>
+              <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter"></div>
             </div>
           </div>
         </header>
