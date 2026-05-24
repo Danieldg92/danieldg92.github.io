@@ -27,7 +27,7 @@ const SERVICES: Record<ServiceKey, {
     title: "Technical solutions",
     body: "Parametric CAD modeling and FEA stress testing for complex assemblies.",
     image: serviceDesign,
-    alt: "Parametric CAD model with dimensional tolerances on a workstation",
+    alt: "Vacuum lifter rig with suction cups and aluminum frame",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
       "We translate ideas into production-ready CAD. Every part is modeled parametrically, stress-tested against real loads, and documented with the tolerances your shop floor actually needs.",
