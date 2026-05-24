@@ -45,8 +45,8 @@ const SERVICES: Record<
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
     image: partCnc,
     alt: "Bead-blasted aluminum CNC machined heat sink component",
-    detailHeading: "Kreativt samarbete.",
-    detailBody: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
+    detailHeading: "Med kreativt samarbete.",
+    detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
     bullets: [
       { label: "Material", value: "Jasmonite" },
       { label: "Tolerans", value: "±0.1 mm" },
