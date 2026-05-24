@@ -124,9 +124,11 @@ function Index() {
               PROTOTYPE TO PRODUCTION STUDIO
             </div>
             <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance mb-12 animate-reveal [animation-delay:100ms]">
-              TOLERANCE <br />
-              <span className="text-muted-foreground">IS NOT</span> <br />
-              NEGOTIABLE.
+              FRÅN <br />
+              <span className="text-muted-foreground">IDÉ</span> <br />
+              TILL
+              <br />
+              <span className="text-muted-foreground">PRODUKT</span> <br />
             </h1>
             <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
               <p className="text-lg text-pretty max-w-[45ch]">
