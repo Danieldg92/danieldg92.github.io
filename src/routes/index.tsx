@@ -286,9 +286,9 @@ function Index() {
               <div>
                 <p className="text-foreground mb-2">Digital</p>
                 <p>
-                  Instagram: @vorm_fab
+                  Instagram: @dg_development
                   <br />
-                  LinkedIn: /vorm-fabric
+                  LinkedIn: /dg-development
                 </p>
               </div>
               <div>
