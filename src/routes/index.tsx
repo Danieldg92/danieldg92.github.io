@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import partCnc from "@/assets/part-cnc.png";
+import partCnc from "@/assets/part-cnc.jpg";
 import partMould from "@/assets/part-mould.jpg";
 import workshop from "@/assets/workshop.jpg";
-import serviceDesign from "@/assets/service-design.png";
+import serviceDesign from "@/assets/service-design.jpg";
 import serviceLaser from "@/assets/service-laser.jpg";
 
 export const Route = createFileRoute("/")({
@@ -12,37 +12,39 @@ export const Route = createFileRoute("/")({
 
 type ServiceKey = "design" | "cnc" | "mould" | "laser";
 
-const SERVICES: Record<ServiceKey, {
-  tag: string;
-  title: string;
-  body: string;
-  image: string;
-  alt: string;
-  detailHeading: string;
-  detailBody: string;
-  bullets: { label: string; value: string }[];
-}> = {
+const SERVICES: Record<
+  ServiceKey,
+  {
+    tag: string;
+    title: string;
+    body: string;
+    image: string;
+    alt: string;
+    detailHeading: string;
+    detailBody: string;
+    bullets: { label: string; value: string }[];
+  }
+> = {
   design: {
     tag: "01/DESIGN",
-    title: "Technical solutions",
-    body: "Parametric CAD modeling and FEA stress testing for complex assemblies.",
+    title: "Technical Design",
+    body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
     image: serviceDesign,
-    alt: "Vacuum lifter rig with suction cups and aluminum frame",
+    alt: "Parametric CAD model with dimensional tolerances on a workstation",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
-      "We translate ideas into production-ready CAD. Every part is modeled parametrically, stress-tested against real loads, and documented with the tolerances your shop floor actually needs.",
+      "Vi förvandlar idéer till produktions-redo CAD. Varje del är designad parametriskt, och dokumenterade med toleranser för direkt produktion.",
     bullets: [
-      { label: "Parametric CAD", value: "SolidWorks · Fusion 360" },
-      { label: "Simulation", value: "FEA · Tolerance stacks" },
-      { label: "Output", value: "STEP · 2D drawings · BOM" },
+      { label: "Parametric CAD", value: "SolidWorks · Fusion 360 · Onshape" },
+      { label: "Output", value: "STEP-filer · 2D ritningar · BOM" },
     ],
   },
   cnc: {
     tag: "02/MANUFACTURE",
-    title: "Design och formgivning",
+    title: "5-Axis CNC Machining",
     body: "High-precision milling in aluminum, titanium, and engineering plastics.",
     image: partCnc,
-    alt: "Black and white marbled cylindrical product design",
+    alt: "Bead-blasted aluminum CNC machined heat sink component",
     detailHeading: "Cut once. Cut right.",
     detailBody:
       "Our 5-axis cells handle complex geometries in a single setup — from one-off prototypes to short-run production. Surface finishes inspected against the master file before they leave the shop.",
@@ -54,7 +56,7 @@ const SERVICES: Record<ServiceKey, {
   },
   mould: {
     tag: "03/FORM",
-    title: "Event Design",
+    title: "Moulding & Tooling",
     body: "Custom silicone moulding and low-volume polyurethane casting.",
     image: partMould,
     alt: "Clear polyurethane cast enclosure for optic module",
@@ -98,14 +100,18 @@ function Index() {
           <div className="size-6 bg-foreground flex items-center justify-center">
             <div className="size-2 bg-primary" />
           </div>
-          <span className="font-display text-lg tracking-tighter uppercase font-extrabold">
-            DG Development
-          </span>
+          <span className="font-display text-lg tracking-tighter uppercase font-extrabold">Vorm-Fabric</span>
         </div>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
-          <a href="#services" className="hover:text-primary transition-colors">01. Services</a>
-          <a href="#work" className="hover:text-primary transition-colors">02. Capabilities</a>
-          <a href="#contact" className="hover:text-primary transition-colors">03. Inquiry</a>
+          <a href="#services" className="hover:text-primary transition-colors">
+            01. Services
+          </a>
+          <a href="#work" className="hover:text-primary transition-colors">
+            02. Capabilities
+          </a>
+          <a href="#contact" className="hover:text-primary transition-colors">
+            03. Inquiry
+          </a>
         </div>
         <div className="text-[10px] font-mono text-primary">[ STATUS: ACTIVE ]</div>
       </nav>
@@ -124,8 +130,8 @@ function Index() {
             </h1>
             <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
               <p className="text-lg text-pretty max-w-[45ch]">
-                DG Development is a specialized development shop bridging the gap between digital design
-                and physical reality. We engineer parts that feel as good as they perform.
+                Vorm-Fabric is a specialized development shop bridging the gap between digital design and physical
+                reality. We engineer parts that feel as good as they perform.
               </p>
               <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter">
                 <span>Available for Q4 2026 Commissioning</span>
@@ -154,22 +160,12 @@ function Index() {
                 } ${isActive ? "bg-foreground text-background" : "hover:bg-card"}`}
               >
                 <span
-                  className={`block font-mono text-[10px] mb-12 ${
-                    isActive ? "text-primary" : "text-muted-foreground"
-                  }`}
+                  className={`block font-mono text-[10px] mb-12 ${isActive ? "text-primary" : "text-muted-foreground"}`}
                 >
                   {s.tag}
                 </span>
-                <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">
-                  {s.title}
-                </h3>
-                <p
-                  className={`text-sm ${
-                    isActive ? "text-background/70" : "text-muted-foreground"
-                  }`}
-                >
-                  {s.body}
-                </p>
+                <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">{s.title}</h3>
+                <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
                 <span
                   className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
                     isActive ? "text-primary" : "text-foreground"
@@ -185,16 +181,12 @@ function Index() {
         {/* Service detail (reactive to selected service) */}
         <section id="work" className="p-6 md:p-12 scroll-mt-20">
           <div className="flex justify-between items-end mb-12">
-            <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">
-              {activeService.title}
-            </h2>
-            <span className="font-mono text-[10px] text-muted-foreground hidden md:block">
-              [ {activeService.tag} ]
-            </span>
+            <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">{activeService.title}</h2>
+            <span className="font-mono text-[10px] text-muted-foreground hidden md:block">[ {activeService.tag} ]</span>
           </div>
 
           <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-            <div className="w-full aspect-square bg-card overflow-hidden">
+            <div className="w-full aspect-square bg-card border border-border overflow-hidden">
               <img
                 src={activeService.image}
                 alt={activeService.alt}
@@ -209,13 +201,14 @@ function Index() {
                 <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
                   {activeService.detailHeading}
                 </h3>
-                <p className="text-base text-muted-foreground text-pretty max-w-[50ch]">
-                  {activeService.detailBody}
-                </p>
+                <p className="text-base text-muted-foreground text-pretty max-w-[50ch]">{activeService.detailBody}</p>
               </div>
               <dl className="border-t border-border divide-y divide-border">
                 {activeService.bullets.map((b) => (
-                  <div key={b.label} className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter">
+                  <div
+                    key={b.label}
+                    className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
+                  >
                     <dt className="text-muted-foreground">{b.label}</dt>
                     <dd>{b.value}</dd>
                   </div>
@@ -225,7 +218,6 @@ function Index() {
           </div>
         </section>
 
-
         {/* Process */}
         <section className="px-6 py-24 bg-foreground text-background">
           <div className="grid md:grid-cols-2 gap-24 max-w-7xl mx-auto">
@@ -234,14 +226,26 @@ function Index() {
                 "The difference is felt in the radius."
               </h2>
               <p className="text-muted-foreground max-w-sm mb-12">
-                Our workshop operates at the intersection of traditional machining and algorithmic
-                design. We don't just manufacture; we refine.
+                Our workshop operates at the intersection of traditional machining and algorithmic design. We don't just
+                manufacture; we refine.
               </p>
               <div className="space-y-6">
                 {[
-                  { n: "01", title: "Material Integrity", body: "Certified aerospace-grade alloys and chemical-resistant polymers." },
-                  { n: "02", title: "Rapid Tooling", body: "Bridge production for testing before full-scale manufacturing." },
-                  { n: "03", title: "Quality Verification", body: "Micrometer-level inspection against the master CAD file." },
+                  {
+                    n: "01",
+                    title: "Material Integrity",
+                    body: "Certified aerospace-grade alloys and chemical-resistant polymers.",
+                  },
+                  {
+                    n: "02",
+                    title: "Rapid Tooling",
+                    body: "Bridge production for testing before full-scale manufacturing.",
+                  },
+                  {
+                    n: "03",
+                    title: "Quality Verification",
+                    body: "Micrometer-level inspection against the master CAD file.",
+                  },
                 ].map((s) => (
                   <div key={s.n} className="flex gap-4 border-t border-white/10 pt-4">
                     <span className="text-primary font-mono text-xs">{s.n}</span>
@@ -269,31 +273,41 @@ function Index() {
         {/* Contact */}
         <footer id="contact" className="px-6 py-24 border-t border-border">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">
-              Start a project
-            </p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">Start a project</p>
             <a
-              href="mailto:hello@dgdevelopment.se"
+              href="mailto:hello@vormfabric.studio"
               className="font-display font-extrabold text-4xl md:text-7xl tracking-tighter hover:text-primary transition-colors underline decoration-border decoration-1 underline-offset-8 break-all"
             >
-              hello@dgdevelopment.se
+              hello@vormfabric.studio
             </a>
             <div className="grid md:grid-cols-3 gap-12 mt-24 text-[10px] font-mono uppercase tracking-tighter text-muted-foreground text-left">
               <div>
                 <p className="text-foreground mb-2">Studio</p>
-                <p>42 Industrial Way<br />Ste 200, Brooklyn, NY</p>
+                <p>
+                  42 Industrial Way
+                  <br />
+                  Ste 200, Brooklyn, NY
+                </p>
               </div>
               <div>
                 <p className="text-foreground mb-2">Digital</p>
-                <p>Instagram: @dg_development<br />LinkedIn: /dg-development</p>
+                <p>
+                  Instagram: @vorm_fab
+                  <br />
+                  LinkedIn: /vorm-fabric
+                </p>
               </div>
               <div>
                 <p className="text-foreground mb-2">Capacity</p>
-                <p>Current: 85% Load<br />Next Open: Dec 2026</p>
+                <p>
+                  Current: 85% Load
+                  <br />
+                  Next Open: Dec 2026
+                </p>
               </div>
             </div>
             <div className="mt-16 pt-8 border-t border-border text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-            © 2026 DG Development. All tolerances reserved.
+              © 2026 Vorm-Fabric Studio. All tolerances reserved.
             </div>
           </div>
         </footer>
