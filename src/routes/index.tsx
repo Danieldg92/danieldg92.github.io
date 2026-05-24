@@ -54,7 +54,7 @@ const SERVICES: Record<ServiceKey, {
   },
   mould: {
     tag: "03/FORM",
-    title: "Moulding & Tooling",
+    title: "Event Design",
     body: "Custom silicone moulding and low-volume polyurethane casting.",
     image: partMould,
     alt: "Clear polyurethane cast enclosure for optic module",
