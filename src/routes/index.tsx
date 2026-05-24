@@ -5,6 +5,9 @@ import partMould from "@/assets/part-mould.jpg";
 import workshop from "@/assets/workshop.jpg";
 import serviceDesign from "@/assets/service-design.jpg";
 import serviceLaser from "@/assets/service-laser.jpg";
+import vaakumlyft from "@/assets/vaakumlyft-2.png";
+import boursinEvent from "@/assets/boursin-event.jpg";
+import manasi from "@/assets/manasi-2.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -29,8 +32,8 @@ const SERVICES: Record<
     tag: "01/DESIGN",
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
-    image: serviceDesign,
-    alt: "Parametric CAD model with dimensional tolerances on a workstation",
+    image: vaakumlyft,
+    alt: "Vakuumlyftsystem i industriell miljö",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
       "Vi förvandlar idéer till produktions-redo CAD. Varje del är designad parametriskt, och dokumenterade med toleranser för direkt produktion.",
@@ -43,8 +46,8 @@ const SERVICES: Record<
     tag: "02/MANUFACTURE",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    image: partCnc,
-    alt: "Bead-blasted aluminum CNC machined heat sink component",
+    image: manasi,
+    alt: "Design och formgivningsprojekt",
     detailHeading: "Med kreativt samarbete.",
     detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
     bullets: [
@@ -57,8 +60,8 @@ const SERVICES: Record<
     tag: "03/FORM",
     title: "Företagsevent",
     body: "Custom silicone moulding and low-volume polyurethane casting.",
-    image: partMould,
-    alt: "Clear polyurethane cast enclosure for optic module",
+    image: boursinEvent,
+    alt: "Företagsevent med varumärkesframhävning",
     detailHeading: "Bridge tooling, production feel.",
     detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events. ",
     bullets: [
