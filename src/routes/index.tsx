@@ -120,6 +120,7 @@ function Index() {
           <div className="max-w-6xl">
             <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance mb-12 animate-reveal [animation-delay:100ms]">
               FRÅN <br />
+              <br />
               <span className="text-muted-foreground">IDÉ</span> <br />
               TILL
               <br />
@@ -127,8 +128,8 @@ function Index() {
             </h1>
             <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
               <p className="text-lg text-pretty max-w-[45ch]">
-                DG development är ett specialiserat design och tillverknings företag som minskar klyftan mellan digital
-                design och verkliga produkter, med mål att nå just era specifika visioner.
+                DG development är ett specialiserat design- och produktutvecklingsföretag som minskar klyftan mellan
+                digital design och verkliga produkter, med mål att nå just era specifika visioner.
               </p>
               <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter"></div>
             </div>
@@ -269,10 +270,10 @@ function Index() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">Start a project</p>
             <a
-              href="mailto:hello@dgdevelopment.se"
+              href="mailto:hello@vormfabric.studio"
               className="font-display font-extrabold text-4xl md:text-7xl tracking-tighter hover:text-primary transition-colors underline decoration-border decoration-1 underline-offset-8 break-all"
             >
-              hello@dgdevelopment.se
+              hello@vormfabric.studio
             </a>
             <div className="grid md:grid-cols-3 gap-12 mt-24 text-[10px] font-mono uppercase tracking-tighter text-muted-foreground text-left">
               <div>
@@ -286,9 +287,9 @@ function Index() {
               <div>
                 <p className="text-foreground mb-2">Digital</p>
                 <p>
-                  Instagram: @dg_development
+                  Instagram: @vorm_fab
                   <br />
-                  LinkedIn: /dg-development
+                  LinkedIn: /vorm-fabric
                 </p>
               </div>
               <div>
@@ -301,7 +302,7 @@ function Index() {
               </div>
             </div>
             <div className="mt-16 pt-8 border-t border-border text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-              © 2026 DG Development. All tolerances reserved.
+              © 2026 Vorm-Fabric Studio. All tolerances reserved.
             </div>
           </div>
         </footer>
