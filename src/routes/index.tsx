@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import partCnc from "@/assets/part-cnc.jpg";
+import partCnc from "@/assets/part-cnc.png";
 import partMould from "@/assets/part-mould.jpg";
 import workshop from "@/assets/workshop.jpg";
 import serviceDesign from "@/assets/service-design.png";
