@@ -118,12 +118,11 @@ function Index() {
         {/* Hero */}
         <header className="px-6 pt-24 pb-12 border-b border-border">
           <div className="max-w-6xl">
-            <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance mb-12 animate-reveal [animation-delay:100ms]">
-              FRÅN <br />
-              <span className="text-muted-foreground">IDÉ</span> <br />
-              TILL
-              <br />
-              <span className="text-muted-foreground">PRODUKT</span> <br />
+            <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance mb-12 animate-reveal [animation-delay:100ms] flex flex-col gap-2 md:gap-4">
+              <span>FRÅN</span>
+              <span className="text-muted-foreground">IDÉ</span>
+              <span>TILL</span>
+              <span className="text-muted-foreground">PRODUKT</span>
             </h1>
             <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
               <p className="text-lg text-pretty max-w-[45ch]">
