@@ -118,18 +118,23 @@ function Index() {
         {/* Hero */}
         <header className="px-6 pt-24 pb-12 border-b border-border">
           <div className="max-w-6xl">
-            <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance mb-12 animate-reveal [animation-delay:100ms] flex flex-col gap-2 md:gap-4">
-              <span>FRÅN</span>
-              <span className="text-muted-foreground">IDÉ</span>
-              <span>TILL</span>
-              <span className="text-muted-foreground">PRODUKT</span>
-            </h1>
-            <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
-              <p className="text-lg text-pretty max-w-[45ch]">
-                DG development är ett specialiserat design- och produktutvecklingsföretag som minskar klyftan mellan
-                digital design och verkliga produkter, med mål att nå just era specifika visioner.
-              </p>
-              <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter"></div>
+            <div className="flex gap-8 md:gap-12 items-start animate-reveal [animation-delay:100ms]">
+              <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
+                <span>FRÅN</span>
+                <span className="text-muted-foreground">IDÉ</span>
+                <span>TILL</span>
+                <span className="text-muted-foreground">PRODUKT</span>
+              </h1>
+              <div className="self-stretch w-px bg-foreground" />
+              <div className="flex flex-col gap-6 pt-2">
+                <h2 className="text-4xl md:text-[5vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance">
+                  DG Development
+                </h2>
+                <p className="text-lg text-pretty max-w-[45ch]">
+                  DG development är ett specialiserat design- och produktutvecklingsföretag som minskar klyftan mellan
+                  digital design och verkliga produkter, med mål att nå just era specifika visioner.
+                </p>
+              </div>
             </div>
           </div>
         </header>
