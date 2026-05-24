@@ -1,16 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import partCnc from "@/assets/part-cnc.jpg";
-import partMould from "@/assets/part-mould.jpg";
-import workshop from "@/assets/workshop.jpg";
-import serviceDesign from "@/assets/service-design.jpg";
-import serviceLaser from "@/assets/service-laser.jpg";
+import vaakumlyft from "@/assets/vaakumlyft.png";
+import manasi from "@/assets/manasi.png";
+import boursin from "@/assets/boursin.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type ServiceKey = "design" | "cnc" | "mould" | "laser";
+type ServiceKey = "design" | "cnc" | "mould";
 
 const SERVICES: Record<
   ServiceKey,
@@ -29,8 +27,8 @@ const SERVICES: Record<
     tag: "01/DESIGN",
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
-    image: serviceDesign,
-    alt: "Parametric CAD model with dimensional tolerances on a workstation",
+    image: vaakumlyft,
+    alt: "Vakuumlyft – teknisk lösning för materialhantering",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
       "Vi förvandlar idéer till produktions-redo CAD. Varje del är designad parametriskt, och dokumenterade med toleranser för direkt produktion.",
@@ -43,8 +41,8 @@ const SERVICES: Record<
     tag: "02/MANUFACTURE",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    image: partCnc,
-    alt: "Bead-blasted aluminum CNC machined heat sink component",
+    image: manasi,
+    alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
     detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
     bullets: [
@@ -56,35 +54,20 @@ const SERVICES: Record<
   mould: {
     tag: "03/FORM",
     title: "Företagsevent",
-    body: "Custom silicone moulding and low-volume polyurethane casting.",
-    image: partMould,
-    alt: "Clear polyurethane cast enclosure for optic module",
+    body: "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
+    image: boursin,
+    alt: "Boursin – företagsevent med skräddarsydd installation",
     detailHeading: "Bridge tooling, production feel.",
-    detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events. ",
+    detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events.",
     bullets: [
-      { label: "Process", value: "Silicone · PU casting" },
-      { label: "Finish", value: "Optical clear · Soft-touch" },
-      { label: "Lead time", value: "5 — 10 days" },
-    ],
-  },
-  laser: {
-    tag: "04/DETAIL",
-    title: "Laser Engraving",
-    body: "Fiber laser marking for permanent serialization and cosmetic branding.",
-    image: serviceLaser,
-    alt: "Fiber laser engraving a serial number into a brushed metal plate",
-    detailHeading: "Marks that outlive the part.",
-    detailBody:
-      "Permanent, high-contrast marking on metals and engineered plastics. Logos, serial numbers, data-matrix codes — engraved to a depth that survives anodizing, abrasion, and chemical exposure.",
-    bullets: [
-      { label: "Source", value: "20 W fiber laser" },
-      { label: "Substrates", value: "Metals · Anodized Al · Plastics" },
-      { label: "Resolution", value: "0.02 mm line width" },
+      { label: "Process", value: "Koncept · Konstruktion · Produktion" },
+      { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
+      { label: "Lead time", value: "5 — 10 dagar" },
     ],
   },
 };
 
-const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould", "laser"];
+const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
 
 function Index() {
   const [active, setActive] = useState<ServiceKey>("design");
@@ -140,7 +123,7 @@ function Index() {
         </header>
 
         {/* Services — clickable */}
-        <section id="services" className="grid md:grid-cols-4 border-b border-border">
+        <section id="services" className="grid md:grid-cols-3 border-b border-border">
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
             const isActive = key === active;
@@ -154,7 +137,7 @@ function Index() {
                 }}
                 aria-pressed={isActive}
                 className={`text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
-                  i < 3 ? "md:border-r" : ""
+                  i < 2 ? "md:border-r" : ""
                 } ${isActive ? "bg-foreground text-background" : "hover:bg-card"}`}
               >
                 <span
@@ -257,8 +240,8 @@ function Index() {
             </div>
             <div className="w-full aspect-[3/4] bg-white/5 border border-white/10 overflow-hidden">
               <img
-                src={workshop}
-                alt="CNC machine spindle and tool changer in the workshop"
+                src={vaakumlyft}
+                alt="Vakuumlyft – teknisk lösning"
                 width={1024}
                 height={1408}
                 className="w-full h-full object-cover"
