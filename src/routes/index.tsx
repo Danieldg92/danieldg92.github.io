@@ -158,7 +158,7 @@ function Index() {
                 } ${isActive ? "bg-foreground text-background" : "hover:bg-card"}`}
               >
                 <span
-                  className={`block font-mono text-[10px] mb-12 ${isActive ? "text-primary" : "text-muted-foreground"}`}
+                  className={`block font-mono text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
                 >
                   {s.tag}
                 </span>
@@ -166,7 +166,7 @@ function Index() {
                 <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
                 <span
                   className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
-                    isActive ? "text-primary" : "text-foreground"
+                    isActive ? "text-background/70" : "text-foreground"
                   }`}
                 >
                   {isActive ? "[ Viewing ]" : "View →"}
