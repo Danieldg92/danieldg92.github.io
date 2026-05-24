@@ -70,8 +70,8 @@ const SERVICES: Record<
 const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
 
 function Index() {
-  const [active, setActive] = useState<ServiceKey>("design");
-  const activeService = SERVICES[active];
+  const [active, setActive] = useState<ServiceKey | null>(null);
+  const activeService = active ? SERVICES[active] : null;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -99,7 +99,7 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <header className="px-6 pt-24 pb-12 border-b border-border">
+        <header className="px-6 pt-24 pb-32 md:pb-48 border-b border-border">
           <div className="max-w-6xl">
             <div className="flex gap-8 md:gap-12 items-stretch animate-reveal [animation-delay:100ms]">
               <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
@@ -132,8 +132,11 @@ function Index() {
                 key={key}
                 type="button"
                 onClick={() => {
-                  setActive(key);
-                  document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  const next = isActive ? null : key;
+                  setActive(next);
+                  if (next) {
+                    document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
                 }}
                 aria-pressed={isActive}
                 className={`text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
@@ -160,44 +163,46 @@ function Index() {
         </section>
 
         {/* Service detail (reactive to selected service) */}
-        <section id="work" className="p-6 md:p-12 scroll-mt-20">
-          <div className="flex justify-between items-end mb-12">
-            <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">{activeService.title}</h2>
-            <span className="font-mono text-[10px] text-muted-foreground hidden md:block">[ {activeService.tag} ]</span>
-          </div>
+        {activeService && (
+          <section id="work" className="p-6 md:p-12 scroll-mt-20 border-b border-border">
+            <div className="flex justify-between items-end mb-12">
+              <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">{activeService.title}</h2>
+              <span className="font-mono text-[10px] text-muted-foreground hidden md:block">[ {activeService.tag} ]</span>
+            </div>
 
-          <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-            <div className="w-full aspect-square bg-card border border-border overflow-hidden">
-              <img
-                src={activeService.image}
-                alt={activeService.alt}
-                width={1024}
-                height={1024}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-col justify-between gap-8">
-              <div>
-                <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
-                  {activeService.detailHeading}
-                </h3>
-                <p className="text-base text-muted-foreground text-pretty max-w-[50ch]">{activeService.detailBody}</p>
+            <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
+              <div className="w-full aspect-square bg-card border border-border overflow-hidden">
+                <img
+                  src={activeService.image}
+                  alt={activeService.alt}
+                  width={1024}
+                  height={1024}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
-              <dl className="border-t border-border divide-y divide-border">
-                {activeService.bullets.map((b) => (
-                  <div
-                    key={b.label}
-                    className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
-                  >
-                    <dt className="text-muted-foreground">{b.label}</dt>
-                    <dd>{b.value}</dd>
-                  </div>
-                ))}
-              </dl>
+              <div className="flex flex-col justify-between gap-8">
+                <div>
+                  <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
+                    {activeService.detailHeading}
+                  </h3>
+                  <p className="text-base text-muted-foreground text-pretty max-w-[50ch]">{activeService.detailBody}</p>
+                </div>
+                <dl className="border-t border-border divide-y divide-border">
+                  {activeService.bullets.map((b) => (
+                    <div
+                      key={b.label}
+                      className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
+                    >
+                      <dt className="text-muted-foreground">{b.label}</dt>
+                      <dd>{b.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Process */}
         <section className="px-6 py-24 bg-foreground text-background">
