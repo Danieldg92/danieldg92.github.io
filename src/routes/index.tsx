@@ -27,7 +27,7 @@ const SERVICES: Record<
 > = {
   design: {
     tag: "01/DESIGN",
-    title: "Technical Design",
+    title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
     image: serviceDesign,
     alt: "Parametric CAD model with dimensional tolerances on a workstation",
