@@ -185,15 +185,15 @@ function Index() {
                   <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
                     {activeService.detailHeading}
                   </h3>
-                  <p className="text-base text-muted-foreground text-pretty max-w-[50ch]">{activeService.detailBody}</p>
+                  <p className="text-base text-background/70 text-pretty max-w-[50ch]">{activeService.detailBody}</p>
                 </div>
-                <dl className="border-t border-border divide-y divide-border">
+                <dl className="border-t border-white/10 divide-y divide-white/10">
                   {activeService.bullets.map((b) => (
                     <div
                       key={b.label}
                       className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
                     >
-                      <dt className="text-muted-foreground">{b.label}</dt>
+                      <dt className="text-background/70">{b.label}</dt>
                       <dd>{b.value}</dd>
                     </div>
                   ))}
