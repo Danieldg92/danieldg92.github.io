@@ -158,7 +158,7 @@ function Index() {
                 } ${isActive ? "bg-foreground text-background" : "hover:bg-card"}`}
               >
                 <span
-                  className={`block font-mono text-[10px] mb-12 ${isActive ? "text-primary" : "text-muted-foreground"}`}
+                  className={`block font-mono text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
                 >
                   {s.tag}
                 </span>
