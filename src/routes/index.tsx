@@ -277,10 +277,10 @@ function Index() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">Start a project</p>
             <a
-              href="mailto:hello@vormfabric.studio"
+              href="mailto:hello@dgdevelopment.se"
               className="font-display font-extrabold text-4xl md:text-7xl tracking-tighter hover:text-primary transition-colors underline decoration-border decoration-1 underline-offset-8 break-all"
             >
-              hello@vormfabric.studio
+              hello@dgdevelopment.se
             </a>
             <div className="grid md:grid-cols-3 gap-12 mt-24 text-[10px] font-mono uppercase tracking-tighter text-muted-foreground text-left">
               <div>
