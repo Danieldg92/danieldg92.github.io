@@ -1,13 +1,95 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import partCnc from "@/assets/part-cnc.jpg";
 import partMould from "@/assets/part-mould.jpg";
 import workshop from "@/assets/workshop.jpg";
+import serviceDesign from "@/assets/service-design.jpg";
+import serviceLaser from "@/assets/service-laser.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
+type ServiceKey = "design" | "cnc" | "mould" | "laser";
+
+const SERVICES: Record<ServiceKey, {
+  tag: string;
+  title: string;
+  body: string;
+  image: string;
+  alt: string;
+  detailHeading: string;
+  detailBody: string;
+  bullets: { label: string; value: string }[];
+}> = {
+  design: {
+    tag: "01/DESIGN",
+    title: "Technical Design",
+    body: "Parametric CAD modeling and FEA stress testing for complex assemblies.",
+    image: serviceDesign,
+    alt: "Parametric CAD model with dimensional tolerances on a workstation",
+    detailHeading: "From sketch to manufacturable file.",
+    detailBody:
+      "We translate ideas into production-ready CAD. Every part is modeled parametrically, stress-tested against real loads, and documented with the tolerances your shop floor actually needs.",
+    bullets: [
+      { label: "Parametric CAD", value: "SolidWorks · Fusion 360" },
+      { label: "Simulation", value: "FEA · Tolerance stacks" },
+      { label: "Output", value: "STEP · 2D drawings · BOM" },
+    ],
+  },
+  cnc: {
+    tag: "02/MANUFACTURE",
+    title: "5-Axis CNC Machining",
+    body: "High-precision milling in aluminum, titanium, and engineering plastics.",
+    image: partCnc,
+    alt: "Bead-blasted aluminum CNC machined heat sink component",
+    detailHeading: "Cut once. Cut right.",
+    detailBody:
+      "Our 5-axis cells handle complex geometries in a single setup — from one-off prototypes to short-run production. Surface finishes inspected against the master file before they leave the shop.",
+    bullets: [
+      { label: "Materials", value: "Al · Ti · Steel · POM · PEEK" },
+      { label: "Tolerance", value: "±0.01 mm" },
+      { label: "Volume", value: "1 — 5,000 units" },
+    ],
+  },
+  mould: {
+    tag: "03/FORM",
+    title: "Moulding & Tooling",
+    body: "Custom silicone moulding and low-volume polyurethane casting.",
+    image: partMould,
+    alt: "Clear polyurethane cast enclosure for optic module",
+    detailHeading: "Bridge tooling, production feel.",
+    detailBody:
+      "Silicone tools and vacuum-cast polyurethane parts deliver injection-grade aesthetics in days, not months. Perfect for validation runs, investor samples, and pilot batches before committing to steel.",
+    bullets: [
+      { label: "Process", value: "Silicone · PU casting" },
+      { label: "Finish", value: "Optical clear · Soft-touch" },
+      { label: "Lead time", value: "5 — 10 days" },
+    ],
+  },
+  laser: {
+    tag: "04/DETAIL",
+    title: "Laser Engraving",
+    body: "Fiber laser marking for permanent serialization and cosmetic branding.",
+    image: serviceLaser,
+    alt: "Fiber laser engraving a serial number into a brushed metal plate",
+    detailHeading: "Marks that outlive the part.",
+    detailBody:
+      "Permanent, high-contrast marking on metals and engineered plastics. Logos, serial numbers, data-matrix codes — engraved to a depth that survives anodizing, abrasion, and chemical exposure.",
+    bullets: [
+      { label: "Source", value: "20 W fiber laser" },
+      { label: "Substrates", value: "Metals · Anodized Al · Plastics" },
+      { label: "Resolution", value: "0.02 mm line width" },
+    ],
+  },
+};
+
+const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould", "laser"];
+
 function Index() {
+  const [active, setActive] = useState<ServiceKey>("design");
+  const activeService = SERVICES[active];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
@@ -22,7 +104,7 @@ function Index() {
         </div>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
           <a href="#services" className="hover:text-primary transition-colors">01. Services</a>
-          <a href="#work" className="hover:text-primary transition-colors">02. Output</a>
+          <a href="#work" className="hover:text-primary transition-colors">02. Capabilities</a>
           <a href="#contact" className="hover:text-primary transition-colors">03. Inquiry</a>
         </div>
         <div className="text-[10px] font-mono text-primary">[ STATUS: ACTIVE ]</div>
@@ -53,73 +135,96 @@ function Index() {
           </div>
         </header>
 
-        {/* Services */}
+        {/* Services — clickable */}
         <section id="services" className="grid md:grid-cols-4 border-b border-border">
-          {[
-            { tag: "01/DESIGN", title: "Technical Design", body: "Parametric CAD modeling and FEA stress testing for complex assemblies." },
-            { tag: "02/MANUFACTURE", title: "5-Axis CNC Machining", body: "High-precision milling in aluminum, titanium, and engineering plastics." },
-            { tag: "03/FORM", title: "Moulding & Tooling", body: "Custom silicone moulding and low-volume polyurethane casting." },
-            { tag: "04/DETAIL", title: "Laser Engraving", body: "Fiber laser marking for permanent serialization and cosmetic branding." },
-          ].map((s, i) => (
-            <div
-              key={s.tag}
-              className={`p-6 border-b md:border-b-0 border-border hover:bg-card transition-colors ${
-                i < 3 ? "md:border-r" : ""
-              }`}
-            >
-              <span className="block font-mono text-[10px] mb-12 text-muted-foreground">{s.tag}</span>
-              <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.body}</p>
-            </div>
-          ))}
+          {SERVICE_ORDER.map((key, i) => {
+            const s = SERVICES[key];
+            const isActive = key === active;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => {
+                  setActive(key);
+                  document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                aria-pressed={isActive}
+                className={`text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
+                  i < 3 ? "md:border-r" : ""
+                } ${isActive ? "bg-foreground text-background" : "hover:bg-card"}`}
+              >
+                <span
+                  className={`block font-mono text-[10px] mb-12 ${
+                    isActive ? "text-primary" : "text-muted-foreground"
+                  }`}
+                >
+                  {s.tag}
+                </span>
+                <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">
+                  {s.title}
+                </h3>
+                <p
+                  className={`text-sm ${
+                    isActive ? "text-background/70" : "text-muted-foreground"
+                  }`}
+                >
+                  {s.body}
+                </p>
+                <span
+                  className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
+                    isActive ? "text-primary" : "text-foreground"
+                  }`}
+                >
+                  {isActive ? "[ Viewing ]" : "View →"}
+                </span>
+              </button>
+            );
+          })}
         </section>
 
-        {/* Selected Output */}
-        <section id="work" className="p-6">
+        {/* Service detail (reactive to selected service) */}
+        <section id="work" className="p-6 md:p-12 scroll-mt-20">
           <div className="flex justify-between items-end mb-12">
             <h2 className="font-display font-extrabold text-4xl tracking-tighter uppercase">
-              Selected Output
+              {activeService.title}
             </h2>
             <span className="font-mono text-[10px] text-muted-foreground hidden md:block">
-              [ ARCHIVE_INDEX: 02 PIECES ]
+              [ {activeService.tag} ]
             </span>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-1">
-            <article>
-              <div className="w-full aspect-square bg-card border border-border overflow-hidden">
-                <img
-                  src={partCnc}
-                  alt="Bead-blasted aluminum CNC machined heat sink component"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+          <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
+            <div className="w-full aspect-square bg-card border border-border overflow-hidden">
+              <img
+                src={activeService.image}
+                alt={activeService.alt}
+                width={1024}
+                height={1024}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="flex flex-col justify-between gap-8">
+              <div>
+                <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
+                  {activeService.detailHeading}
+                </h3>
+                <p className="text-base text-muted-foreground text-pretty max-w-[50ch]">
+                  {activeService.detailBody}
+                </p>
               </div>
-              <div className="mt-4 flex justify-between font-mono text-[10px] uppercase tracking-tighter">
-                <span>Component 082: Heat Sink</span>
-                <span className="text-muted-foreground">Tolerance: ±0.01mm</span>
-              </div>
-            </article>
-            <article>
-              <div className="w-full aspect-square bg-card border border-border overflow-hidden">
-                <img
-                  src={partMould}
-                  alt="Clear polyurethane cast enclosure for optic module"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-4 flex justify-between font-mono text-[10px] uppercase tracking-tighter">
-                <span>Enclosure: Optic Module</span>
-                <span className="text-muted-foreground">Finish: Optical Clear</span>
-              </div>
-            </article>
+              <dl className="border-t border-border divide-y divide-border">
+                {activeService.bullets.map((b) => (
+                  <div key={b.label} className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter">
+                    <dt className="text-muted-foreground">{b.label}</dt>
+                    <dd>{b.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </section>
+
 
         {/* Process */}
         <section className="px-6 py-24 bg-foreground text-background">
