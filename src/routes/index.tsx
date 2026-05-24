@@ -1,11 +1,90 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import partCnc from "@/assets/part-cnc.jpg";
 import partMould from "@/assets/part-mould.jpg";
 import workshop from "@/assets/workshop.jpg";
+import serviceDesign from "@/assets/service-design.jpg";
+import serviceLaser from "@/assets/service-laser.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
+
+type ServiceKey = "design" | "cnc" | "mould" | "laser";
+
+const SERVICES: Record<ServiceKey, {
+  tag: string;
+  title: string;
+  body: string;
+  image: string;
+  alt: string;
+  detailHeading: string;
+  detailBody: string;
+  bullets: { label: string; value: string }[];
+}> = {
+  design: {
+    tag: "01/DESIGN",
+    title: "Technical Design",
+    body: "Parametric CAD modeling and FEA stress testing for complex assemblies.",
+    image: serviceDesign,
+    alt: "Parametric CAD model with dimensional tolerances on a workstation",
+    detailHeading: "From sketch to manufacturable file.",
+    detailBody:
+      "We translate ideas into production-ready CAD. Every part is modeled parametrically, stress-tested against real loads, and documented with the tolerances your shop floor actually needs.",
+    bullets: [
+      { label: "Parametric CAD", value: "SolidWorks · Fusion 360" },
+      { label: "Simulation", value: "FEA · Tolerance stacks" },
+      { label: "Output", value: "STEP · 2D drawings · BOM" },
+    ],
+  },
+  cnc: {
+    tag: "02/MANUFACTURE",
+    title: "5-Axis CNC Machining",
+    body: "High-precision milling in aluminum, titanium, and engineering plastics.",
+    image: partCnc,
+    alt: "Bead-blasted aluminum CNC machined heat sink component",
+    detailHeading: "Cut once. Cut right.",
+    detailBody:
+      "Our 5-axis cells handle complex geometries in a single setup — from one-off prototypes to short-run production. Surface finishes inspected against the master file before they leave the shop.",
+    bullets: [
+      { label: "Materials", value: "Al · Ti · Steel · POM · PEEK" },
+      { label: "Tolerance", value: "±0.01 mm" },
+      { label: "Volume", value: "1 — 5,000 units" },
+    ],
+  },
+  mould: {
+    tag: "03/FORM",
+    title: "Moulding & Tooling",
+    body: "Custom silicone moulding and low-volume polyurethane casting.",
+    image: partMould,
+    alt: "Clear polyurethane cast enclosure for optic module",
+    detailHeading: "Bridge tooling, production feel.",
+    detailBody:
+      "Silicone tools and vacuum-cast polyurethane parts deliver injection-grade aesthetics in days, not months. Perfect for validation runs, investor samples, and pilot batches before committing to steel.",
+    bullets: [
+      { label: "Process", value: "Silicone · PU casting" },
+      { label: "Finish", value: "Optical clear · Soft-touch" },
+      { label: "Lead time", value: "5 — 10 days" },
+    ],
+  },
+  laser: {
+    tag: "04/DETAIL",
+    title: "Laser Engraving",
+    body: "Fiber laser marking for permanent serialization and cosmetic branding.",
+    image: serviceLaser,
+    alt: "Fiber laser engraving a serial number into a brushed metal plate",
+    detailHeading: "Marks that outlive the part.",
+    detailBody:
+      "Permanent, high-contrast marking on metals and engineered plastics. Logos, serial numbers, data-matrix codes — engraved to a depth that survives anodizing, abrasion, and chemical exposure.",
+    bullets: [
+      { label: "Source", value: "20 W fiber laser" },
+      { label: "Substrates", value: "Metals · Anodized Al · Plastics" },
+      { label: "Resolution", value: "0.02 mm line width" },
+    ],
+  },
+};
+
+const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould", "laser"];
 
 function Index() {
   return (
