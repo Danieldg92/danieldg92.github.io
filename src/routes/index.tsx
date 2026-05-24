@@ -3,7 +3,7 @@ import { useState } from "react";
 import partCnc from "@/assets/part-cnc.jpg";
 import partMould from "@/assets/part-mould.jpg";
 import workshop from "@/assets/workshop.jpg";
-import serviceDesign from "@/assets/service-design.jpg";
+import serviceDesign from "@/assets/service-design.png";
 import serviceLaser from "@/assets/service-laser.jpg";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +27,7 @@ const SERVICES: Record<ServiceKey, {
     title: "Technical solutions",
     body: "Parametric CAD modeling and FEA stress testing for complex assemblies.",
     image: serviceDesign,
-    alt: "Parametric CAD model with dimensional tolerances on a workstation",
+    alt: "Vacuum lifter rig with suction cups and aluminum frame",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
       "We translate ideas into production-ready CAD. Every part is modeled parametrically, stress-tested against real loads, and documented with the tolerances your shop floor actually needs.",
