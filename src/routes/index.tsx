@@ -132,7 +132,7 @@ function Index() {
             </h1>
             <div className="grid md:grid-cols-2 gap-12 animate-reveal [animation-delay:200ms]">
               <p className="text-lg text-pretty max-w-[45ch]">
-                Vorm-Fabric is a specialized development shop bridging the gap between digital design and physical
+                DG Development is a specialized development shop bridging the gap between digital design and physical
                 reality. We engineer parts that feel as good as they perform.
               </p>
               <div className="flex flex-col justify-end gap-2 font-mono text-[11px] text-muted-foreground uppercase tracking-tighter">
