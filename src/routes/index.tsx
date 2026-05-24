@@ -42,7 +42,7 @@ const SERVICES: Record<ServiceKey, {
     title: "Design och formgivning",
     body: "High-precision milling in aluminum, titanium, and engineering plastics.",
     image: partCnc,
-    alt: "Bead-blasted aluminum CNC machined heat sink component",
+    alt: "Black and white marbled cylindrical product design",
     detailHeading: "Cut once. Cut right.",
     detailBody:
       "Our 5-axis cells handle complex geometries in a single setup — from one-off prototypes to short-run production. Surface finishes inspected against the master file before they leave the shop.",
