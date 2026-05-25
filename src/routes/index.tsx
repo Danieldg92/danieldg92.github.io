@@ -59,10 +59,9 @@ const SERVICES: Record<
     tag: "01/DESIGN",
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
-    images: [vaakumlyft, designF2],
+    images: [vaakumlyft],
     imageCaptions: [
       "From sketch to manufacturable file.",
-      "Nike Cup CLASH, prestigefylld trofé för de skarpaste gejmerna",
     ],
     alt: "Vakuumlyft – teknisk lösning för materialhantering",
     detailHeading: "From sketch to manufacturable file.",
