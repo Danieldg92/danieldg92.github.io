@@ -202,7 +202,7 @@ function Index() {
             </div>
 
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-              <div className="w-full aspect-square bg-foreground overflow-hidden p-[5%]">
+              <div className="relative w-full aspect-square bg-foreground p-[5%]">
                 <img
                   src={activeService.image}
                   alt={activeService.alt}
@@ -211,6 +211,9 @@ function Index() {
                   className="w-full h-full object-contain"
                   loading="lazy"
                 />
+                <ScrollRevealBox className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground">
+                  {activeService.detailBody}
+                </ScrollRevealBox>
               </div>
               <div className="flex flex-col justify-between gap-8">
                 <div>
@@ -231,13 +234,6 @@ function Index() {
                   ))}
                 </dl>
               </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div aria-hidden className="hidden md:block" />
-              <ScrollRevealBox>
-                {activeService.detailBody}
-              </ScrollRevealBox>
             </div>
           </section>
         )}
