@@ -155,6 +155,7 @@ function Index() {
             03. Kontakt
           </a>
         </div>
+        <div className="hidden md:block w-[140px]" />
       </nav>
 
       <main>
