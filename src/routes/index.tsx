@@ -212,13 +212,35 @@ function Index() {
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
               <div className="relative w-full aspect-square bg-foreground p-[5%]">
                 <img
-                  src={activeService.image}
+                  src={activeService.images[imageIndex] ?? activeService.images[0]}
                   alt={activeService.alt}
                   width={1024}
                   height={1024}
                   className="w-full h-full object-contain"
                   loading="lazy"
                 />
+                <button
+                  type="button"
+                  aria-label="Previous image"
+                  onClick={() => {
+                    if (activeService.images.length < 2) return;
+                    setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
+                  }}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-background/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                >
+                  <ChevronLeft className="size-10" strokeWidth={1.5} />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next image"
+                  onClick={() => {
+                    if (activeService.images.length < 2) return;
+                    setImageIndex((i) => (i + 1) % activeService.images.length);
+                  }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-background/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                >
+                  <ChevronRight className="size-10" strokeWidth={1.5} />
+                </button>
                 <ScrollRevealBox className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground">
                   {activeService.detailBody}
                 </ScrollRevealBox>
