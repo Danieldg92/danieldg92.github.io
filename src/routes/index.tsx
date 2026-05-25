@@ -47,7 +47,7 @@ const SERVICES: Record<
     tag: string;
     title: string;
     body: string;
-    image: string;
+    images: string[];
     alt: string;
     detailHeading: string;
     detailBody: string;
@@ -58,7 +58,7 @@ const SERVICES: Record<
     tag: "01/DESIGN",
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
-    image: vaakumlyft,
+    images: [vaakumlyft],
     alt: "Vakuumlyft – teknisk lösning för materialhantering",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
@@ -72,7 +72,7 @@ const SERVICES: Record<
     tag: "02/MANUFACTURE",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    image: manasi,
+    images: [manasi, designF2],
     alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
     detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
@@ -86,7 +86,7 @@ const SERVICES: Record<
     tag: "03/FORM",
     title: "Företagsevent",
     body: "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
-    image: boursin,
+    images: [boursin],
     alt: "Boursin – företagsevent med skräddarsydd installation",
     detailHeading: "Bridge tooling, production feel.",
     detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events.",
