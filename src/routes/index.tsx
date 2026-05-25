@@ -48,6 +48,7 @@ const SERVICES: Record<
     title: string;
     body: string;
     images: string[];
+    imageCaptions: string[];
     alt: string;
     detailHeading: string;
     detailBody: string;
@@ -59,6 +60,10 @@ const SERVICES: Record<
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
     images: [vaakumlyft, designF2],
+    imageCaptions: [
+      "From sketch to manufacturable file.",
+      "Nike Cup CLASH, prestigefylld trofé för de skarpaste gejmerna",
+    ],
     alt: "Vakuumlyft – teknisk lösning för materialhantering",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
@@ -73,6 +78,10 @@ const SERVICES: Record<
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
     images: [manasi, designF2],
+    imageCaptions: [
+      "Manasi 7, ett samarbete med Manasi för att få fram deras vision",
+      "Nike Cup CLASH, prestigefylld trofé för de skarpaste gejmerna",
+    ],
     alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
     detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
@@ -87,6 +96,7 @@ const SERVICES: Record<
     title: "Företagsevent",
     body: "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
     images: [boursin],
+    imageCaptions: ["Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events."],
     alt: "Boursin – företagsevent med skräddarsydd installation",
     detailHeading: "Bridge tooling, production feel.",
     detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events.",
@@ -241,8 +251,11 @@ function Index() {
                 >
                   <ChevronRight className="size-10" strokeWidth={1.5} />
                 </button>
-                <ScrollRevealBox className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground">
-                  {activeService.detailBody}
+                <ScrollRevealBox
+                  key={`${active}-${imageIndex}`}
+                  className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground"
+                >
+                  {activeService.imageCaptions[imageIndex] ?? activeService.detailBody}
                 </ScrollRevealBox>
               </div>
               <div className="flex flex-col justify-between gap-8">
