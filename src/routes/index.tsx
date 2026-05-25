@@ -1,5 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+function ScrollRevealBox({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => entry.isIntersecting && setVisible(true),
+      { threshold: 0.3 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      className={`border border-white p-8 text-white text-base leading-relaxed transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
 import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
 import boursin from "@/assets/boursin.jpg";
@@ -206,6 +231,13 @@ function Index() {
                   ))}
                 </dl>
               </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mt-8">
+              <div aria-hidden className="hidden md:block" />
+              <ScrollRevealBox>
+                {activeService.detailBody}
+              </ScrollRevealBox>
             </div>
           </section>
         )}
