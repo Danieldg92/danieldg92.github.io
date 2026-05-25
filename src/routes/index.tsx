@@ -80,7 +80,7 @@ const SERVICES: Record<
     images: [manasi, designF2],
     imageCaptions: [
       "Manasi 7, ett samarbete med Manasi för att få fram deras vision",
-      "Nike Cup CLASH, prestigefylld trofé för de skarpaste gejmerna",
+      "NIKE CUP CLASH, en prestigefylld trofé för de skarpaste av gejmers",
     ],
     alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
