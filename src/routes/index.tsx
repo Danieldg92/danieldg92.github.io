@@ -14,12 +14,25 @@ function ScrollRevealBox({ children }: { children: React.ReactNode }) {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
+function ScrollRevealBox({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => entry.isIntersecting && setVisible(true),
+      { threshold: 0.3 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
   return (
     <div
       ref={ref}
       className={`border border-white p-8 text-white text-base leading-relaxed transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      }`}
+        visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+      } ${className}`}
     >
       {children}
     </div>
