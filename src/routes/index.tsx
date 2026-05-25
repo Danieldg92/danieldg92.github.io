@@ -148,9 +148,6 @@ function Index() {
           >
             01. Tjänster
           </a>
-          <a href="#work" className="hover:text-primary transition-colors">
-            02. Capabilities
-          </a>
           <a href="#contact" className="hover:text-primary transition-colors">
             03. Kontakt
           </a>
