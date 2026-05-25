@@ -149,7 +149,7 @@ function Index() {
             01. Tjänster
           </a>
           <a href="#contact" className="hover:text-primary transition-colors">
-            03. Kontakt
+            02. Kontakt
           </a>
         </div>
         <div className="hidden md:block w-[140px]" />
