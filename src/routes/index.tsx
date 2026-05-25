@@ -177,7 +177,7 @@ function Index() {
             </div>
 
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-              <div className="w-full aspect-square bg-foreground border border-white/10 overflow-hidden p-[5%]">
+              <div className="w-full aspect-square bg-foreground overflow-hidden p-[5%]">
                 <img
                   src={activeService.image}
                   alt={activeService.alt}
