@@ -293,57 +293,6 @@ function Index() {
           </section>
         )}
 
-        {/* Process */}
-        <section className="px-6 py-24 bg-foreground text-background">
-          <div className="grid md:grid-cols-2 gap-24 max-w-7xl mx-auto">
-            <div>
-              <h2 className="font-display font-extrabold text-5xl tracking-tighter leading-none mb-8 italic">
-                "The difference is felt in the radius."
-              </h2>
-              <p className="text-muted-foreground max-w-sm mb-12">
-                Our workshop operates at the intersection of traditional machining and algorithmic design. We don't just
-                manufacture; we refine.
-              </p>
-              <div className="space-y-6">
-                {[
-                  {
-                    n: "01",
-                    title: "Material Integrity",
-                    body: "Certified aerospace-grade alloys and chemical-resistant polymers.",
-                  },
-                  {
-                    n: "02",
-                    title: "Rapid Tooling",
-                    body: "Bridge production for testing before full-scale manufacturing.",
-                  },
-                  {
-                    n: "03",
-                    title: "Quality Verification",
-                    body: "Micrometer-level inspection against the master CAD file.",
-                  },
-                ].map((s) => (
-                  <div key={s.n} className="flex gap-4 border-t border-white/10 pt-4">
-                    <span className="text-primary font-mono text-xs">{s.n}</span>
-                    <div>
-                      <h4 className="font-display font-extrabold text-lg uppercase">{s.title}</h4>
-                      <p className="text-sm text-muted-foreground mt-1">{s.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="w-full aspect-[3/4] bg-white/5 border border-white/10 overflow-hidden">
-              <img
-                src={vaakumlyft}
-                alt="Vakuumlyft – teknisk lösning"
-                width={1024}
-                height={1408}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </section>
 
         {/* Contact */}
         <footer id="contact" className="px-6 py-24 border-t border-border">
