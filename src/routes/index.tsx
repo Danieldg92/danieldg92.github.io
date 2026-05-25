@@ -155,7 +155,6 @@ function Index() {
             03. Kontakt
           </a>
         </div>
-        <div className="text-[10px] font-mono text-primary">[ STATUS: ACTIVE ]</div>
       </nav>
 
       <main>
