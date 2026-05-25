@@ -53,6 +53,7 @@ const SERVICES: Record<
     detailHeading: string;
     detailBody: string;
     bullets: { label: string; value: string }[];
+    imageBullets?: { label: string; value: string }[][];
   }
 > = {
   design: {
