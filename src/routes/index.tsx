@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function ScrollRevealBox({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ function ScrollRevealBox({ children, className = "" }: { children: React.ReactNo
 }
 import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
+import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
 
 export const Route = createFileRoute("/")({
@@ -45,7 +47,7 @@ const SERVICES: Record<
     tag: string;
     title: string;
     body: string;
-    image: string;
+    images: string[];
     alt: string;
     detailHeading: string;
     detailBody: string;
@@ -56,7 +58,7 @@ const SERVICES: Record<
     tag: "01/DESIGN",
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
-    image: vaakumlyft,
+    images: [vaakumlyft],
     alt: "Vakuumlyft – teknisk lösning för materialhantering",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
@@ -70,7 +72,7 @@ const SERVICES: Record<
     tag: "02/MANUFACTURE",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    image: manasi,
+    images: [manasi, designF2],
     alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
     detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
@@ -84,7 +86,7 @@ const SERVICES: Record<
     tag: "03/FORM",
     title: "Företagsevent",
     body: "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
-    image: boursin,
+    images: [boursin],
     alt: "Boursin – företagsevent med skräddarsydd installation",
     detailHeading: "Bridge tooling, production feel.",
     detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events.",
@@ -100,6 +102,7 @@ const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
 
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
+  const [imageIndex, setImageIndex] = useState(0);
   const activeService = active ? SERVICES[active] : null;
 
   return (
@@ -170,6 +173,7 @@ function Index() {
                 onClick={() => {
                   const next = isActive ? null : key;
                   setActive(next);
+                  setImageIndex(0);
                   if (next) {
                     document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
@@ -208,13 +212,35 @@ function Index() {
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
               <div className="relative w-full aspect-square bg-foreground p-[5%]">
                 <img
-                  src={activeService.image}
+                  src={activeService.images[imageIndex] ?? activeService.images[0]}
                   alt={activeService.alt}
                   width={1024}
                   height={1024}
                   className="w-full h-full object-contain"
                   loading="lazy"
                 />
+                <button
+                  type="button"
+                  aria-label="Previous image"
+                  onClick={() => {
+                    if (activeService.images.length < 2) return;
+                    setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
+                  }}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-background/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                >
+                  <ChevronLeft className="size-10" strokeWidth={1.5} />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next image"
+                  onClick={() => {
+                    if (activeService.images.length < 2) return;
+                    setImageIndex((i) => (i + 1) % activeService.images.length);
+                  }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-background/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                >
+                  <ChevronRight className="size-10" strokeWidth={1.5} />
+                </button>
                 <ScrollRevealBox className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground">
                   {activeService.detailBody}
                 </ScrollRevealBox>
