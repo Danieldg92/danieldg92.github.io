@@ -17,10 +17,14 @@ function ScrollRevealBox({ children, className = "" }: { children: React.ReactNo
   return (
     <div
       ref={ref}
-      className={`border border-white p-8 text-white text-base leading-relaxed transition-all duration-700 ease-out ${
+      className={`relative border border-white p-8 text-white text-base leading-relaxed transition-all duration-700 ease-out ${
         visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
       } ${className}`}
     >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute right-full top-1/3 -translate-y-1/2 w-8 h-px bg-white"
+      />
       {children}
     </div>
   );
