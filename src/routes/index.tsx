@@ -62,7 +62,7 @@ const SERVICES: Record<
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
     images: [vaakumlyft],
     imageCaptions: [
-      "From sketch to manufacturable file.",
+      "Pneumatisk vakuumsug för lyft av metallskivor",
     ],
     alt: "Vakuumlyft – teknisk lösning för materialhantering",
     detailHeading: "From sketch to manufacturable file.",
