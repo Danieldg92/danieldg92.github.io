@@ -53,6 +53,7 @@ const SERVICES: Record<
     detailHeading: string;
     detailBody: string;
     bullets: { label: string; value: string }[];
+    imageBullets?: { label: string; value: string }[][];
   }
 > = {
   design: {
@@ -88,6 +89,18 @@ const SERVICES: Record<
       { label: "Material", value: "Jasmonite" },
       { label: "Tolerans", value: "±0.1 mm" },
       { label: "Metod", value: "Gjutning" },
+    ],
+    imageBullets: [
+      [
+        { label: "Material", value: "Jasmonite" },
+        { label: "Tolerans", value: "±0.1 mm" },
+        { label: "Metod", value: "Gjutning" },
+      ],
+      [
+        { label: "Material", value: "PLA" },
+        { label: "DESIGN", value: "BLENDER" },
+        { label: "Metod", value: "3D-print" },
+      ],
     ],
   },
   mould: {
@@ -264,8 +277,8 @@ function Index() {
                   </h3>
                   <p className="text-base text-background/70 text-pretty max-w-[50ch]">{activeService.detailBody}</p>
                 </div>
-                <dl className="border-t border-white/10 divide-y divide-white/10">
-                  {activeService.bullets.map((b) => (
+                <dl key={imageIndex} className="border-t border-white/10 divide-y divide-white/10">
+                  {(activeService.imageBullets?.[imageIndex] ?? activeService.bullets).map((b) => (
                     <div
                       key={b.label}
                       className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
