@@ -84,7 +84,14 @@ function Index() {
           <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
         </div>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
-          <a href="#services" className="hover:text-primary transition-colors">
+          <a
+            href="#services"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
+            }}
+            className="hover:text-primary transition-colors"
+          >
             01. Tjänster
           </a>
           <a href="#work" className="hover:text-primary transition-colors">
