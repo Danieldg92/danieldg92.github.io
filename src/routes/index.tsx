@@ -90,6 +90,18 @@ const SERVICES: Record<
       { label: "Tolerans", value: "±0.1 mm" },
       { label: "Metod", value: "Gjutning" },
     ],
+    imageBullets: [
+      [
+        { label: "Material", value: "Jasmonite" },
+        { label: "Tolerans", value: "±0.1 mm" },
+        { label: "Metod", value: "Gjutning" },
+      ],
+      [
+        { label: "Material", value: "PLA" },
+        { label: "DESIGN", value: "BLENDER" },
+        { label: "Metod", value: "3D-print" },
+      ],
+    ],
   },
   mould: {
     tag: "03/FORM",
