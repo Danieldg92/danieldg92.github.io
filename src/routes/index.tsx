@@ -173,6 +173,7 @@ function Index() {
                 onClick={() => {
                   const next = isActive ? null : key;
                   setActive(next);
+                  setImageIndex(0);
                   if (next) {
                     document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
