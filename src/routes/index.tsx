@@ -8,7 +8,7 @@ function ScrollRevealBox({ children, className = "" }: { children: React.ReactNo
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setVisible(true),
+      ([entry]) => setVisible(entry.isIntersecting),
       { threshold: 0.3 }
     );
     obs.observe(el);
