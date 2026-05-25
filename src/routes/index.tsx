@@ -102,6 +102,7 @@ const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
 
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
+  const [imageIndex, setImageIndex] = useState(0);
   const activeService = active ? SERVICES[active] : null;
 
   return (
