@@ -232,6 +232,13 @@ function Index() {
                 </dl>
               </div>
             </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mt-8">
+              <div aria-hidden className="hidden md:block" />
+              <ScrollRevealBox>
+                {activeService.detailBody}
+              </ScrollRevealBox>
+            </div>
           </section>
         )}
 
