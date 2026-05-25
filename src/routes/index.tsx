@@ -251,8 +251,11 @@ function Index() {
                 >
                   <ChevronRight className="size-10" strokeWidth={1.5} />
                 </button>
-                <ScrollRevealBox className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground">
-                  {activeService.detailBody}
+                <ScrollRevealBox
+                  key={`${active}-${imageIndex}`}
+                  className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground"
+                >
+                  {activeService.imageCaptions[imageIndex] ?? activeService.detailBody}
                 </ScrollRevealBox>
               </div>
               <div className="flex flex-col justify-between gap-8">
