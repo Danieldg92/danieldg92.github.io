@@ -1,35 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-function ScrollRevealBox({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      className={`border border-white p-8 text-white text-base leading-relaxed transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-      } ${className}`}
-    >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute right-full top-1/3 -translate-y-1/2 w-8 h-px bg-white"
-      />
-      {children}
-    </div>
-  );
-}
 import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
 import designF2 from "@/assets/DesignF2.png";
@@ -260,12 +232,6 @@ function Index() {
                 >
                   <ChevronRight className="size-10" strokeWidth={1.5} />
                 </button>
-                <ScrollRevealBox
-                  key={`${active}-${imageIndex}`}
-                  className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-8 w-72 z-10 bg-foreground"
-                >
-                  {activeService.imageCaptions[imageIndex] ?? activeService.detailBody}
-                </ScrollRevealBox>
               </div>
               <div className="flex flex-col justify-between gap-8">
                 <div>
