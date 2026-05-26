@@ -2,34 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-function ScrollRevealBox({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      className={`border border-white p-8 text-white text-base leading-relaxed transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-      } ${className}`}
-    >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute right-full top-1/3 -translate-y-1/2 w-8 h-px bg-white"
-      />
-      {children}
-    </div>
-  );
-}
 import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
 import designF2 from "@/assets/DesignF2.png";
