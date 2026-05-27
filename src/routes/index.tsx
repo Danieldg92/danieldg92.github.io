@@ -55,8 +55,10 @@ const SERVICES: Record<
     tag: "02/MANUFACTURE",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    images: [manasi, designF2],
+    images: [hm, logga, manasi, designF2],
     imageCaptions: [
+      "HM – design och formgivning",
+      "Logga – design och formgivning",
       "Manasi 7, ett samarbete med Manasi för att få fram deras vision",
       "NIKE CUP CLASH, en prestigefylld trofé för de skarpaste av gejmers",
     ],
