@@ -88,3 +88,12 @@
 .animate-reveal {
   animation: slide-up 0.8s var(--ease-out-expo) both;
 }
+
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.6s var(--ease-out-expo) both;
+}
