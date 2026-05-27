@@ -193,7 +193,7 @@ function Index() {
         <header className="px-6 pt-24 pb-24 border-b border-border">
           <div className="max-w-6xl">
             <div className="flex gap-8 md:gap-12 items-stretch animate-reveal [animation-delay:100ms]">
-              <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
                 <span className="text-muted-foreground">FRÅN</span>
                 <span>IDÉ</span>
                 <span className="text-muted-foreground">TILL</span>
