@@ -268,7 +268,7 @@ function Index() {
                   alt={activeService.alt}
                   width={1024}
                   height={1024}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain rounded-lg"
                   loading="lazy"
                 />
                 <button
