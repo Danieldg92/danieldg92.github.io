@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import cylinder from "@/assets/Cylinder.jpg";
+import vakuumprotes from "@/assets/Vakuumprotes.jpg";
 import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
 import designF2 from "@/assets/DesignF2.png";
