@@ -280,7 +280,7 @@ function Index() {
                   }}
                   className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-background/90 transition-all duration-200 hover:scale-125 focus:outline-none"
                 >
-                  <ChevronLeft className="size-10" strokeWidth={1.5} />
+                  <ChevronLeft className="size-14" strokeWidth={1.5} />
                 </button>
                 <button
                   type="button"
