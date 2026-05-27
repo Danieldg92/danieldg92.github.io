@@ -269,7 +269,7 @@ function Index() {
             </div>
 
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-              <div className="relative w-full aspect-square bg-foreground px-[15%] pb-[5%]">
+              <div className="relative w-full aspect-square max-h-[75vh] bg-foreground px-[15%] pb-[5%] mx-auto">
                 <img
                   src={activeService.images[imageIndex] ?? activeService.images[0]}
                   alt={activeService.alt}
