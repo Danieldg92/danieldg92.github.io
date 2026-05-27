@@ -191,27 +191,28 @@ function Index() {
       <main>
         {/* Hero */}
         <header className="px-6 pt-24 pb-24 border-b border-border">
-          <div className="max-w-6xl">
-            <div className="flex gap-8 md:gap-12 items-stretch animate-reveal [animation-delay:100ms]">
+          <div className="flex items-stretch animate-reveal [animation-delay:100ms]">
+            <div className="w-1/2 flex justify-end pr-8 md:pr-12">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
                 <span className="text-muted-foreground">FRÅN</span>
                 <span>IDÉ</span>
                 <span className="text-muted-foreground">TILL</span>
                 <span>PRODUKT</span>
               </h1>
-              <div className="self-stretch w-px bg-foreground" />
-              <div className="flex flex-col gap-6 justify-center">
-                <h2 className="text-4xl md:text-[5vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance">
-                  DG Development
-                </h2>
-                <p className="text-lg text-pretty max-w-[45ch]">
-                  DG development är ett specialiserat design- och produktutvecklingsföretag som minskar klyftan mellan
-                  digital design och verkliga produkter, med mål att nå just era specifika visioner.
-                </p>
-              </div>
+            </div>
+            <div className="self-stretch w-px bg-foreground" />
+            <div className="w-1/2 flex flex-col gap-6 justify-center pl-8 md:pl-12">
+              <h2 className="text-4xl md:text-[5vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance">
+                DG Development
+              </h2>
+              <p className="text-lg text-pretty max-w-[45ch]">
+                DG development är ett specialiserat design- och produktutvecklingsföretag som minskar klyftan mellan
+                digital design och verkliga produkter, med mål att nå just era specifika visioner.
+              </p>
             </div>
           </div>
         </header>
+
 
         {/* Services — clickable */}
         <section id="services" className={`grid md:grid-cols-3 border-b ${active ? "border-foreground" : "border-border"}`}>
