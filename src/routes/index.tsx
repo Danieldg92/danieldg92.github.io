@@ -310,22 +310,6 @@ function Index() {
                     {activeService.imageTexts?.[displayedIndex]?.body ?? activeService.detailBody}
                   </p>
                 </div>
-                <dl
-                  key={`bullets-${displayedIndex}`}
-                  className={`border-t border-white/10 divide-y divide-white/10 transition-opacity duration-200 ${
-                    isExiting ? "opacity-0" : "opacity-100"
-                  }`}
-                >
-                  {(activeService.imageBullets?.[displayedIndex] ?? activeService.bullets).map((b) => (
-                    <div
-                      key={b.label}
-                      className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
-                    >
-                      <dt className="text-background/70">{b.label}</dt>
-                      <dd>{b.value}</dd>
-                    </div>
-                  ))}
-                </dl>
               </div>
             </div>
           </section>
