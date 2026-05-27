@@ -192,10 +192,10 @@ function Index() {
           <div className="max-w-6xl">
             <div className="flex gap-8 md:gap-12 items-stretch animate-reveal [animation-delay:100ms]">
               <h1 className="text-7xl md:text-[10vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
-                <span className="text-[oklch(0.82_0_0)]">FRÅN</span>
-                <span className="text-[oklch(0.65_0_0)]">IDÉ</span>
-                <span className="text-[oklch(0.42_0_0)]">TILL</span>
-                <span className="text-foreground">PRODUKT</span>
+                <span>FRÅN</span>
+                <span className="text-muted-foreground">IDÉ</span>
+                <span>TILL</span>
+                <span className="text-muted-foreground">PRODUKT</span>
               </h1>
               <div className="self-stretch w-px bg-foreground" />
               <div className="flex flex-col gap-6 justify-center">
