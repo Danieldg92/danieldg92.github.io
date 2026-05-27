@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import cylinder from "@/assets/Cylinder.jpg";
@@ -144,7 +144,19 @@ const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
+  const [displayedIndex, setDisplayedIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
   const activeService = active ? SERVICES[active] : null;
+
+  useEffect(() => {
+    if (imageIndex === displayedIndex) return;
+    setIsExiting(true);
+    const t = setTimeout(() => {
+      setDisplayedIndex(imageIndex);
+      setIsExiting(false);
+    }, 220);
+    return () => clearTimeout(t);
+  }, [imageIndex, displayedIndex]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -212,6 +224,8 @@ function Index() {
                   const next = isActive ? null : key;
                   setActive(next);
                   setImageIndex(0);
+                  setDisplayedIndex(0);
+                  setIsExiting(false);
                   if (next) {
                     document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
@@ -281,16 +295,26 @@ function Index() {
                 </button>
               </div>
               <div className="flex flex-col justify-between gap-8">
-                <div key={imageIndex} className="animate-fade-in-right">
+                <div
+                  key={displayedIndex}
+                  className={`transition-all duration-300 ease-out ${
+                    isExiting ? "opacity-0 translate-x-6" : "opacity-100 translate-x-0 animate-fade-in-right"
+                  }`}
+                >
                   <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
-                    {activeService.imageTexts?.[imageIndex]?.heading ?? activeService.detailHeading}
+                    {activeService.imageTexts?.[displayedIndex]?.heading ?? activeService.detailHeading}
                   </h3>
                   <p className="text-base text-background/70 text-pretty max-w-[50ch]">
-                    {activeService.imageTexts?.[imageIndex]?.body ?? activeService.detailBody}
+                    {activeService.imageTexts?.[displayedIndex]?.body ?? activeService.detailBody}
                   </p>
                 </div>
-                <dl key={imageIndex} className="border-t border-white/10 divide-y divide-white/10">
-                  {(activeService.imageBullets?.[imageIndex] ?? activeService.bullets).map((b) => (
+                <dl
+                  key={`bullets-${displayedIndex}`}
+                  className={`border-t border-white/10 divide-y divide-white/10 transition-opacity duration-200 ${
+                    isExiting ? "opacity-0" : "opacity-100"
+                  }`}
+                >
+                  {(activeService.imageBullets?.[displayedIndex] ?? activeService.bullets).map((b) => (
                     <div
                       key={b.label}
                       className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
