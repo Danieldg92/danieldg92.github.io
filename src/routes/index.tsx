@@ -144,7 +144,19 @@ const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
+  const [displayedIndex, setDisplayedIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
   const activeService = active ? SERVICES[active] : null;
+
+  useEffect(() => {
+    if (imageIndex === displayedIndex) return;
+    setIsExiting(true);
+    const t = setTimeout(() => {
+      setDisplayedIndex(imageIndex);
+      setIsExiting(false);
+    }, 220);
+    return () => clearTimeout(t);
+  }, [imageIndex, displayedIndex]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
