@@ -224,6 +224,8 @@ function Index() {
                   const next = isActive ? null : key;
                   setActive(next);
                   setImageIndex(0);
+                  setDisplayedIndex(0);
+                  setIsExiting(false);
                   if (next) {
                     document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
