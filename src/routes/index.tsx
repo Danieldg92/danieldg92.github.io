@@ -70,12 +70,11 @@ const SERVICES: Record<
     tag: "02/MANUFACTURE",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    images: [manasi, hm, logga, designF2],
+    images: [manasi, hm, logga],
     imageCaptions: [
       "Manasi 7, ett samarbete med Manasi för att få fram deras vision",
       "HM – design och formgivning",
       "Logga – design och formgivning",
-      "NIKE CUP CLASH, en prestigefylld trofé för de skarpaste av gejmers",
     ],
     alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
@@ -110,18 +109,17 @@ const SERVICES: Record<
         heading: "Logga – grafisk identitet.",
         body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
       },
-      {
-        heading: "NIKE Cup Clash.",
-        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
-      },
     ],
   },
   mould: {
     tag: "03/FORM",
     title: "Företagsevent",
     body: "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
-    images: [boursin],
-    imageCaptions: ["Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events."],
+    images: [boursin, designF2],
+    imageCaptions: [
+      "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
+      "NIKE CUP CLASH, en prestigefylld trofé för de skarpaste av gejmers",
+    ],
     alt: "Boursin – företagsevent med skräddarsydd installation",
     detailHeading: "Bridge tooling, production feel.",
     detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events.",
@@ -134,6 +132,10 @@ const SERVICES: Record<
       {
         heading: "Boursin – företagsevent.",
         body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
+      },
+      {
+        heading: "NIKE Cup Clash.",
+        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
       },
     ],
   },
