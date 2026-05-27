@@ -296,7 +296,7 @@ function Index() {
                   <ChevronRight className="size-14" strokeWidth={1.5} />
                 </button>
               </div>
-              <div className="flex flex-col justify-between gap-8">
+              <div className="flex flex-col justify-center gap-8">
                 <div
                   key={displayedIndex}
                   className={`transition-all duration-300 ease-out ${
