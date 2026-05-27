@@ -34,11 +34,13 @@ const SERVICES: Record<
     tag: "01/DESIGN",
     title: "Tekniska lösningar",
     body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
-    images: [vaakumlyft],
+    images: [cylinder, vakuumprotes, vaakumlyft],
     imageCaptions: [
+      "Cylinder – teknisk lösning",
+      "Vakuumprotes – teknisk lösning",
       "Pneumatisk vakuumsug för lyft av metallskivor",
     ],
-    alt: "Vakuumlyft – teknisk lösning för materialhantering",
+    alt: "Tekniska lösningar – CAD och produktutveckling",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
       "Vi förvandlar idéer till produktions-redo CAD. Varje del är designad parametriskt, och dokumenterade med toleranser för direkt produktion.",
