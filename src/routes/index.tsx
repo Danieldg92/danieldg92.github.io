@@ -30,6 +30,7 @@ const SERVICES: Record<
     detailBody: string;
     bullets: { label: string; value: string }[];
     imageBullets?: { label: string; value: string }[][];
+    imageTexts?: { heading: string; body: string }[];
   }
 > = {
   design: {
@@ -49,6 +50,20 @@ const SERVICES: Record<
     bullets: [
       { label: "Parametric CAD", value: "SolidWorks · Fusion 360 · Onshape" },
       { label: "Output", value: "STEP-filer · 2D ritningar · BOM" },
+    ],
+    imageTexts: [
+      {
+        heading: "Cylinder – teknisk lösning.",
+        body: "Parametrisk CAD-modell av en kundanpassad cylinder, dokumenterad med toleranser för direkt produktion.",
+      },
+      {
+        heading: "Vakuumprotes – teknisk lösning.",
+        body: "Skräddarsydd protes utvecklad i nära samarbete med användaren, från koncept till produktionsfärdig fil.",
+      },
+      {
+        heading: "Pneumatisk vakuumsug.",
+        body: "Konstruktion av ett pneumatiskt vakuumsuglyft för säker hantering av tunga metallskivor i industrimiljö.",
+      },
     ],
   },
   cnc: {
@@ -82,6 +97,24 @@ const SERVICES: Record<
         { label: "Metod", value: "3D-print" },
       ],
     ],
+    imageTexts: [
+      {
+        heading: "Manasi 7 – ett kreativt samarbete.",
+        body: "Tillsammans med Manasi formgav vi en parfymflaska som fångar varumärkets vision i varje detalj.",
+      },
+      {
+        heading: "HM – design och formgivning.",
+        body: "Form och funktion i samspel — ett designprojekt där estetik och tillverkning möts.",
+      },
+      {
+        heading: "Logga – grafisk identitet.",
+        body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
+      },
+      {
+        heading: "NIKE Cup Clash.",
+        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
+      },
+    ],
   },
   mould: {
     tag: "03/FORM",
@@ -96,6 +129,12 @@ const SERVICES: Record<
       { label: "Process", value: "Koncept · Konstruktion · Produktion" },
       { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
       { label: "Lead time", value: "5 — 10 dagar" },
+    ],
+    imageTexts: [
+      {
+        heading: "Boursin – företagsevent.",
+        body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
+      },
     ],
   },
 };
