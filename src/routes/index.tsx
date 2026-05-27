@@ -8,6 +8,8 @@ import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
 import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
+import hm from "@/assets/HM.jpg";
+import logga from "@/assets/Logga.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
