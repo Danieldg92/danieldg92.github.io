@@ -295,16 +295,26 @@ function Index() {
                 </button>
               </div>
               <div className="flex flex-col justify-between gap-8">
-                <div key={imageIndex} className="animate-fade-in-right">
+                <div
+                  key={displayedIndex}
+                  className={`transition-all duration-300 ease-out ${
+                    isExiting ? "opacity-0 translate-x-6" : "opacity-100 translate-x-0 animate-fade-in-right"
+                  }`}
+                >
                   <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
-                    {activeService.imageTexts?.[imageIndex]?.heading ?? activeService.detailHeading}
+                    {activeService.imageTexts?.[displayedIndex]?.heading ?? activeService.detailHeading}
                   </h3>
                   <p className="text-base text-background/70 text-pretty max-w-[50ch]">
-                    {activeService.imageTexts?.[imageIndex]?.body ?? activeService.detailBody}
+                    {activeService.imageTexts?.[displayedIndex]?.body ?? activeService.detailBody}
                   </p>
                 </div>
-                <dl key={imageIndex} className="border-t border-white/10 divide-y divide-white/10">
-                  {(activeService.imageBullets?.[imageIndex] ?? activeService.bullets).map((b) => (
+                <dl
+                  key={`bullets-${displayedIndex}`}
+                  className={`border-t border-white/10 divide-y divide-white/10 transition-opacity duration-200 ${
+                    isExiting ? "opacity-0" : "opacity-100"
+                  }`}
+                >
+                  {(activeService.imageBullets?.[displayedIndex] ?? activeService.bullets).map((b) => (
                     <div
                       key={b.label}
                       className="grid grid-cols-2 gap-4 py-4 font-mono text-[11px] uppercase tracking-tighter"
