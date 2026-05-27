@@ -229,7 +229,11 @@ function Index() {
                   setDisplayedIndex(0);
                   setIsExiting(false);
                   if (next) {
-                    document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "center" });
+                    requestAnimationFrame(() => {
+                      requestAnimationFrame(() => {
+                        document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "center" });
+                      });
+                    });
                   }
                 }}
                 aria-pressed={isActive}
