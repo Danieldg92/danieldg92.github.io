@@ -129,6 +129,7 @@ const SERVICES: Record<
       {
         heading: "Ninja Casino – event och installation.",
         body: "En iögonfallande eventlösning med tält, snurrhjul och grafik som väcker uppmärksamhet och engagerar besökarna.",
+      },
     ],
   },
 };
