@@ -202,7 +202,7 @@ function Index() {
 
 
         {/* Services — clickable */}
-        <section id="services" className={`grid md:grid-cols-3 border-b ${active ? "border-foreground" : "border-border"}`}>
+        <section id="services" className={`grid md:grid-cols-2 border-b ${active ? "border-foreground" : "border-border"}`}>
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
             const isActive = key === active;
