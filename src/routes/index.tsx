@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type ServiceKey = "design" | "cnc" | "mould";
+type ServiceKey = "design" | "cnc";
 
 const SERVICES: Record<
   ServiceKey,
