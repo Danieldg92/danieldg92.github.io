@@ -85,9 +85,54 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-reveal {
-  animation: slide-up 0.8s var(--ease-out-expo) both;
+.animate-fade-in-right {
+  animation: fade-in-right 0.6s var(--ease-out-expo) both;
 }
+
+@keyframes wave-drift-1 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  50%      { transform: translate(6%, -4%) scale(1.15); }
+}
+@keyframes wave-drift-2 {
+  0%, 100% { transform: translate(0%, 0%) scale(1.1); }
+  50%      { transform: translate(-7%, 5%) scale(1); }
+}
+@keyframes wave-drift-3 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  50%      { transform: translate(5%, 6%) scale(1.2); }
+}
+@keyframes wave-drift-4 {
+  0%, 100% { transform: translate(0%, 0%) scale(1.05); }
+  50%      { transform: translate(-6%, -6%) scale(0.95); }
+}
+@keyframes wave-drift-5 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  50%      { transform: translate(4%, 4%) scale(1.1); }
+}
+
+.wave-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.wave-bg span {
+  position: absolute;
+  display: block;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  will-change: transform;
+}
+.wave-bg span:nth-child(1) { top: -15%; left: -10%; background: oklch(0.78 0.16 35);  animation: wave-drift-1 14s ease-in-out infinite; }
+.wave-bg span:nth-child(2) { top: -5%;  left: 30%;  background: oklch(0.72 0.20 35);  animation: wave-drift-2 18s ease-in-out infinite; }
+.wave-bg span:nth-child(3) { top: 20%;  left: 55%;  background: oklch(0.65 0.23 35);  animation: wave-drift-3 16s ease-in-out infinite; }
+.wave-bg span:nth-child(4) { top: 35%;  left: 5%;   background: oklch(0.58 0.21 35);  animation: wave-drift-4 20s ease-in-out infinite; }
+.wave-bg span:nth-child(5) { top: 10%;  left: 75%;  background: oklch(0.50 0.18 35);  animation: wave-drift-5 22s ease-in-out infinite; }
+
 
 @keyframes fade-in-right {
   from { opacity: 0; transform: translateX(40px); }
