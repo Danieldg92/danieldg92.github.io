@@ -36,99 +36,99 @@ const SERVICES: Record<
 > = {
   design: {
     tag: "01/DESIGN",
-    title: "Tekniska lösningar",
-    body: "Parametrisk CAD modellering med toleranser enligt ISO-standard.",
+    title: "Technical solutions",
+    body: "Parametric CAD modeling with tolerances according to ISO standards.",
     images: [cylinder, vakuumprotes, vaakumlyft],
     imageCaptions: [
-      "Cylinder – teknisk lösning",
-      "Vakuumprotes – teknisk lösning",
-      "Pneumatisk vakuumsug för lyft av metallskivor",
+      "Cylinder – technical solution",
+      "Vacuum prosthesis – technical solution",
+      "Pneumatic vacuum lift for metal sheets",
     ],
-    alt: "Tekniska lösningar – CAD och produktutveckling",
+    alt: "Technical solutions – CAD and product development",
     detailHeading: "From sketch to manufacturable file.",
     detailBody:
-      "Vi förvandlar idéer till produktions-redo CAD. Varje del är designad parametriskt, och dokumenterade med toleranser för direkt produktion.",
+      "We turn ideas into production-ready CAD. Every part is designed parametrically and documented with tolerances for direct manufacturing.",
     bullets: [
       { label: "Parametric CAD", value: "SolidWorks · Fusion 360 · Onshape" },
-      { label: "Output", value: "STEP-filer · 2D ritningar · BOM" },
+      { label: "Output", value: "STEP files · 2D drawings · BOM" },
     ],
     imageTexts: [
       {
-        heading: "Cylinder – teknisk lösning.",
-        body: "Parametrisk CAD-modell av en kundanpassad cylinder, dokumenterad med toleranser för direkt produktion.",
+        heading: "Cylinder – technical solution.",
+        body: "Parametric CAD model of a custom cylinder, documented with tolerances for direct production.",
       },
       {
-        heading: "Vakuumprotes – teknisk lösning.",
-        body: "Skräddarsydd protes utvecklad i nära samarbete med användaren, från koncept till produktionsfärdig fil.",
+        heading: "Vacuum prosthesis – technical solution.",
+        body: "Custom-made prosthesis developed in close collaboration with the user, from concept to production-ready file.",
       },
       {
-        heading: "Pneumatisk vakuumsug.",
-        body: "Konstruktion av ett pneumatiskt vakuumsuglyft för säker hantering av tunga metallskivor i industrimiljö.",
+        heading: "Pneumatic vacuum lift.",
+        body: "Design of a pneumatic vacuum lift for safe handling of heavy metal sheets in an industrial environment.",
       },
     ],
   },
   cnc: {
     tag: "02/DESIGN",
-    title: "Design och formgivning",
-    body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
+    title: "Design and form",
+    body: "We create function, feeling, and aesthetics that fit your vision.",
     images: [manasi, hm, logga, boursin, designF2, ninja],
     imageCaptions: [
-      "Manasi 7, ett samarbete med Manasi för att få fram deras vision",
-      "HM – design och formgivning",
-      "Logga – design och formgivning",
-      "Boursin – företagsevent",
-      "NIKE CUP CLASH, en prestigefylld trofé",
-      "Ninja Casino – event och installation",
+      "Manasi 7, a collaboration with Manasi to bring out their vision",
+      "HM – design and form",
+      "Logo – design and form",
+      "Boursin – corporate event",
+      "NIKE CUP CLASH, a prestigious trophy",
+      "Ninja Casino – event and installation",
     ],
-    alt: "Manasi – design och formgivning av parfymflaska",
-    detailHeading: "Med kreativt samarbete.",
-    detailBody: "Skapar vi funktion, känsla och estetik som passar in på er vision.",
+    alt: "Manasi – design and form of a perfume bottle",
+    detailHeading: "Through creative collaboration.",
+    detailBody: "We create function, feeling, and aesthetics that fit your vision.",
     bullets: [
       { label: "Material", value: "Jasmonite" },
-      { label: "Tolerans", value: "±0.1 mm" },
-      { label: "Metod", value: "Gjutning" },
+      { label: "Tolerance", value: "±0.1 mm" },
+      { label: "Method", value: "Casting" },
     ],
     imageBullets: [
       [
         { label: "Material", value: "Jasmonite" },
-        { label: "Tolerans", value: "±0.1 mm" },
-        { label: "Metod", value: "Gjutning" },
+        { label: "Tolerance", value: "±0.1 mm" },
+        { label: "Method", value: "Casting" },
       ],
       [
         { label: "Material", value: "PLA" },
-        { label: "DESIGN", value: "BLENDER" },
-        { label: "Metod", value: "3D-print" },
+        { label: "Design", value: "Blender" },
+        { label: "Method", value: "3D printing" },
       ],
       [
-        { label: "Process", value: "Koncept · Konstruktion · Produktion" },
-        { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
-        { label: "Lead time", value: "5 — 10 dagar" },
+        { label: "Process", value: "Concept · Construction · Production" },
+        { label: "Finish", value: "Custom · Brand-adapted" },
+        { label: "Lead time", value: "5 — 10 days" },
       ],
     ],
     imageTexts: [
       {
-        heading: "Manasi 7 – ett kreativt samarbete.",
-        body: "Tillsammans med Manasi formgav vi en parfymflaska som fångar varumärkets vision i varje detalj.",
+        heading: "Manasi 7 – a creative collaboration.",
+        body: "Together with Manasi we shaped a perfume bottle that captures the brand's vision in every detail.",
       },
       {
-        heading: "HM – design och formgivning.",
-        body: "Form och funktion i samspel — ett designprojekt där estetik och tillverkning möts.",
+        heading: "HM – design and form.",
+        body: "Form and function in harmony — a design project where aesthetics and manufacturing meet.",
       },
       {
-        heading: "Logga – grafisk identitet.",
-        body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
+        heading: "Logo – visual identity.",
+        body: "We design visual identities that live from sketch to finished product.",
       },
       {
-        heading: "Boursin – företagsevent.",
-        body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
+        heading: "Boursin – corporate event.",
+        body: "A custom installation that elevates the brand and creates memorable experiences for visitors.",
       },
       {
         heading: "NIKE Cup Clash.",
-        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
+        body: "A prestigious trophy designed for the sharpest of gamers — powerful form, precise manufacturing.",
       },
       {
-        heading: "Ninja Casino – event och installation.",
-        body: "En iögonfallande eventlösning med tält, snurrhjul och grafik som väcker uppmärksamhet och engagerar besökarna.",
+        heading: "Ninja Casino – event and installation.",
+        body: "An eye-catching event solution with a tent, spinning wheel, and graphics that capture attention and engage visitors.",
       },
     ],
   },
@@ -172,10 +172,10 @@ function Index() {
             }}
             className="hover:text-primary transition-colors"
           >
-            01. Tjänster
+            01. Services
           </a>
           <a href="#contact" className="hover:text-primary transition-colors">
-            02. Kontakt
+            02. Contact
           </a>
         </div>
         <div className="hidden md:block w-[140px]" />
@@ -187,10 +187,10 @@ function Index() {
           <div className="flex items-stretch animate-reveal [animation-delay:100ms]">
             <div className="w-1/2 flex justify-end pr-8 md:pr-12">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
-                <span className="text-muted-foreground">FRÅN</span>
-                <span>IDÉ</span>
-                <span className="text-muted-foreground">TILL</span>
-                <span>PRODUKT</span>
+                <span className="text-muted-foreground">FROM</span>
+                <span>IDEA</span>
+                <span className="text-muted-foreground">TO</span>
+                <span>PRODUCT</span>
               </h1>
             </div>
             <div className="self-stretch w-px bg-foreground" />
@@ -199,8 +199,7 @@ function Index() {
                 DG Development
               </h2>
               <p className="text-lg text-pretty max-w-[45ch]">
-                DG development är ett specialiserat design- och produktutvecklingsföretag som minskar klyftan mellan
-                digital design och verkliga produkter, med mål att nå just era specifika visioner.
+                Designed for Use. Developed for Experience.
               </p>
             </div>
           </div>
@@ -317,7 +316,7 @@ function Index() {
         {/* Contact */}
         <footer id="contact" className="px-6 py-24 border-t border-border">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">Kontakta oss</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">Contact us</p>
             <a
               href="mailto:info@dgd.solutions"
               className="font-display font-extrabold text-4xl md:text-7xl tracking-tighter hover:text-primary transition-colors underline decoration-border decoration-1 underline-offset-8 break-all"
