@@ -126,52 +126,11 @@ const SERVICES: Record<
       },
     ],
   },
-
-        heading: "Logga – grafisk identitet.",
-        body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
-      },
-      {
-        heading: "Boursin – företagsevent.",
-        body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
-      },
-      {
-        heading: "NIKE Cup Clash.",
-        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
-      },
-    ],
-  },
-
-  mould: {
-    tag: "03/FORM",
-    title: "Företagsevent",
-    body: "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
-    images: [boursin, designF2],
-    imageCaptions: [
-      "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
-      "NIKE CUP CLASH, en prestigefylld trofé för de skarpaste av gejmers",
-    ],
-    alt: "Boursin – företagsevent med skräddarsydd installation",
-    detailHeading: "Bridge tooling, production feel.",
-    detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events.",
-    bullets: [
-      { label: "Process", value: "Koncept · Konstruktion · Produktion" },
-      { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
-      { label: "Lead time", value: "5 — 10 dagar" },
-    ],
-    imageTexts: [
-      {
-        heading: "Boursin – företagsevent.",
-        body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
-      },
-      {
-        heading: "NIKE Cup Clash.",
-        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
-      },
-    ],
-  },
 };
 
-const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
+const SERVICE_ORDER: ServiceKey[] = ["design", "cnc"];
+
+function Index() {
 
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
