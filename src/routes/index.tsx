@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type ServiceKey = "design" | "cnc" | "mould";
+type ServiceKey = "design" | "cnc";
 
 const SERVICES: Record<
   ServiceKey,
@@ -67,14 +67,16 @@ const SERVICES: Record<
     ],
   },
   cnc: {
-    tag: "02/MANUFACTURE",
+    tag: "02/DESIGN",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    images: [manasi, hm, logga],
+    images: [manasi, hm, logga, boursin, designF2],
     imageCaptions: [
       "Manasi 7, ett samarbete med Manasi för att få fram deras vision",
       "HM – design och formgivning",
       "Logga – design och formgivning",
+      "Boursin – företagsevent",
+      "NIKE CUP CLASH, en prestigefylld trofé",
     ],
     alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
@@ -95,6 +97,11 @@ const SERVICES: Record<
         { label: "DESIGN", value: "BLENDER" },
         { label: "Metod", value: "3D-print" },
       ],
+      [
+        { label: "Process", value: "Koncept · Konstruktion · Produktion" },
+        { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
+        { label: "Lead time", value: "5 — 10 dagar" },
+      ],
     ],
     imageTexts: [
       {
@@ -109,26 +116,6 @@ const SERVICES: Record<
         heading: "Logga – grafisk identitet.",
         body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
       },
-    ],
-  },
-  mould: {
-    tag: "03/FORM",
-    title: "Företagsevent",
-    body: "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
-    images: [boursin, designF2],
-    imageCaptions: [
-      "Vi hjälper dig framhäva ditt varumärke med design och konstruktion för events.",
-      "NIKE CUP CLASH, en prestigefylld trofé för de skarpaste av gejmers",
-    ],
-    alt: "Boursin – företagsevent med skräddarsydd installation",
-    detailHeading: "Bridge tooling, production feel.",
-    detailBody: "Vi hjälper dig framhäva ditt varumärke med hjälp av design och konstruktion för events.",
-    bullets: [
-      { label: "Process", value: "Koncept · Konstruktion · Produktion" },
-      { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
-      { label: "Lead time", value: "5 — 10 dagar" },
-    ],
-    imageTexts: [
       {
         heading: "Boursin – företagsevent.",
         body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
@@ -141,7 +128,7 @@ const SERVICES: Record<
   },
 };
 
-const SERVICE_ORDER: ServiceKey[] = ["design", "cnc", "mould"];
+const SERVICE_ORDER: ServiceKey[] = ["design", "cnc"];
 
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
@@ -215,7 +202,7 @@ function Index() {
 
 
         {/* Services — clickable */}
-        <section id="services" className={`grid md:grid-cols-3 border-b ${active ? "border-foreground" : "border-border"}`}>
+        <section id="services" className={`grid md:grid-cols-2 border-b ${active ? "border-foreground" : "border-border"}`}>
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
             const isActive = key === active;
