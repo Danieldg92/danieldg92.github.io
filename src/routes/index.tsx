@@ -67,14 +67,16 @@ const SERVICES: Record<
     ],
   },
   cnc: {
-    tag: "02/MANUFACTURE",
+    tag: "02/DESIGN",
     title: "Design och formgivning",
     body: "Vi skapar funktion, känsla och estetik som passar in på er vision.",
-    images: [manasi, hm, logga],
+    images: [manasi, hm, logga, boursin, designF2],
     imageCaptions: [
       "Manasi 7, ett samarbete med Manasi för att få fram deras vision",
       "HM – design och formgivning",
       "Logga – design och formgivning",
+      "Boursin – företagsevent",
+      "NIKE CUP CLASH, en prestigefylld trofé",
     ],
     alt: "Manasi – design och formgivning av parfymflaska",
     detailHeading: "Med kreativt samarbete.",
@@ -95,6 +97,13 @@ const SERVICES: Record<
         { label: "DESIGN", value: "BLENDER" },
         { label: "Metod", value: "3D-print" },
       ],
+      undefined,
+      [
+        { label: "Process", value: "Koncept · Konstruktion · Produktion" },
+        { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
+        { label: "Lead time", value: "5 — 10 dagar" },
+      ],
+      undefined,
     ],
     imageTexts: [
       {
@@ -109,8 +118,17 @@ const SERVICES: Record<
         heading: "Logga – grafisk identitet.",
         body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
       },
+      {
+        heading: "Boursin – företagsevent.",
+        body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
+      },
+      {
+        heading: "NIKE Cup Clash.",
+        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
+      },
     ],
   },
+
   mould: {
     tag: "03/FORM",
     title: "Företagsevent",
