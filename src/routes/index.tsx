@@ -97,13 +97,11 @@ const SERVICES: Record<
         { label: "DESIGN", value: "BLENDER" },
         { label: "Metod", value: "3D-print" },
       ],
-      undefined,
       [
         { label: "Process", value: "Koncept · Konstruktion · Produktion" },
         { label: "Finish", value: "Skräddarsytt · Varumärkesanpassat" },
         { label: "Lead time", value: "5 — 10 dagar" },
       ],
-      undefined,
     ],
     imageTexts: [
       {
@@ -115,6 +113,20 @@ const SERVICES: Record<
         body: "Form och funktion i samspel — ett designprojekt där estetik och tillverkning möts.",
       },
       {
+        heading: "Logga – grafisk identitet.",
+        body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
+      },
+      {
+        heading: "Boursin – företagsevent.",
+        body: "En skräddarsydd installation som lyfter varumärket och skapar minnesvärda upplevelser för besökarna.",
+      },
+      {
+        heading: "NIKE Cup Clash.",
+        body: "En prestigefylld trofé designad för de skarpaste av gejmers — kraftfull form, precis tillverkning.",
+      },
+    ],
+  },
+
         heading: "Logga – grafisk identitet.",
         body: "Vi formger visuella identiteter som lever från skiss till färdig produkt.",
       },
