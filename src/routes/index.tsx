@@ -177,8 +177,11 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <header className="px-6 pt-24 pb-24 border-b border-border">
-          <div className="flex items-stretch animate-reveal [animation-delay:100ms]">
+        <header className="relative overflow-hidden px-6 pt-24 pb-24 border-b border-border">
+          <div className="wave-bg" aria-hidden="true">
+            <span /><span /><span /><span /><span />
+          </div>
+          <div className="relative z-10 flex items-stretch animate-reveal [animation-delay:100ms]">
             <div className="w-1/2 flex justify-end pr-8 md:pr-12">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
                 <span className="text-muted-foreground">FRÅN</span>
@@ -199,6 +202,7 @@ function Index() {
             </div>
           </div>
         </header>
+
 
 
         {/* Services — clickable */}
