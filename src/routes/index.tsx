@@ -131,8 +131,6 @@ const SERVICES: Record<
 const SERVICE_ORDER: ServiceKey[] = ["design", "cnc"];
 
 function Index() {
-
-function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
   const [displayedIndex, setDisplayedIndex] = useState(0);
