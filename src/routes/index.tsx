@@ -194,13 +194,10 @@ function Index() {
               </h1>
             </div>
             <div className="self-stretch w-px bg-foreground" />
-            <div className="w-1/2 flex flex-col gap-2 justify-center items-center pl-8 md:pl-12">
+            <div className="w-1/2 flex justify-center items-center pl-8 md:pl-12">
               <h2 className="text-4xl md:text-[5vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance text-center">
                 DG Development
               </h2>
-              <p className="text-lg text-pretty max-w-[45ch] text-center">
-                Designed for Use. Developed for Experience.
-              </p>
             </div>
           </div>
         </header>
