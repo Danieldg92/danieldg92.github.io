@@ -72,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vorm-Fabric — Product development, CNC & moulding studio" },
+      { title: "DG Development" },
       { name: "description", content: "Specialized product development studio. Technical design, injection moulding, 5-axis CNC machining and laser engraving for prototypes and low-volume production." },
       { name: "author", content: "Vorm-Fabric" },
       { property: "og:title", content: "Vorm-Fabric — Product development, CNC & moulding studio" },
