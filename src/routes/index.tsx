@@ -6,9 +6,10 @@ import cylinder from "@/assets/Cylinder.jpg";
 import vakuumprotes from "@/assets/Vakuumprotes.jpg";
 import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
+import ninja from "@/assets/Ninja.jpg";
 import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
-import ninja from "@/assets/Ninja.jpg";
+
 import hm from "@/assets/HM.jpg";
 
 import logga from "@/assets/Logga.jpg";
@@ -21,7 +22,6 @@ const HERO_SLIDESHOW = [
   manasi,
   designF2,
   boursin,
-  ninja,
   hm,
 
   logga,
@@ -218,7 +218,7 @@ function Index() {
                 alt=""
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
                   i === heroSlide ? "opacity-20" : "opacity-0"
-                }`}
+                } ${src === hm || src === manasi ? "scale-90" : ""}`}
               />
             ))}
           </div>
