@@ -212,7 +212,7 @@ function Index() {
                 key={src}
                 src={src}
                 alt=""
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+                className={`absolute inset-0 m-auto w-[80%] h-[80%] object-cover transition-opacity duration-[1500ms] ease-in-out ${
                   i === heroSlide ? "opacity-20" : "opacity-0"
                 }`}
               />
