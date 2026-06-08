@@ -13,16 +13,14 @@ import boursin from "@/assets/boursin.jpg";
 import hm from "@/assets/HM.jpg";
 
 import logga from "@/assets/Logga.jpg";
-import dgdLogo from "@/assets/dgd-logo.png.asset.json";
-import vakuumprotesRender from "@/assets/VakuumprotesRENDER.png.asset.json";
-import hmClean from "@/assets/HMclean.png.asset.json";
+import hmClean from "@/assets/HMclean.png";
 
 const HERO_SLIDESHOW = [
   manasi,
-  hmClean.url,
+  hmClean,
   boursin,
   cylinder,
-  vakuumprotesRender.url,
+  vakuumprotes,
   vaakumlyft,
   designF2,
   logga,
@@ -186,7 +184,7 @@ function Index() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-3 focus:outline-none cursor-pointer"
         >
-          <img src={dgdLogo.url} alt="DG Development logo" className="h-8 w-auto" />
+          <img src={logga} alt="DG Development logo" className="h-8 w-auto" />
           <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
         </button>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest justify-self-center">
@@ -218,7 +216,7 @@ function Index() {
                 alt=""
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
                   i === heroSlide ? "opacity-20" : "opacity-0"
-                } ${src === hmClean.url ? "object-[15%_center]" : ""}`}
+                } ${src === hmClean ? "object-[15%_center]" : ""}`}
               />
             ))}
           </div>
