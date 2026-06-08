@@ -10,8 +10,24 @@ import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
 import ninja from "@/assets/Ninja.jpg";
 import hm from "@/assets/HM.jpg";
+import hm2 from "@/assets/HM-2.jpg";
 import logga from "@/assets/Logga.jpg";
+import manasiJpg from "@/assets/Manasi.jpg";
 import dgdLogo from "@/assets/dgd-logo.png.asset.json";
+
+const HERO_SLIDESHOW = [
+  cylinder,
+  vakuumprotes,
+  vaakumlyft,
+  manasi,
+  designF2,
+  boursin,
+  ninja,
+  hm,
+  hm2,
+  logga,
+  manasiJpg,
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -142,6 +158,7 @@ function Index() {
   const [imageIndex, setImageIndex] = useState(0);
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
+  const [heroSlide, setHeroSlide] = useState(0);
   const activeService = active ? SERVICES[active] : null;
 
   useEffect(() => {
@@ -153,6 +170,13 @@ function Index() {
     }, 220);
     return () => clearTimeout(t);
   }, [imageIndex, displayedIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroSlide((i) => (i + 1) % HERO_SLIDESHOW.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -182,8 +206,20 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <header className="px-6 pt-24 pb-24 border-b border-border">
-          <div className="flex items-stretch animate-reveal [animation-delay:100ms]">
+        <header className="relative px-6 pt-24 pb-24 border-b border-border overflow-hidden">
+          <div aria-hidden className="absolute inset-0 pointer-events-none">
+            {HERO_SLIDESHOW.map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt=""
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+                  i === heroSlide ? "opacity-20" : "opacity-0"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="relative flex items-stretch animate-reveal [animation-delay:100ms]">
             <div className="w-1/2 flex justify-end pr-8 md:pr-12">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
                 <span className="text-muted-foreground">FROM</span>
