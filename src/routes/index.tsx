@@ -10,7 +10,7 @@ import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
 import ninja from "@/assets/Ninja.jpg";
 import hm from "@/assets/HM.jpg";
-import hm2 from "@/assets/HM-2.jpg";
+
 import logga from "@/assets/Logga.jpg";
 import manasiJpg from "@/assets/Manasi.jpg";
 import dgdLogo from "@/assets/dgd-logo.png.asset.json";
