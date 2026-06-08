@@ -157,12 +157,12 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 flex justify-between items-center">
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <div className="flex items-center gap-3">
           <img src={dgdLogo.url} alt="DG Development logo" className="h-8 w-auto" />
           <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
         </div>
-        <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
+        <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest justify-self-center">
           <a
             href="#services"
             onClick={(e) => {
@@ -177,7 +177,7 @@ function Index() {
             02. Contact
           </a>
         </div>
-        <div className="hidden md:block w-[140px]" />
+        <div className="hidden md:block" />
       </nav>
 
       <main>
