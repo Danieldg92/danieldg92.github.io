@@ -15,6 +15,7 @@ import hm from "@/assets/HM.jpg";
 import logga from "@/assets/Logga.jpg";
 import dgdLogo from "@/assets/dgd-logo.png.asset.json";
 import vakuumprotesRender from "@/assets/VakuumprotesRENDER.png.asset.json";
+import hmClean from "@/assets/HMclean.png.asset.json";
 
 const HERO_SLIDESHOW = [
   cylinder,
@@ -23,7 +24,7 @@ const HERO_SLIDESHOW = [
   manasi,
   designF2,
   boursin,
-  hm,
+  hmClean.url,
 
   logga,
 
@@ -219,7 +220,7 @@ function Index() {
                 alt=""
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
                   i === heroSlide ? "opacity-20" : "opacity-0"
-                } ${src === hm ? "object-[15%_center]" : ""}`}
+                } ${src === hmClean.url ? "object-[15%_center]" : ""}`}
               />
             ))}
           </div>
