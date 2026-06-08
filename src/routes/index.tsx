@@ -23,9 +23,9 @@ const HERO_SLIDESHOW = [
   boursin,
   ninja,
   hm,
-  hm2,
+
   logga,
-  manasiJpg,
+
 ];
 
 export const Route = createFileRoute("/")({
