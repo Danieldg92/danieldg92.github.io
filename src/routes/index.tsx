@@ -13,9 +13,7 @@ import boursin from "@/assets/boursin.jpg";
 import hm from "@/assets/HM.jpg";
 
 import logga from "@/assets/Logga.jpg";
-import dgdLogo from "@/assets/dgd-logo.png.asset.json";
-import vakuumprotesRender from "@/assets/VakuumprotesRENDER.png.asset.json";
-import hmClean from "@/assets/HMclean.png.asset.json";
+import hmClean from "@/assets/HMclean.png";
 
 const HERO_SLIDESHOW = [
   manasi,
