@@ -184,7 +184,7 @@ function Index() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-3 focus:outline-none cursor-pointer"
         >
-          <img src={dgdLogo.url} alt="DG Development logo" className="h-8 w-auto" />
+          <img src={logga} alt="DG Development logo" className="h-8 w-auto" />
           <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
         </button>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest justify-self-center">
