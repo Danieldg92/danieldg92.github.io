@@ -21,7 +21,6 @@ const HERO_SLIDESHOW = [
   manasi,
   designF2,
   boursin,
-  ninja,
   hm,
 
   logga,
