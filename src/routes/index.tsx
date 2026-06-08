@@ -12,7 +12,6 @@ import ninja from "@/assets/Ninja.jpg";
 import hm from "@/assets/HM.jpg";
 
 import logga from "@/assets/Logga.jpg";
-import manasiJpg from "@/assets/Manasi.jpg";
 import dgdLogo from "@/assets/dgd-logo.png.asset.json";
 
 const HERO_SLIDESHOW = [
