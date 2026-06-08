@@ -18,16 +18,14 @@ import vakuumprotesRender from "@/assets/VakuumprotesRENDER.png.asset.json";
 import hmClean from "@/assets/HMclean.png.asset.json";
 
 const HERO_SLIDESHOW = [
+  manasi,
+  hmClean.url,
+  boursin,
   cylinder,
   vakuumprotesRender.url,
   vaakumlyft,
-  manasi,
   designF2,
-  boursin,
-  hmClean.url,
-
   logga,
-
 ];
 
 export const Route = createFileRoute("/")({
