@@ -17,10 +17,10 @@ import hmClean from "@/assets/HMclean.png";
 
 const HERO_SLIDESHOW = [
   manasi,
-  hmClean.url,
+  hmClean,
   boursin,
   cylinder,
-  vakuumprotesRender.url,
+  vakuumprotes,
   vaakumlyft,
   designF2,
   logga,
