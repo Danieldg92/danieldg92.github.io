@@ -14,10 +14,11 @@ import hm from "@/assets/HM.jpg";
 
 import logga from "@/assets/Logga.jpg";
 import dgdLogo from "@/assets/dgd-logo.png.asset.json";
+import vakuumprotesRender from "@/assets/VakuumprotesRENDER.png.asset.json";
 
 const HERO_SLIDESHOW = [
   cylinder,
-  vakuumprotes,
+  vakuumprotesRender.url,
   vaakumlyft,
   manasi,
   designF2,
