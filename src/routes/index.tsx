@@ -70,7 +70,7 @@ const SERVICES: Record<
   },
   cnc: {
     tag: "02/DESIGN",
-    title: "Design and form",
+    title: "Design and company events",
     body: "We create function, feeling, and aesthetics that fit your vision.",
     images: [manasi, hm, logga, boursin, designF2, ninja],
     imageCaptions: [
