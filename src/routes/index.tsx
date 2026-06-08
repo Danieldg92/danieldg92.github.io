@@ -10,9 +10,8 @@ import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
 import ninja from "@/assets/Ninja.jpg";
 import hm from "@/assets/HM.jpg";
-import hm2 from "@/assets/HM-2.jpg";
+
 import logga from "@/assets/Logga.jpg";
-import manasiJpg from "@/assets/Manasi.jpg";
 import dgdLogo from "@/assets/dgd-logo.png.asset.json";
 
 const HERO_SLIDESHOW = [
@@ -24,9 +23,9 @@ const HERO_SLIDESHOW = [
   boursin,
   ninja,
   hm,
-  hm2,
+
   logga,
-  manasiJpg,
+
 ];
 
 export const Route = createFileRoute("/")({
@@ -213,7 +212,7 @@ function Index() {
                 key={src}
                 src={src}
                 alt=""
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+                className={`absolute inset-0 m-auto w-[80%] h-[80%] object-cover transition-opacity duration-[1500ms] ease-in-out ${
                   i === heroSlide ? "opacity-20" : "opacity-0"
                 }`}
               />
