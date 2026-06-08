@@ -11,6 +11,7 @@ import boursin from "@/assets/boursin.jpg";
 import ninja from "@/assets/Ninja.jpg";
 import hm from "@/assets/HM.jpg";
 import logga from "@/assets/Logga.jpg";
+import dgdLogo from "@/assets/dgd-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -158,9 +159,7 @@ function Index() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="size-6 bg-foreground flex items-center justify-center">
-            <div className="size-2 bg-primary" />
-          </div>
+          <img src={dgdLogo.url} alt="DG Development logo" className="h-8 w-auto" />
           <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
         </div>
         <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest">
