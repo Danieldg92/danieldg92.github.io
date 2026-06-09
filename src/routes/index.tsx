@@ -214,9 +214,9 @@ function Index() {
                 key={src}
                 src={src}
                 alt=""
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
-                  i === heroSlide ? "opacity-20" : "opacity-0"
-                } ${src === hmClean ? "object-[15%_center]" : ""}`}
+                className={`absolute inset-0 w-full h-full transition-opacity duration-[1500ms] ease-in-out ${
+                  src === logga ? "object-contain" : "object-cover"
+                } ${i === heroSlide ? "opacity-20" : "opacity-0"} ${src === hmClean ? "object-[15%_center]" : ""}`}
               />
             ))}
           </div>
