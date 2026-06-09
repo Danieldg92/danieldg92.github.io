@@ -16,6 +16,7 @@ import logga from "@/assets/dgd-logo.png";
 import hmClean from "@/assets/HMclean.png";
 
 const HERO_SLIDESHOW = [
+  logga,
   manasi,
   hmClean,
   boursin,
@@ -23,7 +24,6 @@ const HERO_SLIDESHOW = [
   vakuumprotes,
   vaakumlyft,
   designF2,
-  logga,
 ];
 
 export const Route = createFileRoute("/")({
