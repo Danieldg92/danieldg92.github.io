@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import cylinder from "@/assets/Cylinder.jpg";
-import vakuumprotes from "@/assets/Vakuumprotes.jpg";
+import vakuumprotes from "@/assets/VakuumprotesRENDER.png";
 import vaakumlyft from "@/assets/vaakumlyft.png";
 import manasi from "@/assets/manasi.png";
 import ninja from "@/assets/Ninja.jpg";
@@ -12,7 +12,7 @@ import boursin from "@/assets/boursin.jpg";
 
 import hm from "@/assets/HM.jpg";
 
-import logga from "@/assets/Logga.jpg";
+import logga from "@/assets/dgd-logo.png";
 import hmClean from "@/assets/HMclean.png";
 
 const HERO_SLIDESHOW = [
