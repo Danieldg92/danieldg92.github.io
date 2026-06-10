@@ -46,7 +46,7 @@ const SERVICES: Record<
     images: [cylinder, vakuumprotes, vaakumlyft],
     imageCaptions: [
       "Large scale poster roller",
-      "Pneumatic gripper",
+      "Vacuum prosthesis – technical solution",
       "Pneumatic vacuum lift for metal sheets",
     ],
     alt: "Technical solutions – CAD and product development",
@@ -60,15 +60,15 @@ const SERVICES: Record<
     imageTexts: [
       {
         heading: "Large scale poster roller.",
-        body: "Engineering and fabrication of a large-scale, heavy-duty industrial roller designed for long-term operational durability.",
+        body: "This project involves the engineering and fabrication of a large-scale, heavy-duty industrial roller designed for long-term operational durability.",
       },
       {
-        heading: "Pneumatic gripper for prosthetic legs.",
-        body: "Custom-made pneumatic gripper mountable on robotic arm as an end effector. The gripper uses suction cups placed and angled to optimize grip on the prosthetic leg developed by the client.
+        heading: "Vacuum prosthesis – technical solution.",
+        body: "Custom-made prosthesis developed in close collaboration with the user, from concept to production-ready file.",
       },
       {
-        heading: "Pneumatic lift.",
-        body: "Design of a pneumatic vacuum lift for safe handling of heavy metal sheets in an industrial environment. Includes a user interface for safe and intuitive use",
+        heading: "Pneumatic vacuum lift.",
+        body: "Design of a pneumatic vacuum lift for safe handling of heavy metal sheets in an industrial environment.",
       },
     ],
   },
@@ -332,6 +332,31 @@ function Index() {
                   <p className="text-base text-background/70 text-pretty max-w-[50ch]">
                     {activeService.imageTexts?.[displayedIndex]?.body ?? activeService.detailBody}
                   </p>
+                  {active === "design" && (
+                    <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
+                      <thead>
+                        <tr className="border-b border-background/20">
+                          <th colSpan={2} className="py-2 text-center text-background/90 font-medium uppercase tracking-wider text-xs">
+                            Technical specifications
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-background/20">
+                          <td className="py-2 pr-4 text-background/90 font-medium">Tolerances</td>
+                          <td className="py-2 text-background/70">Cylindricity 1 cm</td>
+                        </tr>
+                        <tr className="border-b border-background/20">
+                          <td className="py-2 pr-4 text-background/90 font-medium">Length</td>
+                          <td className="py-2 text-background/70">12m</td>
+                        </tr>
+                        <tr className="border-b border-background/20">
+                          <td className="py-2 pr-4 text-background/90 font-medium">Diameter</td>
+                          <td className="py-2 text-background/70">2m</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  )}
                 </div>
               </div>
             </div>
