@@ -332,6 +332,20 @@ function Index() {
                   <p className="text-base text-background/70 text-pretty max-w-[50ch]">
                     {activeService.imageTexts?.[displayedIndex]?.body ?? activeService.detailBody}
                   </p>
+                  {active === "design" && (
+                    <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
+                      <tbody>
+                        <tr className="border-b border-background/20">
+                          <td className="py-2 pr-4 text-background/90 font-medium">Tolerances</td>
+                          <td className="py-2 text-background/70">Cylindricity 1 cm</td>
+                        </tr>
+                        <tr className="border-b border-background/20">
+                          <td className="py-2 pr-4 text-background/90 font-medium">Length</td>
+                          <td className="py-2 text-background/70">12m</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  )}
                 </div>
               </div>
             </div>
