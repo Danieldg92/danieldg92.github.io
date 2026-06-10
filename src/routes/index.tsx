@@ -334,6 +334,13 @@ function Index() {
                   </p>
                   {active === "design" && (
                     <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
+                      <thead>
+                        <tr className="border-b border-background/20">
+                          <th colSpan={2} className="py-2 text-center text-background/90 font-medium uppercase tracking-wider text-xs">
+                            Technical specifications
+                          </th>
+                        </tr>
+                      </thead>
                       <tbody>
                         <tr className="border-b border-background/20">
                           <td className="py-2 pr-4 text-background/90 font-medium">Tolerances</td>
