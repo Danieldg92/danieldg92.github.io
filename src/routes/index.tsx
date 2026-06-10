@@ -343,6 +343,10 @@ function Index() {
                           <td className="py-2 pr-4 text-background/90 font-medium">Length</td>
                           <td className="py-2 text-background/70">12m</td>
                         </tr>
+                        <tr className="border-b border-background/20">
+                          <td className="py-2 pr-4 text-background/90 font-medium">Diameter</td>
+                          <td className="py-2 text-background/70">2m</td>
+                        </tr>
                       </tbody>
                     </table>
                   )}
