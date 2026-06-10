@@ -15,16 +15,7 @@ import hm from "@/assets/HM.jpg";
 import logga from "@/assets/dgd-logo.png";
 import hmClean from "@/assets/HMclean.png";
 
-const HERO_SLIDESHOW = [
-  logga,
-  manasi,
-  hmClean,
-  boursin,
-  cylinder,
-  vakuumprotes,
-  vaakumlyft,
-  designF2,
-];
+const HERO_SLIDESHOW = [logga, manasi, hmClean, boursin, cylinder, vakuumprotes, vaakumlyft, designF2];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -54,7 +45,7 @@ const SERVICES: Record<
     body: "Parametric CAD modeling with tolerances according to ISO standards.",
     images: [cylinder, vakuumprotes, vaakumlyft],
     imageCaptions: [
-      "Cylinder – technical solution",
+      "Large scale poster roller",
       "Vacuum prosthesis – technical solution",
       "Pneumatic vacuum lift for metal sheets",
     ],
@@ -68,8 +59,8 @@ const SERVICES: Record<
     ],
     imageTexts: [
       {
-        heading: "Cylinder – technical solution.",
-        body: "Parametric CAD model of a custom cylinder, documented with tolerances for direct production.",
+        heading: "Large scale poster roller.",
+        body: "This project involves the engineering and fabrication of a large-scale, heavy-duty industrial roller designed for long-term operational durability.",
       },
       {
         heading: "Vacuum prosthesis – technical solution.",
@@ -181,7 +172,7 @@ function Index() {
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <button
           type="button"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-3 focus:outline-none cursor-pointer"
         >
           <img src={logga} alt="DG Development logo" className="h-8 w-auto" />
@@ -238,9 +229,11 @@ function Index() {
           </div>
         </header>
 
-
         {/* Services — clickable */}
-        <section id="services" className={`grid md:grid-cols-2 border-b ${active ? "border-foreground" : "border-border"}`}>
+        <section
+          id="services"
+          className={`grid md:grid-cols-2 border-b ${active ? "border-foreground" : "border-border"}`}
+        >
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
             const isActive = key === active;
@@ -344,7 +337,6 @@ function Index() {
             </div>
           </section>
         )}
-
 
         {/* Contact */}
         <footer id="contact" className="px-6 py-24 border-t border-border">
