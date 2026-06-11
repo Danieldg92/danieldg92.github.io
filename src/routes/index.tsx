@@ -38,7 +38,7 @@ const SERVICES: Record<
   }
 > = {
   design: {
-    tag: "01/DESIGN",
+    tag: "01/TECH",
     title: "Technical solutions",
     body: "Parametric CAD modeling with tolerances according to ISO standards.",
     images: [cylinder, vakuumprotes, vaakumlyft],
@@ -258,9 +258,10 @@ function Index() {
                 >
                   {s.tag}
                 </span>
-                <h3 className="font-display font-bold text-[1.75rem] tracking-tighter mb-4 text-center">{s.title}</h3>
+                <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">{s.title}</h3>
+                <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
                 <span
-                  className={`mt-6 block text-right font-mono text-[10px] uppercase tracking-widest ${
+                  className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
                     isActive ? "text-background/70" : "text-foreground"
                   }`}
                 >
