@@ -46,7 +46,7 @@ const SERVICES: Record<
     images: [cylinder, vakuumprotes, vaakumlyft],
     imageCaptions: [
       "Large scale poster roller",
-      "Vacuum prosthesis – technical solution",
+      "Pneumatic lift for prosthetic legs",
       "Pneumatic vacuum lift for metal sheets",
     ],
     alt: "Technical solutions – CAD and product development",
@@ -60,7 +60,7 @@ const SERVICES: Record<
     imageTexts: [
       {
         heading: "Large scale poster roller.",
-        body: "This project involves the engineering and fabrication of a large-scale, heavy-duty industrial roller designed for long-term operational durability.",
+        body: "Engineering and fabrication of a large-scale, heavy-duty industrial roller designed for long-term operational durability.",
       },
       {
         heading: "Vacuum prosthesis – technical solution.",
@@ -336,7 +336,10 @@ function Index() {
                     <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
                       <thead>
                         <tr className="border-b border-background/20">
-                          <th colSpan={2} className="py-2 text-center text-background/90 font-medium uppercase tracking-wider text-xs">
+                          <th
+                            colSpan={2}
+                            className="py-2 text-center text-background/90 font-medium uppercase tracking-wider text-xs"
+                          >
                             Technical specifications
                           </th>
                         </tr>
