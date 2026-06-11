@@ -32,8 +32,6 @@ const SERVICES: Record<
     images: string[];
     imageCaptions: string[];
     alt: string;
-    detailHeading: string;
-    detailBody: string;
     bullets: { label: string; value: string }[];
     imageBullets?: { label: string; value: string }[][];
     imageTexts?: { heading: string; body: string }[];
@@ -50,9 +48,6 @@ const SERVICES: Record<
       "Pneumatic vacuum lift for metal sheets",
     ],
     alt: "Technical solutions – CAD and product development",
-    detailHeading: "From sketch to manufacturable file.",
-    detailBody:
-      "We turn ideas into production-ready CAD. Every part is designed parametrically and documented with tolerances for direct manufacturing.",
     bullets: [
       { label: "Parametric CAD", value: "SolidWorks · Fusion 360 · Onshape" },
       { label: "Output", value: "STEP files · 2D drawings · BOM" },
@@ -63,8 +58,8 @@ const SERVICES: Record<
         body: "Engineering and fabrication of a large-scale, heavy-duty industrial roller designed for long-term operational durability.",
       },
       {
-        heading: "Vacuum prosthesis – technical solution.",
-        body: "Custom-made prosthesis developed in close collaboration with the user, from concept to production-ready file.",
+        heading: "Pneumatic lift for prosthetic legs.",
+        body: "Custom-made pneumatic lift, mountable to robot arm as an end effector. The lift uses suction cups designed for optimal grip on the prosthetic legs designed by the client. ",
       },
       {
         heading: "Pneumatic vacuum lift.",
@@ -78,16 +73,14 @@ const SERVICES: Record<
     body: "We create function, feeling, and aesthetics that fit your vision.",
     images: [manasi, hm, logga, boursin, designF2, ninja],
     imageCaptions: [
-      "Manasi 7, a collaboration with Manasi to bring out their vision",
-      "HM – design and form",
-      "Logo – design and form",
-      "Boursin – corporate event",
+      "Perfume bottle cap",
+      "Large scale 3D-print for showroom",
+      "Glow-in-the-dark representation of company logo",
+      "Wheel of fortune for company event",
       "NIKE CUP CLASH, a prestigious trophy",
-      "Ninja Casino – event and installation",
+      "Wheel of fortune and booth for company event",
     ],
-    alt: "Manasi – design and form of a perfume bottle",
-    detailHeading: "Through creative collaboration.",
-    detailBody: "We create function, feeling, and aesthetics that fit your vision.",
+    alt: "Perfume bottle cap",
     bullets: [
       { label: "Material", value: "Jasmonite" },
       { label: "Tolerance", value: "±0.1 mm" },
@@ -112,28 +105,28 @@ const SERVICES: Record<
     ],
     imageTexts: [
       {
-        heading: "Manasi 7 – a creative collaboration.",
-        body: "Together with Manasi we shaped a perfume bottle that captures the brand's vision in every detail.",
+        heading: "Perfume bottle cap.",
+        body: "Design and manufacturing of bottle cap for a cosmetics company.",
       },
       {
-        heading: "HM – design and form.",
-        body: "Form and function in harmony — a design project where aesthetics and manufacturing meet.",
+        heading: "Showroom piece.",
+        body: "Form design for manufacturability of a larger 3D-piece with hollowness to allow for internal lighting.",
       },
       {
-        heading: "Logo – visual identity.",
-        body: "We design visual identities that live from sketch to finished product.",
+        heading: "Large scale logo representation.",
+        body: "Glow-in-the-dark representation of logo for company event with focus on visual aesthetics.",
       },
       {
-        heading: "Boursin – corporate event.",
-        body: "A custom installation that elevates the brand and creates memorable experiences for visitors.",
+        heading: "Wheel of fortune.",
+        body: "Design and construction of a wheel of fortune, sheated with textiles printed with company design visuals. Laser engraved wooden blanks for price winnings.",
       },
       {
-        heading: "NIKE Cup Clash.",
-        body: "A prestigious trophy designed for the sharpest of gamers — powerful form, precise manufacturing.",
+        heading: "Medal for company event.",
+        body: "A prestigious trophy designed for the sharpest of gamers, won by the top players in a company computer game tournament.",
       },
       {
-        heading: "Ninja Casino – event and installation.",
-        body: "An eye-catching event solution with a tent, spinning wheel, and graphics that capture attention and engage visitors.",
+        heading: "Wheel of fortune and booth.",
+        body: "Design and construction of a wheel of fortune, sheated with textiles printed with company design visuals.",
       },
     ],
   },
@@ -327,10 +320,10 @@ function Index() {
                   }`}
                 >
                   <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
-                    {activeService.imageTexts?.[displayedIndex]?.heading ?? activeService.detailHeading}
+                    {activeService.imageTexts?.[displayedIndex]?.heading}
                   </h3>
                   <p className="text-base text-background/70 text-pretty max-w-[50ch]">
-                    {activeService.imageTexts?.[displayedIndex]?.body ?? activeService.detailBody}
+                    {activeService.imageTexts?.[displayedIndex]?.body}
                   </p>
                   {active === "design" && (
                     <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
