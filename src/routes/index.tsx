@@ -249,24 +249,26 @@ function Index() {
                   }
                 }}
                 aria-pressed={isActive}
-                className={`text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
+                className={`p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card flex flex-col items-center ${
                   i < 2 ? "md:border-r" : ""
                 } ${isActive ? "bg-foreground text-background" : "hover:bg-card"}`}
               >
-                <span
-                  className={`block font-mono text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
-                >
-                  {s.tag}
-                </span>
-                <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">{s.title}</h3>
-                <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
-                <span
-                  className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
-                    isActive ? "text-background/70" : "text-foreground"
-                  }`}
-                >
-                  {isActive ? "[ Viewing ]" : "View →"}
-                </span>
+                <div className="text-left">
+                  <span
+                    className={`block font-mono text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
+                  >
+                    {s.tag}
+                  </span>
+                  <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">{s.title}</h3>
+                  <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
+                  <span
+                    className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
+                      isActive ? "text-background/70" : "text-foreground"
+                    }`}
+                  >
+                    {isActive ? "[ Viewing ]" : "View →"}
+                  </span>
+                </div>
               </button>
             );
           })}
