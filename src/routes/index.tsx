@@ -31,8 +31,6 @@ const SERVICES: Record<
     body: string;
     images: string[];
     imageCaptions: string[];
-    alt: string;
-    bullets: { label: string; value: string }[];
     imageBullets?: { label: string; value: string }[][];
     imageTexts?: { heading: string; body: string }[];
   }
@@ -40,17 +38,11 @@ const SERVICES: Record<
   design: {
     tag: "01/TECH",
     title: "Technical solutions",
-    body: "Parametric CAD modeling with tolerances according to ISO standards.",
     images: [cylinder, vakuumprotes, vaakumlyft],
     imageCaptions: [
       "Large scale poster roller",
       "Pneumatic lift for prosthetic legs",
       "Pneumatic vacuum lift for metal sheets",
-    ],
-    alt: "Technical solutions – CAD and product development",
-    bullets: [
-      { label: "Parametric CAD", value: "SolidWorks · Fusion 360 · Onshape" },
-      { label: "Output", value: "STEP files · 2D drawings · BOM" },
     ],
     imageTexts: [
       {
@@ -70,7 +62,6 @@ const SERVICES: Record<
   cnc: {
     tag: "02/DESIGN",
     title: "Design and company events",
-    body: "We create function, feeling, and aesthetics that fit your vision.",
     images: [manasi, hm, logga, boursin, designF2, ninja],
     imageCaptions: [
       "Perfume bottle cap",
@@ -79,12 +70,6 @@ const SERVICES: Record<
       "Wheel of fortune for company event",
       "NIKE CUP CLASH, a prestigious trophy",
       "Wheel of fortune and booth for company event",
-    ],
-    alt: "Perfume bottle cap",
-    bullets: [
-      { label: "Material", value: "Jasmonite" },
-      { label: "Tolerance", value: "±0.1 mm" },
-      { label: "Method", value: "Casting" },
     ],
     imageBullets: [
       [
