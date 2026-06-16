@@ -243,7 +243,7 @@ function Index() {
                 >
                   {s.tag}
                 </span>
-                <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4">{s.title}</h3>
+                <h3 className="font-display font-extrabold text-2xl tracking-tighter mb-4 text-center">{s.title}</h3>
                 <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
                 <span
                   className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
