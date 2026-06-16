@@ -28,7 +28,7 @@ const SERVICES: Record<
   {
     tag: string;
     title: string;
-    body: string;
+    body?: string;
     images: string[];
     imageCaptions: string[];
     imageBullets?: { label: string; value: string }[][];
@@ -268,7 +268,7 @@ function Index() {
               <div className="relative w-full aspect-square max-h-[75vh] bg-foreground px-[15%] pb-[5%] mx-auto">
                 <img
                   src={activeService.images[imageIndex] ?? activeService.images[0]}
-                  alt={activeService.alt}
+                  alt={activeService.imageCaptions[imageIndex] ?? activeService.title}
                   width={1024}
                   height={1024}
                   className="w-full h-full object-contain rounded-lg"
