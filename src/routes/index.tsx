@@ -236,7 +236,7 @@ function Index() {
                 aria-pressed={isActive}
                 className={`text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
                   i < 2 ? "md:border-r" : ""
-                } ${isActive ? "bg-foreground text-background" : "hover:bg-card"}`}
+                } ${isActive ? "bg-black text-white" : "hover:bg-card"}`}
               >
                 <span
                   className={`block font-mono text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
