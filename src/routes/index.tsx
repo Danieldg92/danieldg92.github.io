@@ -156,7 +156,7 @@ function Index() {
           <img src={logga} alt="DG Development logo" className="h-8 w-auto" />
           <span className="font-display text-lg tracking-tighter uppercase font-extrabold">DG Development</span>
         </button>
-        <div className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest justify-self-center">
+        <div className="hidden md:flex gap-8 text-[10px] font-montserrat uppercase tracking-widest justify-self-center">
           <a
             href="#services"
             onClick={(e) => {
@@ -239,14 +239,14 @@ function Index() {
                 } ${isActive ? "bg-black text-white" : "hover:bg-card"}`}
               >
                 <span
-                  className={`block font-mono text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
+                  className={`block font-montserrat text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
                 >
                   {s.tag}
                 </span>
                 <h3 className="font-montserrat font-normal text-2xl tracking-tighter mb-4 text-center">{s.title}</h3>
                 <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
                 <span
-                  className={`mt-6 inline-block font-mono text-[10px] uppercase tracking-widest ${
+                  className={`mt-6 inline-block font-montserrat text-[10px] uppercase tracking-widest ${
                     isActive ? "text-background/70" : "text-foreground"
                   }`}
                 >
@@ -347,7 +347,7 @@ function Index() {
         {/* Contact */}
         <footer id="contact" className="px-6 py-24 border-t border-border">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-primary mb-8">Contact us</p>
+            <p className="font-montserrat text-[10px] uppercase tracking-widest text-primary mb-8">Contact us</p>
             <a
               href="mailto:info@dgd.solutions"
               className="font-display font-extrabold text-4xl md:text-7xl tracking-tighter hover:text-primary transition-colors underline decoration-border decoration-1 underline-offset-8 break-all"
