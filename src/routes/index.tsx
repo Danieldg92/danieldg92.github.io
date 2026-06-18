@@ -234,7 +234,7 @@ function Index() {
                   }
                 }}
                 aria-pressed={isActive}
-                className={`text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
+                className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
                   i < 2 ? "md:border-r" : ""
                 } ${isActive ? "bg-black text-white" : "hover:bg-card"}`}
               >
@@ -246,7 +246,7 @@ function Index() {
                 <h3 className="font-montserrat font-normal text-2xl tracking-tighter mb-4 text-center">{s.title}</h3>
                 <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
                 <span
-                  className={`mt-6 inline-block font-montserrat text-[10px] uppercase tracking-widest ${
+                  className={`absolute bottom-6 right-6 font-montserrat text-[10px] uppercase tracking-widest ${
                     isActive ? "text-background/70" : "text-foreground"
                   }`}
                 >
