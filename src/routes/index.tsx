@@ -236,15 +236,17 @@ function Index() {
                 aria-pressed={isActive}
                 className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-card ${
                   i < 2 ? "md:border-r" : ""
-                } ${isActive ? "bg-black text-white" : "hover:bg-card"}`}
+                } ${isActive ? "bg-black text-white" : "hover:bg-card"} flex flex-col`}
               >
                 <span
-                  className={`block font-montserrat text-[10px] mb-12 ${isActive ? "text-background/70" : "text-muted-foreground"}`}
+                  className={`block font-montserrat text-[10px] self-start ${isActive ? "text-background/70" : "text-muted-foreground"}`}
                 >
                   {s.tag}
                 </span>
-                <h3 className="font-montserrat font-normal text-2xl tracking-tighter mb-4 text-center">{s.title}</h3>
-                <p className={`text-sm ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>
+                <div className="flex-1 flex flex-col items-center justify-center w-full">
+                  <h3 className="font-montserrat font-normal text-2xl tracking-tighter text-center">{s.title}</h3>
+                  {s.body && <p className={`text-sm mt-2 ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>}
+                </div>
                 <span
                   className={`absolute bottom-6 right-6 font-montserrat text-[10px] uppercase tracking-widest ${
                     isActive ? "text-background/70" : "text-foreground"
