@@ -356,32 +356,6 @@ function Index() {
             >
               info@dgd.solutions
             </a>
-            <div className="grid md:grid-cols-3 gap-12 mt-24 text-[10px] font-mono uppercase tracking-tighter text-muted-foreground text-left">
-              <div>
-                <p className="text-foreground mb-2">Studio</p>
-                <p>
-                  42 Industrial Way
-                  <br />
-                  Ste 200, Brooklyn, NY
-                </p>
-              </div>
-              <div>
-                <p className="text-foreground mb-2">Digital</p>
-                <p>
-                  Instagram: @vorm_fab
-                  <br />
-                  LinkedIn: /vorm-fabric
-                </p>
-              </div>
-              <div>
-                <p className="text-foreground mb-2">Capacity</p>
-                <p>
-                  Current: 85% Load
-                  <br />
-                  Next Open: Dec 2026
-                </p>
-              </div>
-            </div>
             <div className="mt-16 pt-8 border-t border-border text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
               © 2026 Vorm-Fabric Studio. All tolerances reserved.
             </div>
