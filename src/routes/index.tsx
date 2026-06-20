@@ -357,7 +357,7 @@ function Index() {
               info@dgd.solutions
             </a>
             <div className="mt-16 pt-8 border-t border-border text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-              © 2026 Vorm-Fabric Studio. All tolerances reserved.
+              © 2026 DG Development. All tolerances reserved.
             </div>
           </div>
         </footer>
