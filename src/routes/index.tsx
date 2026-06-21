@@ -13,6 +13,7 @@ import boursin from "@/assets/boursin.jpg";
 import hm from "@/assets/HM.jpg";
 
 import logga from "@/assets/dgd-logo.png";
+import loggaJpg from "@/assets/Logga.jpg";
 import hmClean from "@/assets/HMclean.png";
 
 const HERO_SLIDESHOW = [logga, manasi, hmClean, boursin, cylinder, vakuumprotes, vaakumlyft, designF2];
