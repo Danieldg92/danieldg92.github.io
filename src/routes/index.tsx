@@ -63,7 +63,7 @@ const SERVICES: Record<
   cnc: {
     tag: "02/DESIGN",
     title: "Design and company events",
-    images: [manasi, hm, logga, boursin, designF2, ninja],
+    images: [manasi, hm, loggaJpg, boursin, designF2, ninja],
     imageCaptions: [
       "Perfume bottle cap",
       "Large scale 3D-print for showroom",
