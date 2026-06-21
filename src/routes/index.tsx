@@ -108,7 +108,7 @@ const SERVICES: Record<
       },
       {
         heading: "Medal for company event.",
-        body: "A prestigious trophy designed for the sharpest of gamers, won by the top players in a company computer game tournament.",
+        body: "A prestigious trophy designed for the sharpest of gamers, awarded to the top players in a company computer game tournament.",
       },
       {
         heading: "Wheel of fortune and booth.",
