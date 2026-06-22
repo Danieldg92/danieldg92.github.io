@@ -192,16 +192,18 @@ function Index() {
           </div>
           <div className="relative w-full max-w-[1800px] flex items-stretch justify-center animate-reveal [animation-delay:100ms]">
             <div className="w-1/2 flex items-center justify-end pr-[5vw]">
-              <h1 className="text-[clamp(2.5rem,8vw,9rem)] font-display font-extrabold leading-[0.85] tracking-tighter text-balance flex flex-col gap-[1vw]">
+              <h1 className="text-[clamp(3rem,9vw,10rem)] font-display font-extrabold leading-[0.85] tracking-tighter text-balance flex flex-col gap-[1vw]">
                 <span className="text-muted-foreground">FROM</span>
                 <span>IDEA</span>
                 <span className="text-muted-foreground">TO</span>
                 <span>PRODUCT</span>
               </h1>
             </div>
-            <div className="self-stretch w-px bg-foreground" />
+            <div className="h-full flex items-center">
+              <div className="w-px h-full bg-foreground" />
+            </div>
             <div className="w-1/2 flex justify-center items-center pl-[5vw]">
-              <h2 className="text-[clamp(2rem,11vw,12rem)] font-display font-extrabold leading-[0.85] tracking-tighter text-balance text-center">
+              <h2 className="text-[clamp(2.75rem,8.5vw,9.5rem)] font-display font-extrabold leading-[0.85] tracking-tighter text-balance text-center">
                 DG Development
               </h2>
             </div>
