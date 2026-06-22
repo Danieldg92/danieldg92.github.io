@@ -147,9 +147,8 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="max-w-[1440px] mx-auto min-h-screen bg-background">
-        {/* Navigation */}
-        <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -364,7 +363,6 @@ function Index() {
           </div>
         </footer>
       </main>
-      </div>
     </div>
   );
 }
