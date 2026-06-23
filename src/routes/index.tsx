@@ -201,7 +201,7 @@ function Index() {
                   <span>PRODUCT</span>
                 </h1>
               </div>
-              <div className="self-stretch w-[0.07cqi] min-w-[1px] bg-foreground" />
+              <div className="self-stretch w-[0.1cqi] min-w-[1px] bg-foreground" />
               <div className="w-1/2 flex justify-center items-center pl-[3cqi]">
                 <h2 className="text-[clamp(2rem,5cqi,5rem)] font-display font-extrabold leading-[0.9] tracking-tighter text-balance text-center">
                   DG Development
