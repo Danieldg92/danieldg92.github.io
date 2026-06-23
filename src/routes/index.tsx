@@ -147,8 +147,9 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
+      <div className="max-w-[1440px] mx-auto min-h-screen bg-background">
+        {/* Navigation */}
+        <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -177,7 +178,7 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <header className="relative min-h-screen flex flex-col items-center justify-center px-6 py-12 border-b border-border overflow-hidden">
+        <header className="relative px-6 pt-24 pb-24 border-b border-border overflow-hidden">
           <div aria-hidden className="absolute inset-0 pointer-events-none">
             {HERO_SLIDESHOW.map((src, i) => (
               <img
@@ -190,9 +191,9 @@ function Index() {
               />
             ))}
           </div>
-          <div className="relative w-full max-w-[1800px] flex items-stretch justify-center animate-reveal [animation-delay:100ms]">
-            <div className="w-1/2 flex items-center justify-end pr-[5vw]">
-              <h1 className="text-[clamp(2.5rem,8vw,9rem)] font-display font-extrabold leading-[0.85] tracking-tighter text-balance flex flex-col gap-[1vw]">
+          <div className="relative flex items-stretch animate-reveal [animation-delay:100ms]">
+            <div className="w-1/2 flex justify-end pr-8 md:pr-12">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-2 md:gap-4">
                 <span className="text-muted-foreground">FROM</span>
                 <span>IDEA</span>
                 <span className="text-muted-foreground">TO</span>
@@ -200,8 +201,8 @@ function Index() {
               </h1>
             </div>
             <div className="self-stretch w-px bg-foreground" />
-            <div className="w-1/2 flex justify-center items-center pl-[5vw]">
-              <h2 className="text-[clamp(2rem,11vw,12rem)] font-display font-extrabold leading-[0.85] tracking-tighter text-balance text-center">
+            <div className="w-1/2 flex justify-center items-center pl-8 md:pl-12">
+              <h2 className="text-4xl md:text-[5vw] font-display font-extrabold leading-[0.9] tracking-tighter text-balance text-center">
                 DG Development
               </h2>
             </div>
@@ -363,6 +364,7 @@ function Index() {
           </div>
         </footer>
       </main>
+      </div>
     </div>
   );
 }
