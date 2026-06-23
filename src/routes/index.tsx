@@ -365,7 +365,6 @@ function Index() {
           </div>
         </footer>
       </main>
-      </div>
     </div>
   );
 }
