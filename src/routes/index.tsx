@@ -147,8 +147,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="max-w-[1440px] mx-auto min-h-screen bg-background">
-        {/* Navigation */}
+      {/* Navigation */}
         <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <button
           type="button"
@@ -194,16 +193,16 @@ function Index() {
           <div className="@container relative">
             <div className="relative flex items-stretch animate-reveal [animation-delay:100ms]">
               <div className="w-1/2 flex justify-end pr-[3cqi]">
-                <h1 className="text-[clamp(2.5rem,6cqi,6rem)] font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-[1cqi]">
+                <h1 className="text-[clamp(2.5rem,6cqi,12rem)] font-display font-extrabold leading-[0.9] tracking-tighter text-balance flex flex-col gap-[1cqi]">
                   <span className="text-muted-foreground">FROM</span>
                   <span>IDEA</span>
                   <span className="text-muted-foreground">TO</span>
                   <span>PRODUCT</span>
                 </h1>
               </div>
-              <div className="self-stretch w-[0.1cqi] min-w-[1px] bg-foreground" />
+              <div className="self-stretch w-[clamp(1px,0.1cqi,2.5px)] bg-foreground" />
               <div className="w-1/2 flex justify-center items-center pl-[3cqi]">
-                <h2 className="text-[clamp(2rem,5cqi,5rem)] font-display font-extrabold leading-[0.9] tracking-tighter text-balance text-center">
+                <h2 className="text-[clamp(2rem,5cqi,10rem)] font-display font-extrabold leading-[0.9] tracking-tighter text-balance text-center">
                   DG Development
                 </h2>
               </div>
@@ -366,7 +365,6 @@ function Index() {
           </div>
         </footer>
       </main>
-      </div>
     </div>
   );
 }
