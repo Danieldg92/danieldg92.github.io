@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 import cylinder from "@/assets/Cylinder.jpg";
@@ -123,6 +123,8 @@ function Index() {
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
+  const [servicesInView, setServicesInView] = useState(false);
+  const servicesRef = useRef<HTMLElement>(null);
   const activeService = active ? SERVICES[active] : null;
 
   useEffect(() => {
@@ -142,6 +144,19 @@ function Index() {
     return () => clearInterval(interval);
   }, []);
 
+  // Track when the services section is centered in view
+  useEffect(() => {
+    const el = servicesRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => setServicesInView(entry.isIntersecting));
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   // Keyboard navigation for service images
   useEffect(() => {
     if (!activeService || activeService.images.length < 2) return;
@@ -250,8 +265,9 @@ function Index() {
 
         {/* Services — clickable */}
         <section
+          ref={servicesRef}
           id="services"
-          className={`grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"}`}
+          className={`relative z-[60] grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"}`}
         >
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
@@ -294,6 +310,14 @@ function Index() {
             );
           })}
         </section>
+
+        {/* Tinted glass blur overlay behind the service boxes */}
+        <div
+          className={`fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none ${
+            servicesInView ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        />
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
