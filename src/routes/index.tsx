@@ -465,7 +465,7 @@ function Index() {
                     if (activeService.images.length < 2) return;
                     setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
                   }}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                  className="fixed left-4 top-1/2 -translate-y-1/2 z-[70] text-muted-foreground hover:text-foreground/90 transition-all duration-200 hover:scale-125 focus:outline-none"
                 >
                   <ChevronLeft className="size-14" strokeWidth={1.5} />
                 </button>
@@ -476,7 +476,7 @@ function Index() {
                     if (activeService.images.length < 2) return;
                     setImageIndex((i) => (i + 1) % activeService.images.length);
                   }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                  className="fixed right-4 top-1/2 -translate-y-1/2 z-[70] text-muted-foreground hover:text-foreground/90 transition-all duration-200 hover:scale-125 focus:outline-none"
                 >
                   <ChevronRight className="size-14" strokeWidth={1.5} />
                 </button>
