@@ -265,8 +265,9 @@ function Index() {
 
         {/* Services — clickable */}
         <section
+          ref={servicesRef}
           id="services"
-          className={`grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"}`}
+          className={`relative z-[60] grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"}`}
         >
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
