@@ -157,6 +157,7 @@ function Index() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+  // Keyboard navigation for service images
   useEffect(() => {
     if (!activeService || activeService.images.length < 2) return;
     const handleKeyDown = (e: KeyboardEvent) => {
