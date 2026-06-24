@@ -267,9 +267,7 @@ function Index() {
           <button
             type="button"
             aria-label="Scroll to services"
-            onClick={() => {
-              document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
-            }}
+            onClick={() => setMode(1)}
             className="absolute bottom-2 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer"
           >
             <ChevronDown
@@ -286,9 +284,8 @@ function Index() {
 
         {/* Services — clickable */}
         <section
-          ref={servicesRef}
           id="services"
-          className={`relative z-[60] grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"}`}
+          className={`relative grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"} ${mode === 1 || mode === 2 ? "z-[60]" : ""}`}
         >
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
@@ -303,13 +300,7 @@ function Index() {
                   setImageIndex(0);
                   setDisplayedIndex(0);
                   setIsExiting(false);
-                  if (next) {
-                    requestAnimationFrame(() => {
-                      requestAnimationFrame(() => {
-                        document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "center" });
-                      });
-                    });
-                  }
+                  setMode(next ? 2 : 1);
                 }}
                 aria-pressed={isActive}
                 className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none group ${
@@ -332,17 +323,16 @@ function Index() {
           })}
         </section>
 
-        {/* Tinted glass blur overlay behind the service boxes */}
+        {/* Tinted glass blur overlay — highlights the focused section in every mode */}
         <div
-          className={`fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none ${
-            servicesInView ? "opacity-100" : "opacity-0"
-          }`}
+          className="fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none opacity-100"
           aria-hidden="true"
         />
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
-        <section id="work" className="p-6 md:p-12 scroll-mt-20 bg-black text-white">
+        <section id="work" className={`p-6 md:p-12 scroll-mt-20 bg-black text-white relative ${mode === 2 ? "z-[60]" : ""}`}>
+
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
               <div className="relative w-full aspect-square max-h-[75vh] bg-black px-[15%] pb-[5%] mx-auto">
                 <img
