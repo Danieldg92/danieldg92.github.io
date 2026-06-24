@@ -27,7 +27,6 @@ type ServiceKey = "design" | "cnc";
 const SERVICES: Record<
   ServiceKey,
   {
-    tag: string;
     title: string;
     body?: string;
     images: string[];
@@ -37,7 +36,6 @@ const SERVICES: Record<
   }
 > = {
   design: {
-    tag: "01/TECH",
     title: "Technical solutions",
     images: [cylinder, vakuumprotes, vaakumlyft],
     imageCaptions: [
