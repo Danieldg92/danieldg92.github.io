@@ -158,6 +158,22 @@ function Index() {
     };
   }, []);
 
+  // Smooth scroll helper with longer duration and ease-out-expo easing
+  const smoothScrollTo = (targetY: number, duration = 1200) => {
+    const startY = window.scrollY;
+    const diff = targetY - startY;
+    const startTime = performance.now();
+    const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + diff * easeOutExpo(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
   // When mode changes, sync active service and scroll the corresponding section into view
   useEffect(() => {
     if (mode === 2) {
@@ -172,9 +188,14 @@ function Index() {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (id === null) {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          smoothScrollTo(0);
         } else {
-          document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+          const el = document.getElementById(id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            const targetY = window.scrollY + rect.top - window.innerHeight / 2 + rect.height / 2;
+            smoothScrollTo(targetY);
+          }
         }
       });
     });
