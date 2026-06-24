@@ -233,7 +233,7 @@ function Index() {
                 </linearGradient>
               </defs>
               <path
-                d="M 0 4 L 24 4 L 12 20 Z"
+                d="M 0 4 L 24 4 L 12 16 Z"
                 fill="url(#arrow-gradient)"
                 className="transition-colors duration-300 group-hover:fill-foreground"
               />
