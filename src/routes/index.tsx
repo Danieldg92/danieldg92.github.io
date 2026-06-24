@@ -199,13 +199,7 @@ function Index() {
         <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <button
           type="button"
-          onClick={() => {
-            setActive(null);
-            setImageIndex(0);
-            setDisplayedIndex(0);
-            setIsExiting(false);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          onClick={() => setMode(0)}
           className="flex items-center gap-3 focus:outline-none cursor-pointer"
         >
           <img src={logga} alt="DG Development logo" className="h-8 w-auto" />
@@ -216,13 +210,20 @@ function Index() {
             href="#services"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
+              setMode(1);
             }}
             className="hover:text-primary transition-colors"
           >
             01. Services
           </a>
-          <a href="#contact" className="hover:text-primary transition-colors">
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              setMode(3);
+            }}
+            className="hover:text-primary transition-colors"
+          >
             02. Contact
           </a>
         </div>
@@ -231,7 +232,8 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <header className="relative px-6 pt-24 pb-24 border-b border-border overflow-hidden flex flex-col justify-center min-h-[calc(100svh-65px)]">
+        <header className={`relative px-6 pt-24 pb-24 border-b border-border overflow-hidden flex flex-col justify-center min-h-[calc(100svh-65px)] ${mode === 0 ? "z-[60]" : ""}`}>
+
           <div aria-hidden className="absolute inset-0 pointer-events-none">
             {HERO_SLIDESHOW.map((src, i) => (
               <img
