@@ -425,7 +425,7 @@ function Index() {
         )}
 
         {/* Contact */}
-        <footer id="contact" className="px-6 py-24 border-t border-border">
+        <footer id="contact" className={`relative px-6 py-24 border-t border-border bg-background ${mode === 3 ? "z-[60]" : ""}`}>
           <div className="max-w-4xl mx-auto text-center">
             <p className="font-montserrat text-[10px] uppercase tracking-widest text-primary mb-8">Contact us</p>
             <a
