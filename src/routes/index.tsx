@@ -244,11 +244,6 @@ function Index() {
                   i < 2 ? "md:border-r" : ""
                 } ${isActive ? "bg-black text-white" : "hover:bg-card"} flex flex-col min-h-[28vh]`}
               >
-                <span
-                  className={`block font-montserrat text-[10px] self-start ${isActive ? "text-background/70" : "text-muted-foreground"}`}
-                >
-                  {s.tag}
-                </span>
                 <div className="flex-1 flex flex-col items-center justify-center w-full">
                   <h3 className="font-montserrat font-medium text-3xl md:text-4xl tracking-tighter text-center">{s.title}</h3>
                   {s.body && <p className={`text-sm mt-2 ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>}
