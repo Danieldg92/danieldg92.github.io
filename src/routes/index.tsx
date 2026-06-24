@@ -446,10 +446,10 @@ function Index() {
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
-        <section id="work" className={`p-6 md:p-12 scroll-mt-20 bg-black text-white relative ${mode === 2 ? "z-[60]" : ""}`}>
+        <section id="work" className={`p-6 md:p-12 scroll-mt-20 bg-background text-foreground relative ${mode === 2 ? "z-[60]" : ""}`}>
 
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-              <div className="relative w-full aspect-square max-h-[75vh] bg-black px-[15%] pb-[5%] mx-auto">
+              <div className="relative w-full aspect-square max-h-[75vh] bg-background px-[15%] pb-[5%] mx-auto">
                 <img
                   src={activeService.images[imageIndex] ?? activeService.images[0]}
                   alt={activeService.imageCaptions[imageIndex] ?? activeService.title}
@@ -465,7 +465,7 @@ function Index() {
                     if (activeService.images.length < 2) return;
                     setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
                   }}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-background/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground/90 transition-all duration-200 hover:scale-125 focus:outline-none"
                 >
                   <ChevronLeft className="size-14" strokeWidth={1.5} />
                 </button>
@@ -476,7 +476,7 @@ function Index() {
                     if (activeService.images.length < 2) return;
                     setImageIndex((i) => (i + 1) % activeService.images.length);
                   }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-background/90 transition-all duration-200 hover:scale-125 focus:outline-none"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground/90 transition-all duration-200 hover:scale-125 focus:outline-none"
                 >
                   <ChevronRight className="size-14" strokeWidth={1.5} />
                 </button>
@@ -491,33 +491,33 @@ function Index() {
                   <h3 className="font-display font-extrabold text-3xl md:text-4xl tracking-tighter leading-tight mb-6">
                     {activeService.imageTexts?.[displayedIndex]?.heading}
                   </h3>
-                  <p className="text-base text-background/70 text-pretty max-w-[50ch]">
+                  <p className="text-base text-foreground/70 text-pretty max-w-[50ch]">
                     {activeService.imageTexts?.[displayedIndex]?.body}
                   </p>
                   {active === "design" && (
                     <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
                       <thead>
-                        <tr className="border-b border-background/20">
+                        <tr className="border-b border-foreground/20">
                           <th
                             colSpan={2}
-                            className="py-2 text-center text-background/90 font-medium uppercase tracking-wider text-xs"
+                            className="py-2 text-center text-foreground/90 font-medium uppercase tracking-wider text-xs"
                           >
                             Technical specifications
                           </th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b border-background/20">
-                          <td className="py-2 pr-4 text-background/90 font-medium">Tolerances</td>
-                          <td className="py-2 text-background/70">Cylindricity 1 cm</td>
+                        <tr className="border-b border-foreground/20">
+                          <td className="py-2 pr-4 text-foreground/90 font-medium">Tolerances</td>
+                          <td className="py-2 text-foreground/70">Cylindricity 1 cm</td>
                         </tr>
-                        <tr className="border-b border-background/20">
-                          <td className="py-2 pr-4 text-background/90 font-medium">Length</td>
-                          <td className="py-2 text-background/70">12m</td>
+                        <tr className="border-b border-foreground/20">
+                          <td className="py-2 pr-4 text-foreground/90 font-medium">Length</td>
+                          <td className="py-2 text-foreground/70">12m</td>
                         </tr>
-                        <tr className="border-b border-background/20">
-                          <td className="py-2 pr-4 text-background/90 font-medium">Diameter</td>
-                          <td className="py-2 text-background/70">2m</td>
+                        <tr className="border-b border-foreground/20">
+                          <td className="py-2 pr-4 text-foreground/90 font-medium">Diameter</td>
+                          <td className="py-2 text-foreground/70">2m</td>
                         </tr>
                       </tbody>
                     </table>
