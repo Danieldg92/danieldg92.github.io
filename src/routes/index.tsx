@@ -419,7 +419,7 @@ function Index() {
             >
               <ChevronUp
                 size={56}
-                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                className="text-muted-foreground hover:text-foreground/90 transition-all duration-300 hover:scale-125"
                 strokeWidth={2.5}
                 absoluteStrokeWidth
                 strokeLinecap="butt"
@@ -434,7 +434,7 @@ function Index() {
             >
               <ChevronDown
                 size={56}
-                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                className="text-muted-foreground hover:text-foreground/90 transition-all duration-300 hover:scale-125"
                 strokeWidth={2.5}
                 absoluteStrokeWidth
                 strokeLinecap="butt"
