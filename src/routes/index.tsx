@@ -59,7 +59,6 @@ const SERVICES: Record<
     ],
   },
   cnc: {
-    tag: "02/DESIGN",
     title: "Design and company events",
     images: [manasi, hm, loggaJpg, boursin, designF2, ninja],
     imageCaptions: [
@@ -268,11 +267,7 @@ function Index() {
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
-          <section id="work" className="p-6 md:p-12 scroll-mt-20 bg-black text-white">
-            <div className="flex justify-between items-end mb-12">
-              <span className="font-mono text-[10px] text-background/70 hidden md:block">[ {activeService.tag} ]</span>
-            </div>
-
+        <section id="work" className="p-6 md:p-12 scroll-mt-20 bg-black text-white">
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
               <div className="relative w-full aspect-square max-h-[75vh] bg-black px-[15%] pb-[5%] mx-auto">
                 <img
