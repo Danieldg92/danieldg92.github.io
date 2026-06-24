@@ -145,28 +145,39 @@ function Index() {
     return () => clearInterval(interval);
   }, []);
 
-  // Disable page scroll — navigation happens via arrow keys
+  // Hide native scrollbar and disable wheel/touch scrolling — arrow keys drive navigation
   useEffect(() => {
-    const prevHtml = document.documentElement.style.overflow;
-    const prevBody = document.body.style.overflow;
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
+    const prevent = (e: Event) => e.preventDefault();
+    window.addEventListener("wheel", prevent, { passive: false });
+    window.addEventListener("touchmove", prevent, { passive: false });
+    document.documentElement.classList.add("no-scrollbar");
     return () => {
-      document.documentElement.style.overflow = prevHtml;
-      document.body.style.overflow = prevBody;
+      window.removeEventListener("wheel", prevent);
+      window.removeEventListener("touchmove", prevent);
+      document.documentElement.classList.remove("no-scrollbar");
     };
   }, []);
 
-  // When mode changes, sync the active service selection
+  // When mode changes, sync active service and scroll the corresponding section into view
   useEffect(() => {
     if (mode === 2) {
       setActive((a) => a ?? "design");
       setImageIndex(0);
       setDisplayedIndex(0);
       setIsExiting(false);
-    } else {
+    } else if (mode !== 2) {
       setActive(null);
     }
+    const id = mode === 0 ? null : mode === 1 ? "services" : mode === 2 ? "work" : "contact";
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (id === null) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    });
   }, [mode]);
 
   // Keyboard navigation: ArrowUp/Down switch modes, ArrowLeft/Right cycle images in mode 2
