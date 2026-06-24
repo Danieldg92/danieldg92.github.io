@@ -220,7 +220,7 @@ function Index() {
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer flex flex-col items-center"
+            className="absolute bottom-2 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer flex flex-col items-center"
           >
             <ChevronDown size={isHovered ? 40 : 80} className="text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
             <ChevronDown size={56} className="text-muted-foreground transition-all duration-300" strokeWidth={1.5} style={{ marginTop: -((isHovered ? 40 : 80) + 56) * 0.375 + 4 }} />
