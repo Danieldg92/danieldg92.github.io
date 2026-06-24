@@ -117,14 +117,15 @@ const SERVICES: Record<
 
 const SERVICE_ORDER: ServiceKey[] = ["design", "cnc"];
 
+type Mode = 0 | 1 | 2 | 3; // 0 hero, 1 services, 2 servicesActive, 3 contact
+
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
-  const [servicesInView, setServicesInView] = useState(false);
-  const servicesRef = useRef<HTMLElement>(null);
+  const [mode, setMode] = useState<Mode>(0);
   const activeService = active ? SERVICES[active] : null;
 
   useEffect(() => {
@@ -144,34 +145,63 @@ function Index() {
     return () => clearInterval(interval);
   }, []);
 
-  // Track when the services section is centered in view
+  // Hide native scrollbar and disable wheel/touch scrolling — arrow keys drive navigation
   useEffect(() => {
-    const el = servicesRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => setServicesInView(entry.isIntersecting));
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    const prevent = (e: Event) => e.preventDefault();
+    window.addEventListener("wheel", prevent, { passive: false });
+    window.addEventListener("touchmove", prevent, { passive: false });
+    document.documentElement.classList.add("no-scrollbar");
+    return () => {
+      window.removeEventListener("wheel", prevent);
+      window.removeEventListener("touchmove", prevent);
+      document.documentElement.classList.remove("no-scrollbar");
+    };
   }, []);
-  // Keyboard navigation for service images
+
+  // When mode changes, sync active service and scroll the corresponding section into view
   useEffect(() => {
-    if (!activeService || activeService.images.length < 2) return;
+    if (mode === 2) {
+      setActive((a) => a ?? "design");
+      setImageIndex(0);
+      setDisplayedIndex(0);
+      setIsExiting(false);
+    } else {
+      setActive(null);
+    }
+    const id = mode === 0 ? null : mode === 1 ? "services" : mode === 2 ? "work" : "contact";
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (id === null) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    });
+  }, [mode]);
+
+  // Keyboard navigation: ArrowUp/Down switch modes, ArrowLeft/Right cycle images in mode 2
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") {
+      if (e.key === "ArrowDown") {
         e.preventDefault();
-        setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
-      } else if (e.key === "ArrowRight") {
+        setMode((m) => (Math.min(3, m + 1) as Mode));
+      } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        setImageIndex((i) => (i + 1) % activeService.images.length);
+        setMode((m) => (Math.max(0, m - 1) as Mode));
+      } else if (mode === 2 && activeService && activeService.images.length > 1) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          setImageIndex((i) => (i + 1) % activeService.images.length);
+        }
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeService]);
+  }, [mode, activeService]);
 
 
   return (
@@ -180,13 +210,7 @@ function Index() {
         <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <button
           type="button"
-          onClick={() => {
-            setActive(null);
-            setImageIndex(0);
-            setDisplayedIndex(0);
-            setIsExiting(false);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          onClick={() => setMode(0)}
           className="flex items-center gap-3 focus:outline-none cursor-pointer"
         >
           <img src={logga} alt="DG Development logo" className="h-8 w-auto" />
@@ -197,13 +221,20 @@ function Index() {
             href="#services"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
+              setMode(1);
             }}
             className="hover:text-primary transition-colors"
           >
             01. Services
           </a>
-          <a href="#contact" className="hover:text-primary transition-colors">
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              setMode(3);
+            }}
+            className="hover:text-primary transition-colors"
+          >
             02. Contact
           </a>
         </div>
@@ -212,7 +243,8 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <header className="relative px-6 pt-24 pb-24 border-b border-border overflow-hidden flex flex-col justify-center min-h-[calc(100svh-65px)]">
+        <header className={`relative px-6 pt-24 pb-24 border-b border-border overflow-hidden flex flex-col justify-center min-h-[calc(100svh-65px)] ${mode === 0 ? "z-[60]" : ""}`}>
+
           <div aria-hidden className="absolute inset-0 pointer-events-none">
             {HERO_SLIDESHOW.map((src, i) => (
               <img
@@ -246,9 +278,7 @@ function Index() {
           <button
             type="button"
             aria-label="Scroll to services"
-            onClick={() => {
-              document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
-            }}
+            onClick={() => setMode(1)}
             className="absolute bottom-2 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer"
           >
             <ChevronDown
@@ -265,9 +295,8 @@ function Index() {
 
         {/* Services — clickable */}
         <section
-          ref={servicesRef}
           id="services"
-          className={`relative z-[60] grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"}`}
+          className={`relative grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"} ${mode === 1 || mode === 2 ? "z-[60]" : ""}`}
         >
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
@@ -282,13 +311,7 @@ function Index() {
                   setImageIndex(0);
                   setDisplayedIndex(0);
                   setIsExiting(false);
-                  if (next) {
-                    requestAnimationFrame(() => {
-                      requestAnimationFrame(() => {
-                        document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "center" });
-                      });
-                    });
-                  }
+                  setMode(next ? 2 : 1);
                 }}
                 aria-pressed={isActive}
                 className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none group ${
@@ -311,17 +334,16 @@ function Index() {
           })}
         </section>
 
-        {/* Tinted glass blur overlay behind the service boxes */}
+        {/* Tinted glass blur overlay — highlights the focused section in every mode */}
         <div
-          className={`fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none ${
-            servicesInView ? "opacity-100" : "opacity-0"
-          }`}
+          className="fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none opacity-100"
           aria-hidden="true"
         />
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
-        <section id="work" className="p-6 md:p-12 scroll-mt-20 bg-black text-white">
+        <section id="work" className={`p-6 md:p-12 scroll-mt-20 bg-black text-white relative ${mode === 2 ? "z-[60]" : ""}`}>
+
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
               <div className="relative w-full aspect-square max-h-[75vh] bg-black px-[15%] pb-[5%] mx-auto">
                 <img
@@ -403,7 +425,7 @@ function Index() {
         )}
 
         {/* Contact */}
-        <footer id="contact" className="px-6 py-24 border-t border-border">
+        <footer id="contact" className={`relative px-6 py-24 border-t border-border bg-background ${mode === 3 ? "z-[60]" : ""}`}>
           <div className="max-w-4xl mx-auto text-center">
             <p className="font-montserrat text-[10px] uppercase tracking-widest text-primary mb-8">Contact us</p>
             <a
