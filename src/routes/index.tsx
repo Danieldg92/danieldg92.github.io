@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 import cylinder from "@/assets/Cylinder.jpg";
