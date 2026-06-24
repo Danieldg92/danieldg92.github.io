@@ -311,6 +311,14 @@ function Index() {
           })}
         </section>
 
+        {/* Tinted glass blur overlay behind the service boxes */}
+        <div
+          className={`fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none ${
+            servicesInView ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        />
+
         {/* Service detail (reactive to selected service) */}
         {activeService && (
         <section id="work" className="p-6 md:p-12 scroll-mt-20 bg-black text-white">
