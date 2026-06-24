@@ -309,7 +309,7 @@ function Index() {
         {/* Services — clickable */}
         <section
           id="services"
-          className={`relative grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"} ${mode === 1 || mode === 2 ? "z-[60]" : ""}`}
+          className={`relative grid md:grid-cols-2 border-b ${active ? "border-black" : "border-border"} ${mode === 1 ? "z-[60]" : ""}`}
         >
           {SERVICE_ORDER.map((key, i) => {
             const s = SERVICES[key];
