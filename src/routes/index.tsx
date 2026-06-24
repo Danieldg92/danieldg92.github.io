@@ -507,6 +507,24 @@ function Index() {
           </section>
         )}
 
+        {mode === 3 && (
+          <button
+            type="button"
+            aria-label="Back to services"
+            onClick={() => setMode(1)}
+            className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+          >
+            <ChevronUp
+              size={56}
+              className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+              strokeWidth={2.5}
+              absoluteStrokeWidth
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+            />
+          </button>
+        )}
+
         {/* Contact */}
         <footer id="contact" className={`relative px-6 py-24 border-t border-border bg-background ${mode === 3 ? "z-[60]" : ""}`}>
           <div className="max-w-4xl mx-auto text-center">
