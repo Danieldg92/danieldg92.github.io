@@ -219,7 +219,7 @@ function Index() {
             }}
             className="absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer animate-arrow-pulse"
           >
-            <ChevronDown className="size-10" strokeWidth={1.5} />
+            <ChevronDown className="size-20 hover:!text-black transition-colors duration-300" strokeWidth={1.5} />
           </button>
         </header>
 
