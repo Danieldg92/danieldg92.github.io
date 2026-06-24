@@ -151,7 +151,13 @@ function Index() {
         <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4 grid grid-cols-3 items-center">
         <button
           type="button"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            setActive(null);
+            setImageIndex(0);
+            setDisplayedIndex(0);
+            setIsExiting(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="flex items-center gap-3 focus:outline-none cursor-pointer"
         >
           <img src={logga} alt="DG Development logo" className="h-8 w-auto" />
