@@ -217,11 +217,13 @@ function Index() {
             onClick={() => {
               document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
             }}
-            className="group absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer flex flex-col items-center"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer flex flex-col items-center"
           >
-            <ChevronDown className="size-20 group-hover:size-10 text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
-            <ChevronDown className="size-14 text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
-            <ChevronDown className="size-10 group-hover:size-20 text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
+            <ChevronDown size={isHovered ? 40 : 80} className="text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
+            <ChevronDown size={56} className="text-muted-foreground transition-all duration-300" strokeWidth={1.5} style={{ marginTop: -((isHovered ? 40 : 80) + 56) * 0.375 + 4 }} />
+            <ChevronDown size={isHovered ? 80 : 40} className="text-muted-foreground transition-all duration-300" strokeWidth={1.5} style={{ marginTop: -(56 + (isHovered ? 80 : 40)) * 0.375 + 4 }} />
           </button>
         </header>
 
