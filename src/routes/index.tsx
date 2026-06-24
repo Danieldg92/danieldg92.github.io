@@ -347,9 +347,9 @@ function Index() {
           })}
         </section>
 
-        {/* Tinted glass blur overlay — highlights the focused section in every mode */}
+        {/* Tinted glass blur overlay — highlights the focused section in every mode except hero */}
         <div
-          className="fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none opacity-100"
+          className={`fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none ${mode === 0 ? "opacity-0" : "opacity-100"}`}
           aria-hidden="true"
         />
 
