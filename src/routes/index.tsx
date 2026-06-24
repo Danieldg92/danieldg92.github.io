@@ -415,7 +415,7 @@ function Index() {
               type="button"
               aria-label="Back to services"
               onClick={() => setMode(1)}
-              className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+              className="fixed top-4 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
             >
               <ChevronUp
                 size={56}
@@ -533,7 +533,7 @@ function Index() {
             type="button"
             aria-label="Back to services"
             onClick={() => setMode(1)}
-            className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
           >
             <ChevronUp
               size={56}
