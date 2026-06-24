@@ -238,7 +238,7 @@ function Index() {
           >
             <ChevronDown
               size={56}
-              className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110"
+              className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-125"
               strokeWidth={2.5}
               absoluteStrokeWidth
               strokeLinecap="butt"
