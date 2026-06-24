@@ -180,15 +180,28 @@ function Index() {
     });
   }, [mode]);
 
-  // Keyboard navigation: ArrowUp/Down switch modes, ArrowLeft/Right cycle images in mode 2
+  // Keyboard navigation: ArrowUp/Down switch modes (skipping mode 2 unless reached via click).
+  // ArrowLeft/Right cycle service images only when in mode 2.
   useEffect(() => {
+    const nextMode = (m: Mode): Mode => {
+      if (m === 0) return 1;
+      if (m === 1) return 3;
+      if (m === 2) return 3;
+      return 3;
+    };
+    const prevMode = (m: Mode): Mode => {
+      if (m === 3) return 1;
+      if (m === 2) return 1;
+      if (m === 1) return 0;
+      return 0;
+    };
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        setMode((m) => (Math.min(3, m + 1) as Mode));
+        setMode((m) => nextMode(m));
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        setMode((m) => (Math.max(0, m - 1) as Mode));
+        setMode((m) => prevMode(m));
       } else if (mode === 2 && activeService && activeService.images.length > 1) {
         if (e.key === "ArrowLeft") {
           e.preventDefault();
