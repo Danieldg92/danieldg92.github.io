@@ -165,7 +165,7 @@ function Index() {
       setImageIndex(0);
       setDisplayedIndex(0);
       setIsExiting(false);
-    } else if (mode !== 2) {
+    } else {
       setActive(null);
     }
     const id = mode === 0 ? null : mode === 1 ? "services" : mode === 2 ? "work" : "contact";
