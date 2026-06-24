@@ -144,7 +144,19 @@ function Index() {
     return () => clearInterval(interval);
   }, []);
 
-  // Keyboard navigation for service images
+  // Track when the services section is centered in view
+  useEffect(() => {
+    const el = servicesRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => setServicesInView(entry.isIntersecting));
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     if (!activeService || activeService.images.length < 2) return;
     const handleKeyDown = (e: KeyboardEvent) => {
