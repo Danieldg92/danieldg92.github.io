@@ -117,14 +117,15 @@ const SERVICES: Record<
 
 const SERVICE_ORDER: ServiceKey[] = ["design", "cnc"];
 
+type Mode = 0 | 1 | 2 | 3; // 0 hero, 1 services, 2 servicesActive, 3 contact
+
 function Index() {
   const [active, setActive] = useState<ServiceKey | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
-  const [servicesInView, setServicesInView] = useState(false);
-  const servicesRef = useRef<HTMLElement>(null);
+  const [mode, setMode] = useState<Mode>(0);
   const activeService = active ? SERVICES[active] : null;
 
   useEffect(() => {
@@ -144,34 +145,52 @@ function Index() {
     return () => clearInterval(interval);
   }, []);
 
-  // Track when the services section is centered in view
+  // Disable page scroll — navigation happens via arrow keys
   useEffect(() => {
-    const el = servicesRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => setServicesInView(entry.isIntersecting));
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    const prevHtml = document.documentElement.style.overflow;
+    const prevBody = document.body.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.documentElement.style.overflow = prevHtml;
+      document.body.style.overflow = prevBody;
+    };
   }, []);
-  // Keyboard navigation for service images
+
+  // When mode changes, sync the active service selection
   useEffect(() => {
-    if (!activeService || activeService.images.length < 2) return;
+    if (mode === 2) {
+      setActive((a) => a ?? "design");
+      setImageIndex(0);
+      setDisplayedIndex(0);
+      setIsExiting(false);
+    } else {
+      setActive(null);
+    }
+  }, [mode]);
+
+  // Keyboard navigation: ArrowUp/Down switch modes, ArrowLeft/Right cycle images in mode 2
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") {
+      if (e.key === "ArrowDown") {
         e.preventDefault();
-        setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
-      } else if (e.key === "ArrowRight") {
+        setMode((m) => (Math.min(3, m + 1) as Mode));
+      } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        setImageIndex((i) => (i + 1) % activeService.images.length);
+        setMode((m) => (Math.max(0, m - 1) as Mode));
+      } else if (mode === 2 && activeService && activeService.images.length > 1) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          setImageIndex((i) => (i + 1) % activeService.images.length);
+        }
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeService]);
+  }, [mode, activeService]);
 
 
   return (
