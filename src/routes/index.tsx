@@ -245,7 +245,7 @@ function Index() {
                 } ${isActive ? "bg-black text-white" : "hover:bg-card"} flex flex-col min-h-[28vh]`}
               >
                 <div className="flex-1 flex flex-col items-center justify-center w-full">
-                  <h3 className="font-montserrat font-medium text-3xl md:text-4xl tracking-tighter text-center">{s.title}</h3>
+                  <h3 className="font-montserrat font-light text-3xl md:text-4xl tracking-tighter text-center">{s.title}</h3>
                   {s.body && <p className={`text-sm mt-2 ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>}
                 </div>
                 <span
