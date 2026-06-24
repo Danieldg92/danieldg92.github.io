@@ -123,6 +123,7 @@ function Index() {
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const activeService = active ? SERVICES[active] : null;
 
   useEffect(() => {
