@@ -293,7 +293,7 @@ function Index() {
                 aria-pressed={isActive}
                 className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none group ${
                   i < 2 ? "md:border-r" : ""
-                } ${isActive ? "bg-black text-white" : "hover:text-primary"} flex flex-col min-h-[28vh]`}
+                } ${isActive ? "bg-black text-white" : "bg-background hover:text-primary"} flex flex-col min-h-[28vh]`}
               >
                 <div className="flex-1 flex flex-col items-center justify-center w-full">
                   <h3 className={`font-montserrat font-light text-3xl md:text-4xl tracking-tighter text-center ${isActive ? "" : "group-hover:text-primary"}`}>{s.title}</h3>
