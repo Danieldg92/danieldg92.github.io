@@ -283,7 +283,7 @@ function Index() {
                 </div>
                 <span
                   className={`absolute bottom-6 right-6 font-montserrat text-[10px] uppercase tracking-widest ${
-                    isActive ? "text-background/70" : "text-foreground"
+                    isActive ? "text-background/70" : "text-foreground group-hover:text-white"
                   }`}
                 >
                   {isActive ? "[ Viewing ]" : "View →"}
