@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 
 import cylinder from "@/assets/Cylinder.jpg";
 import vakuumprotes from "@/assets/VakuumprotesRENDER.png";
@@ -352,6 +352,59 @@ function Index() {
           className="fixed inset-0 z-50 bg-foreground/40 backdrop-blur-md transition-opacity duration-500 pointer-events-none opacity-100"
           aria-hidden="true"
         />
+
+        {/* Fixed mode navigation arrows (above the blur overlay) */}
+        {mode === 1 && (
+          <>
+            <button
+              type="button"
+              aria-label="Back to hero"
+              onClick={() => setMode(0)}
+              className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+            >
+              <ChevronUp
+                size={56}
+                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                strokeWidth={2.5}
+                absoluteStrokeWidth
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+              />
+            </button>
+            <button
+              type="button"
+              aria-label="Go to contact"
+              onClick={() => setMode(3)}
+              className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+            >
+              <ChevronDown
+                size={56}
+                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                strokeWidth={2.5}
+                absoluteStrokeWidth
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+              />
+            </button>
+          </>
+        )}
+        {mode === 3 && (
+          <button
+            type="button"
+            aria-label="Back to services"
+            onClick={() => setMode(1)}
+            className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+          >
+            <ChevronUp
+              size={56}
+              className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+              strokeWidth={2.5}
+              absoluteStrokeWidth
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+            />
+          </button>
+        )}
 
         {/* Service detail (reactive to selected service) */}
         {activeService && (
