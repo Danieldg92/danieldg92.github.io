@@ -273,17 +273,17 @@ function Index() {
                   }
                 }}
                 aria-pressed={isActive}
-                className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:bg-black focus-visible:text-white group ${
+                className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 group ${
                   i < 2 ? "md:border-r" : ""
-                } ${isActive ? "bg-black text-white" : "hover:bg-black hover:text-white"} flex flex-col min-h-[28vh]`}
+                } ${isActive ? "bg-black text-white" : "hover:text-primary"} flex flex-col min-h-[28vh]`}
               >
                 <div className="flex-1 flex flex-col items-center justify-center w-full">
-                  <h3 className="font-montserrat font-light text-3xl md:text-4xl tracking-tighter text-center">{s.title}</h3>
+                  <h3 className={`font-montserrat font-light text-3xl md:text-4xl tracking-tighter text-center ${isActive ? "" : "group-hover:text-primary"}`}>{s.title}</h3>
                   {s.body && <p className={`text-sm mt-2 ${isActive ? "text-background/70" : "text-muted-foreground"}`}>{s.body}</p>}
                 </div>
                 <span
                   className={`absolute bottom-6 right-6 font-montserrat text-[10px] uppercase tracking-widest ${
-                    isActive ? "text-background/70" : "text-foreground group-hover:text-white"
+                    isActive ? "text-background/70" : "text-foreground group-hover:text-primary"
                   }`}
                 >
                   {isActive ? "[ Viewing ]" : "View →"}
