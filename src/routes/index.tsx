@@ -353,6 +353,59 @@ function Index() {
           aria-hidden="true"
         />
 
+        {/* Fixed mode navigation arrows (above the blur overlay) */}
+        {mode === 1 && (
+          <>
+            <button
+              type="button"
+              aria-label="Back to hero"
+              onClick={() => setMode(0)}
+              className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+            >
+              <ChevronUp
+                size={56}
+                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                strokeWidth={2.5}
+                absoluteStrokeWidth
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+              />
+            </button>
+            <button
+              type="button"
+              aria-label="Go to contact"
+              onClick={() => setMode(3)}
+              className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+            >
+              <ChevronDown
+                size={56}
+                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                strokeWidth={2.5}
+                absoluteStrokeWidth
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+              />
+            </button>
+          </>
+        )}
+        {mode === 3 && (
+          <button
+            type="button"
+            aria-label="Back to services"
+            onClick={() => setMode(1)}
+            className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+          >
+            <ChevronUp
+              size={56}
+              className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+              strokeWidth={2.5}
+              absoluteStrokeWidth
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+            />
+          </button>
+        )}
+
         {/* Service detail (reactive to selected service) */}
         {activeService && (
         <section id="work" className={`p-6 md:p-12 scroll-mt-20 bg-black text-white relative ${mode === 2 ? "z-[60]" : ""}`}>
