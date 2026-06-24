@@ -100,8 +100,8 @@
 }
 
 @keyframes arrow-pulse {
-  0%, 100% { color: #3f3f3f; }
-  50% { color: #bdbdbd; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 .animate-arrow-pulse {

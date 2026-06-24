@@ -217,9 +217,9 @@ function Index() {
             onClick={() => {
               document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
             }}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer animate-arrow-pulse"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer"
           >
-            <ChevronDown className="size-20 hover:!text-black transition-colors duration-300" strokeWidth={1.5} />
+            <ChevronDown className="size-20 text-foreground/80 animate-arrow-pulse hover:text-foreground hover:animate-none transition-colors duration-300" strokeWidth={1.5} />
           </button>
         </header>
 
