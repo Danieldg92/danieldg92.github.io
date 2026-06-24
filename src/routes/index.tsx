@@ -449,7 +449,7 @@ function Index() {
         <section id="work" className={`p-6 md:p-12 scroll-mt-20 bg-background text-foreground relative ${mode === 2 ? "z-[60]" : ""}`}>
 
             <div key={active} className="grid md:grid-cols-2 gap-8 animate-reveal">
-              <div className="relative w-full aspect-square max-h-[75vh] bg-background px-[15%] pb-[5%] mx-auto">
+              <div className="relative w-full aspect-square max-h-[55vh] bg-background px-[15%] pb-[5%] mx-auto">
                 <img
                   src={activeService.images[imageIndex] ?? activeService.images[0]}
                   alt={activeService.imageCaptions[imageIndex] ?? activeService.title}
