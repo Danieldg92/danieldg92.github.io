@@ -388,22 +388,39 @@ function Index() {
             </button>
           </>
         )}
-        {mode === 3 && (
-          <button
-            type="button"
-            aria-label="Back to services"
-            onClick={() => setMode(1)}
-            className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
-          >
-            <ChevronUp
-              size={56}
-              className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
-              strokeWidth={2.5}
-              absoluteStrokeWidth
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-            />
-          </button>
+        {mode === 2 && (
+          <>
+            <button
+              type="button"
+              aria-label="Back to services"
+              onClick={() => setMode(1)}
+              className="fixed top-20 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+            >
+              <ChevronUp
+                size={56}
+                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                strokeWidth={2.5}
+                absoluteStrokeWidth
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+              />
+            </button>
+            <button
+              type="button"
+              aria-label="Go to contact"
+              onClick={() => setMode(3)}
+              className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[70] focus:outline-none cursor-pointer"
+            >
+              <ChevronDown
+                size={56}
+                className="text-background hover:text-background/80 transition-all duration-300 hover:scale-125"
+                strokeWidth={2.5}
+                absoluteStrokeWidth
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+              />
+            </button>
+          </>
         )}
 
         {/* Service detail (reactive to selected service) */}
