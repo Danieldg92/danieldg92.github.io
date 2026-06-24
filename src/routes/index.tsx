@@ -273,7 +273,7 @@ function Index() {
                   }
                 }}
                 aria-pressed={isActive}
-                className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 group ${
+                className={`relative text-left p-6 border-b md:border-b-0 border-border transition-colors cursor-pointer focus:outline-none group ${
                   i < 2 ? "md:border-r" : ""
                 } ${isActive ? "bg-black text-white" : "hover:text-primary"} flex flex-col min-h-[28vh]`}
               >
