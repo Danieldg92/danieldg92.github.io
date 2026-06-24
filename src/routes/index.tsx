@@ -143,6 +143,23 @@ function Index() {
     return () => clearInterval(interval);
   }, []);
 
+  // Keyboard navigation for service images
+  useEffect(() => {
+    if (!activeService || activeService.images.length < 2) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        setImageIndex((i) => (i - 1 + activeService.images.length) % activeService.images.length);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        setImageIndex((i) => (i + 1) % activeService.images.length);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeService]);
+
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
