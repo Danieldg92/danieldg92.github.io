@@ -217,27 +217,11 @@ function Index() {
             onClick={() => {
               document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
             }}
-            className="group absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer"
+            className="group absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer flex flex-col items-center"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="w-20 h-20 animate-arrow-pulse group-hover:animate-none"
-              aria-hidden="true"
-            >
-              <defs>
-                <linearGradient id="arrow-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="white" />
-                  <stop offset="100%" stop-color="black" />
-                  <animateTransform attributeName="gradientTransform" type="rotate" from="0 12 12" to="360 12 12" dur="4s" repeatCount="indefinite" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M 0 4 L 24 4 L 12 16 Z"
-                fill="url(#arrow-gradient)"
-                className="transition-colors duration-300 group-hover:fill-foreground"
-              />
-            </svg>
+            <ChevronDown className="size-20 group-hover:size-10 text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
+            <ChevronDown className="size-14 text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
+            <ChevronDown className="size-10 group-hover:size-20 text-muted-foreground transition-all duration-300" strokeWidth={1.5} />
           </button>
         </header>
 
