@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 import cylinder from "@/assets/Cylinder.jpg";
 import vakuumprotes from "@/assets/VakuumprotesRENDER.png";
@@ -180,7 +180,7 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <header className="relative px-6 pt-24 pb-24 border-b border-border overflow-hidden">
+        <header className="relative px-6 pt-24 pb-24 border-b border-border overflow-hidden flex flex-col justify-center min-h-[calc(100svh-65px)]">
           <div aria-hidden className="absolute inset-0 pointer-events-none">
             {HERO_SLIDESHOW.map((src, i) => (
               <img
@@ -211,7 +211,18 @@ function Index() {
               </div>
             </div>
           </div>
+          <button
+            type="button"
+            aria-label="Scroll to services"
+            onClick={() => {
+              document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "center" });
+            }}
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 focus:outline-none cursor-pointer animate-arrow-pulse"
+          >
+            <ChevronDown className="size-10" strokeWidth={1.5} />
+          </button>
         </header>
+
 
         {/* Services — clickable */}
         <section
