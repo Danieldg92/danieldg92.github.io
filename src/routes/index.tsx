@@ -89,7 +89,7 @@ const SERVICES: Record<
   },
   cnc: {
     title: "Design and company events",
-    images: [manasiround, hmrounded, advlogga, ninjablurred, designF2, ninja],
+    images: [manasiround, hmrounded, advlogga, boursinblurred, designF2, ninjablurred],
     imageCaptions: [
       "Perfume bottle cap",
       "Large scale 3D-print for showroom",
