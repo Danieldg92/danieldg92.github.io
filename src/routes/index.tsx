@@ -58,6 +58,23 @@ const SERVICES: Record<
         body: "Design of a pneumatic vacuum lift for safe handling of heavy metal sheets in an industrial environment.",
       },
     ],
+    imageTables: [
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+    ],
   },
   cnc: {
     title: "Design and company events",
