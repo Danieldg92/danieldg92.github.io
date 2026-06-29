@@ -152,9 +152,9 @@ const SERVICES: Record<
         { label: "—", value: "—" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Design", value: "CAD" },
+        { label: "Prototype", value: "3D-print" },
+        { label: "Manufacturing method", value: "Silicone moulding w. pica pigments" },
       ],
       [
         { label: "Height", value: "3m" },
