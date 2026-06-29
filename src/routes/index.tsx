@@ -111,7 +111,7 @@ const SERVICES: Record<
       },
       {
         heading: "Showroom piece.",
-        body: "Form design for manufacturability of a larger 3D-piece with hollowness to allow for internal lighting.",
+        body: "Form design for manufacturability of a larger hollow 3D-piece for internal dynamic lighting effects.",
       },
       {
         heading: "Large scale logo representation.",
