@@ -130,6 +130,38 @@ const SERVICES: Record<
         body: "Design and construction of a wheel of fortune, sheated with textiles printed with company design visuals.",
       },
     ],
+    imageTables: [
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+      [
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+        { label: "—", value: "—" },
+      ],
+    ],
   },
 };
 
