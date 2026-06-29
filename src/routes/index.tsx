@@ -46,11 +46,11 @@ const SERVICES: Record<
     imageTexts: [
       {
         heading: "Large scale poster roller.",
-        body: "Engineering and fabrication of a large-scale, heavy-duty industrial roller designed for long-term operational durability.",
+        body: "Engineering and fabrication of a largescale, heavy-duty industrial roller designed for 24/7 operational. Minimal service required.",
       },
       {
         heading: "Pneumatic lift for prosthetic legs.",
-        body: "Custom-made pneumatic lift, mountable to robot arm as an end effector. The lift uses suction cups designed for optimal grip on the prosthetic legs designed by the client. ",
+        body: "Custom-made pneumatic lift, mountable to robot arm as an end effector. The lift uses suction cups designed for optimal grip on the curved carbon fibre prosthetic leg component",
       },
       {
         heading: "Pneumatic vacuum lift.",
@@ -509,15 +509,15 @@ function Index() {
                       <tbody>
                         <tr className="border-b border-foreground/20">
                           <td className="py-2 pr-4 text-foreground/90 font-medium">Tolerances</td>
-                          <td className="py-2 text-foreground/70">Cylindricity 1 cm</td>
+                          <td className="py-2 text-foreground/70">Radial < +/- 1mm</td>
                         </tr>
                         <tr className="border-b border-foreground/20">
                           <td className="py-2 pr-4 text-foreground/90 font-medium">Length</td>
-                          <td className="py-2 text-foreground/70">12m</td>
+                          <td className="py-2 text-foreground/70">10.5m</td>
                         </tr>
                         <tr className="border-b border-foreground/20">
                           <td className="py-2 pr-4 text-foreground/90 font-medium">Diameter</td>
-                          <td className="py-2 text-foreground/70">2m</td>
+                          <td className="py-2 text-foreground/70">2.1m</td>
                         </tr>
                       </tbody>
                     </table>
