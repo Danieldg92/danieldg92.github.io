@@ -11,8 +11,7 @@ import ninja from "@/assets/Ninja.jpg";
 import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
 
-import hmroundedAsset from "@/assets/hmrounded.png.asset.json";
-const hmrounded = hmroundedAsset.url;
+import hmrounded from "@/assets/hmrounded.png";
 
 import advloggaAsset from "@/assets/AdvLogga.png.asset.json";
 const advlogga = advloggaAsset.url;
