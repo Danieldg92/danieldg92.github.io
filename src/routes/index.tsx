@@ -5,19 +5,11 @@ import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react"
 import cylinder from "@/assets/Cylinder.jpg";
 import vakuumprotes from "@/assets/VakuumprotesRENDER.png";
 import vaakumlyft from "@/assets/vaakumlyft.png";
-import manasiroundAsset from "@/assets/manasiround.png.asset.json";
-const manasiround = manasiroundAsset.url;
-import ninja from "@/assets/Ninja.jpg";
+import manasiround from "@/assets/manasiround.png";
 import designF2 from "@/assets/DesignF2.png";
-import boursin from "@/assets/boursin.jpg";
-
 import hmrounded from "@/assets/hmrounded.png";
-
-import advloggaAsset from "@/assets/AdvLogga.png.asset.json";
-const advlogga = advloggaAsset.url;
-
-import boursinblurredAsset from "@/assets/Boursinblurred.png.asset.json";
-const boursinblurred = boursinblurredAsset.url;
+import advlogga from "@/assets/AdvLogga.png";
+import boursinblurred from "@/assets/Boursinblurred.png";
 
 import ninjablurredAsset from "@/assets/ninjablurred.png.asset.json";
 const ninjablurred = ninjablurredAsset.url;
@@ -25,7 +17,7 @@ const ninjablurred = ninjablurredAsset.url;
 import logga from "@/assets/dgd-logo.png";
 import hmClean from "@/assets/HMclean.png";
 
-const HERO_SLIDESHOW = [logga, manasiround, hmClean, boursin, cylinder, vakuumprotes, vaakumlyft, designF2];
+const HERO_SLIDESHOW = [logga, manasiround, hmClean, cylinder, vakuumprotes, vaakumlyft, designF2];
 
 export const Route = createFileRoute("/")({
   component: Index,
