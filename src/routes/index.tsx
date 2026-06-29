@@ -107,7 +107,7 @@ const SERVICES: Record<
     imageTexts: [
       {
         heading: "Perfume bottle cap.",
-        body: "Design and manufacturing of bottle cap for a cosmetics company.",
+        body: "Design and manufacturing of bottle cap for a cosmetics company. Concept dialogue of various designs, materials and processes. Final design inspired by the Japanese \"Kinsugi\" expression.",
       },
       {
         heading: "Showroom piece.",
