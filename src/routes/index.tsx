@@ -60,9 +60,9 @@ const SERVICES: Record<
     ],
     imageTables: [
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Length", value: "10.5m" },
+        { label: "Tolerance", value: "Radial: < +/- 1mm" },
+        { label: "Diameter", value: "2.1m" },
       ],
       [
         { label: "—", value: "—" },
