@@ -494,7 +494,7 @@ function Index() {
                   <p className="text-base text-foreground/70 text-pretty max-w-[50ch]">
                     {activeService.imageTexts?.[displayedIndex]?.body}
                   </p>
-                  {active === "design" && (
+                  {active === "design" && displayedIndex === 0 && (
                     <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
                       <thead>
                         <tr className="border-b border-foreground/20">
@@ -508,12 +508,12 @@ function Index() {
                       </thead>
                       <tbody>
                         <tr className="border-b border-foreground/20">
-                          <td className="py-2 pr-4 text-foreground/90 font-medium">Lift capacity</td>
-                          <td className="py-2 text-foreground/70">140-160N</td>
+                          <td className="py-2 pr-4 text-foreground/90 font-medium">Length</td>
+                          <td className="py-2 text-foreground/70">10.5m</td>
                         </tr>
                         <tr className="border-b border-foreground/20">
-                          <td className="py-2 pr-4 text-foreground/90 font-medium">Adaptability</td>
-                          <td className="py-2 text-foreground/70">Can be calibrated to various surfaces</td>
+                          <td className="py-2 pr-4 text-foreground/90 font-medium">Tolerance</td>
+                          <td className="py-2 text-foreground/70">{"Radial < +/- 1mm"}</td>
                         </tr>
                         <tr className="border-b border-foreground/20">
                           <td className="py-2 pr-4 text-foreground/90 font-medium">Diameter</td>
