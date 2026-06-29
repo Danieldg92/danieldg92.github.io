@@ -170,6 +170,7 @@ const SERVICES: Record<
       "",
       "Technical specifications (Wheel and mounting support)",
     ],
+  },
 };
 
 const SERVICE_ORDER: ServiceKey[] = ["design", "cnc"];
