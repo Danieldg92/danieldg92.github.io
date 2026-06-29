@@ -5,7 +5,8 @@ import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react"
 import cylinder from "@/assets/Cylinder.jpg";
 import vakuumprotes from "@/assets/VakuumprotesRENDER.png";
 import vaakumlyft from "@/assets/vaakumlyft.png";
-import manasi from "@/assets/manasi.png";
+import manasiAsset from "@/assets/manasi.png.asset.json";
+const manasi = manasiAsset.url;
 import ninja from "@/assets/Ninja.jpg";
 import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
