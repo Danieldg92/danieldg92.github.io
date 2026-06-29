@@ -509,7 +509,7 @@ function Index() {
                       <tbody>
                         <tr className="border-b border-foreground/20">
                           <td className="py-2 pr-4 text-foreground/90 font-medium">Tolerances</td>
-                          <td className="py-2 text-foreground/70">Radial < +/- 1mm</td>
+                          <td className="py-2 text-foreground/70">{"Radial < +/- 1mm"}</td>
                         </tr>
                         <tr className="border-b border-foreground/20">
                           <td className="py-2 pr-4 text-foreground/90 font-medium">Length</td>
