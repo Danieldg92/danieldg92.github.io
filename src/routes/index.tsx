@@ -14,8 +14,10 @@ import boursin from "@/assets/boursin.jpg";
 import hmroundedAsset from "@/assets/hmrounded.png.asset.json";
 const hmrounded = hmroundedAsset.url;
 
+import advloggaAsset from "@/assets/AdvLogga.png.asset.json";
+const advlogga = advloggaAsset.url;
+
 import logga from "@/assets/dgd-logo.png";
-import loggaJpg from "@/assets/Logga.jpg";
 import hmClean from "@/assets/HMclean.png";
 
 const HERO_SLIDESHOW = [logga, manasiround, hmClean, boursin, cylinder, vakuumprotes, vaakumlyft, designF2];
@@ -81,7 +83,7 @@ const SERVICES: Record<
   },
   cnc: {
     title: "Design and company events",
-    images: [manasiround, hmrounded, loggaJpg, boursin, designF2, ninja],
+    images: [manasiround, hmrounded, advlogga, boursin, designF2, ninja],
     imageCaptions: [
       "Perfume bottle cap",
       "Large scale 3D-print for showroom",
