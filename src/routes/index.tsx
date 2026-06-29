@@ -141,9 +141,9 @@ const SERVICES: Record<
         { label: "Lighting", value: "LED assembly and control" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Height", value: "2.5m" },
+        { label: "Width", value: "3.5m" },
+        { label: "Lighting", value: "Self-illuminating fosfor powder" },
       ],
       [
         { label: "—", value: "—" },
