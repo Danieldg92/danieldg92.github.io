@@ -34,6 +34,7 @@ const SERVICES: Record<
     imageBullets?: { label: string; value: string }[][];
     imageTexts?: { heading: string; body: string }[];
     imageTables: { label: string; value: string }[][];
+    imageTableTitles?: string[];
   }
 > = {
   design: {
