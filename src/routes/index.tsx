@@ -34,7 +34,7 @@ const SERVICES: Record<
     imageBullets?: { label: string; value: string }[][];
     imageTexts?: { heading: string; body: string }[];
     imageTables: { label: string; value: string }[][];
-    imageTableTitles?: string[];
+    imageTableTitles?: (string | undefined)[];
   }
 > = {
   design: {
@@ -559,7 +559,7 @@ function Index() {
                             colSpan={2}
                             className="py-2 text-center text-foreground/90 font-medium uppercase tracking-wider text-xs"
                           >
-                            Technical specifications
+                            {activeService.imageTableTitles?.[displayedIndex] ?? "Technical specifications"}
                           </th>
                         </tr>
                       </thead>
