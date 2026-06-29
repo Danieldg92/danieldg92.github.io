@@ -34,6 +34,7 @@ const SERVICES: Record<
     imageBullets?: { label: string; value: string }[][];
     imageTexts?: { heading: string; body: string }[];
     imageTables: { label: string; value: string }[][];
+    imageTableTitles?: string[];
   }
 > = {
   design: {
@@ -156,10 +157,18 @@ const SERVICES: Record<
         { label: "—", value: "—" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Height", value: "3m" },
+        { label: "Width", value: "2.5m" },
+        { label: "Manufacturing", value: "CNC, carpentry and digital print" },
       ],
+    ],
+    imageTableTitles: [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Technical specifications (Wheel and mounting support)",
     ],
   },
 };
@@ -551,7 +560,7 @@ function Index() {
                             colSpan={2}
                             className="py-2 text-center text-foreground/90 font-medium uppercase tracking-wider text-xs"
                           >
-                            Technical specifications
+                            {(activeService.imageTableTitles?.[displayedIndex] || "Technical specifications")}
                           </th>
                         </tr>
                       </thead>
