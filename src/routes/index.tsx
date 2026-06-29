@@ -132,9 +132,8 @@ const SERVICES: Record<
     ],
     imageTables: [
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Material", value: "Jasmonite" },
+        { label: "Manufacturing method", value: "Silicone moulding" },
       ],
       [
         { label: "—", value: "—" },
