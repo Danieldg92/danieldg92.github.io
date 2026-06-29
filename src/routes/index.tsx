@@ -50,7 +50,7 @@ const SERVICES: Record<
       },
       {
         heading: "Pneumatic lift for prosthetic legs.",
-        body: "Custom-made pneumatic lift, mountable to robot arm as an end effector. The lift uses suction cups designed for optimal grip on the curved carbon fibre prosthetic leg component",
+        body: "Custom-made pneumatic lift, mountable to robot arm as an end effector. The lift uses suction cups designed for optimal grip on the curved carbon fibre prosthetic leg component. Includes vacuum-controller with low vacuum alarm and self flushing system in case of accidental water infusion.",
       },
       {
         heading: "Pneumatic vacuum lift.",
