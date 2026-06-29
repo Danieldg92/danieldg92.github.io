@@ -46,7 +46,7 @@ const SERVICES: Record<
     imageTexts: [
       {
         heading: "Large scale poster roller.",
-        body: "Engineering and fabrication of a largescale, heavy-duty industrial roller designed for 24/7 operation. Minimal service required.",
+        body: "Engineering and fabrication of a largescale, heavy-duty industrial roller designed for 24/7 operation. Minimal service required. Turnkey project from concept to deliverable. Only the axial bearings are stock items.",
       },
       {
         heading: "Pneumatic lift for prosthetic legs.",
