@@ -33,6 +33,7 @@ const SERVICES: Record<
     imageCaptions: string[];
     imageBullets?: { label: string; value: string }[][];
     imageTexts?: { heading: string; body: string }[];
+    imageTables: { label: string; value: string }[][];
   }
 > = {
   design: {
