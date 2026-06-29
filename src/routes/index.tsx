@@ -65,9 +65,9 @@ const SERVICES: Record<
         { label: "Diameter", value: "2.1m" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Lift capacity", value: "140-160N" },
+        { label: "Mounting", value: "Quick grip and eject function" },
+        { label: "Adaptability", value: "Possible to calibrate to various surfaces" },
       ],
       [
         { label: "—", value: "—" },
