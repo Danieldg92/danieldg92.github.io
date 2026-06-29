@@ -508,12 +508,12 @@ function Index() {
                       </thead>
                       <tbody>
                         <tr className="border-b border-foreground/20">
-                          <td className="py-2 pr-4 text-foreground/90 font-medium">Tolerances</td>
-                          <td className="py-2 text-foreground/70">{"Radial < +/- 1mm"}</td>
+                          <td className="py-2 pr-4 text-foreground/90 font-medium">Lift capacity</td>
+                          <td className="py-2 text-foreground/70">140-160N</td>
                         </tr>
                         <tr className="border-b border-foreground/20">
-                          <td className="py-2 pr-4 text-foreground/90 font-medium">Length</td>
-                          <td className="py-2 text-foreground/70">10.5m</td>
+                          <td className="py-2 pr-4 text-foreground/90 font-medium">Adaptability</td>
+                          <td className="py-2 text-foreground/70">Can be calibrated to various surfaces</td>
                         </tr>
                         <tr className="border-b border-foreground/20">
                           <td className="py-2 pr-4 text-foreground/90 font-medium">Diameter</td>
