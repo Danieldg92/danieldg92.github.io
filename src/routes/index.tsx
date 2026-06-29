@@ -544,7 +544,7 @@ function Index() {
                   <p className="text-base text-foreground/70 text-pretty max-w-[50ch]">
                     {activeService.imageTexts?.[displayedIndex]?.body}
                   </p>
-                  {active === "design" && displayedIndex === 0 && (
+                  {activeService.imageTables?.[displayedIndex] && (
                     <table className="w-full max-w-[50ch] mt-6 text-sm border-collapse">
                       <thead>
                         <tr className="border-b border-foreground/20">
@@ -557,18 +557,12 @@ function Index() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b border-foreground/20">
-                          <td className="py-2 pr-4 text-foreground/90 font-medium">Length</td>
-                          <td className="py-2 text-foreground/70">10.5m</td>
-                        </tr>
-                        <tr className="border-b border-foreground/20">
-                          <td className="py-2 pr-4 text-foreground/90 font-medium">Tolerance</td>
-                          <td className="py-2 text-foreground/70">{"Radial: < +/- 1mm"}</td>
-                        </tr>
-                        <tr className="border-b border-foreground/20">
-                          <td className="py-2 pr-4 text-foreground/90 font-medium">Diameter</td>
-                          <td className="py-2 text-foreground/70">2.1m</td>
-                        </tr>
+                        {activeService.imageTables[displayedIndex].map((row, i) => (
+                          <tr key={i} className="border-b border-foreground/20">
+                            <td className="py-2 pr-4 text-foreground/90 font-medium">{row.label}</td>
+                            <td className="py-2 text-foreground/70">{row.value}</td>
+                          </tr>
+                        ))}
                       </tbody>
                     </table>
                   )}
