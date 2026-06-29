@@ -136,9 +136,9 @@ const SERVICES: Record<
         { label: "Manufacturing method", value: "Silicone moulding" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Design", value: "CAD" },
+        { label: "Manufacturing method", value: "Large scale 3D-print" },
+        { label: "Lighting", value: "LED assembly and control" },
       ],
       [
         { label: "—", value: "—" },
