@@ -5,8 +5,8 @@ import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react"
 import cylinder from "@/assets/Cylinder.jpg";
 import vakuumprotes from "@/assets/VakuumprotesRENDER.png";
 import vaakumlyft from "@/assets/vaakumlyft.png";
-import manasiAsset from "@/assets/manasi.png.asset.json";
-const manasi = manasiAsset.url;
+import manasiroundAsset from "@/assets/manasiround.png.asset.json";
+const manasiround = manasiroundAsset.url;
 import ninja from "@/assets/Ninja.jpg";
 import designF2 from "@/assets/DesignF2.png";
 import boursin from "@/assets/boursin.jpg";
@@ -17,7 +17,7 @@ import logga from "@/assets/dgd-logo.png";
 import loggaJpg from "@/assets/Logga.jpg";
 import hmClean from "@/assets/HMclean.png";
 
-const HERO_SLIDESHOW = [logga, manasi, hmClean, boursin, cylinder, vakuumprotes, vaakumlyft, designF2];
+const HERO_SLIDESHOW = [logga, manasiround, hmClean, boursin, cylinder, vakuumprotes, vaakumlyft, designF2];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -80,7 +80,7 @@ const SERVICES: Record<
   },
   cnc: {
     title: "Design and company events",
-    images: [manasi, hm, loggaJpg, boursin, designF2, ninja],
+    images: [manasiround, hm, loggaJpg, boursin, designF2, ninja],
     imageCaptions: [
       "Perfume bottle cap",
       "Large scale 3D-print for showroom",
