@@ -163,11 +163,11 @@ const SERVICES: Record<
       ],
     ],
     imageTableTitles: [
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
+      "",
+      "",
+      "",
+      "",
+      "",
       "Technical specifications (Wheel and mounting support)",
     ],
 };
