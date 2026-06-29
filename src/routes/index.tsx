@@ -89,7 +89,7 @@ const SERVICES: Record<
     ],
     imageBullets: [
       [
-        { label: "Material", value: "Jasmonite" },
+        { label: "Material", value: "Jesmonite" },
         { label: "Tolerance", value: "±0.1 mm" },
         { label: "Method", value: "Casting" },
       ],
@@ -132,7 +132,7 @@ const SERVICES: Record<
     ],
     imageTables: [
       [
-        { label: "Material", value: "Jasmonite" },
+        { label: "Material", value: "Jesmonite" },
         { label: "Manufacturing method", value: "Silicone moulding" },
       ],
       [
