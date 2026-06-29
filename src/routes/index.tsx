@@ -157,12 +157,19 @@ const SERVICES: Record<
         { label: "—", value: "—" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Height", value: "3m" },
+        { label: "Width", value: "2.5m" },
+        { label: "Manufacturing", value: "CNC, carpentry and digital print" },
       ],
     ],
-  },
+    imageTableTitles: [
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      "Technical specifications (Wheel and mounting support)",
+    ],
 };
 
 const SERVICE_ORDER: ServiceKey[] = ["design", "cnc"];
