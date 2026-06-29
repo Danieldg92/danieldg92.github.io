@@ -560,7 +560,7 @@ function Index() {
                             colSpan={2}
                             className="py-2 text-center text-foreground/90 font-medium uppercase tracking-wider text-xs"
                           >
-                            {activeService.imageTableTitles?.[displayedIndex] ?? "Technical specifications"}
+                            {(activeService.imageTableTitles?.[displayedIndex] || "Technical specifications")}
                           </th>
                         </tr>
                       </thead>
