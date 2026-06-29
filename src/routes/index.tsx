@@ -70,9 +70,9 @@ const SERVICES: Record<
         { label: "Adaptability", value: "Possible to calibrate to various surfaces" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Lifting capacity", value: "Max 7000N" },
+        { label: "Controller", value: "Double handed safety release" },
+        { label: "User Interface", value: "Visual indicator at workload ready" },
       ],
     ],
   },
