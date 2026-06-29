@@ -20,6 +20,9 @@ const advlogga = advloggaAsset.url;
 import boursinblurredAsset from "@/assets/Boursinblurred.png.asset.json";
 const boursinblurred = boursinblurredAsset.url;
 
+import ninjablurredAsset from "@/assets/ninjablurred.png.asset.json";
+const ninjablurred = ninjablurredAsset.url;
+
 import logga from "@/assets/dgd-logo.png";
 import hmClean from "@/assets/HMclean.png";
 
@@ -86,7 +89,7 @@ const SERVICES: Record<
   },
   cnc: {
     title: "Design and company events",
-    images: [manasiround, hmrounded, advlogga, boursinblurred, designF2, ninja],
+    images: [manasiround, hmrounded, advlogga, ninjablurred, designF2, ninja],
     imageCaptions: [
       "Perfume bottle cap",
       "Large scale 3D-print for showroom",
