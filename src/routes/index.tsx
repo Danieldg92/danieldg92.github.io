@@ -148,9 +148,9 @@ const SERVICES: Record<
         { label: "Lighting", value: "Self-illuminating fosfor powder" },
       ],
       [
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
-        { label: "—", value: "—" },
+        { label: "Diameter", value: "1.5m" },
+        { label: "Design", value: "Adobe package" },
+        { label: "Manufacturing method", value: "Carpentry & CO2 laser" },
       ],
       [
         { label: "Design", value: "CAD" },
